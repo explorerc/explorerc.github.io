@@ -229,6 +229,415 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/04/ES6/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Chen Qi">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="CC_Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/12/04/ES6/" itemprop="url">ES6特性</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-04T16:56:12+08:00">
+                2018-12-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="ES6简介"><a href="#ES6简介" class="headerlink" title="ES6简介"></a>ES6简介</h2><p> ECMScript6简称ES6，是JavaScript语言的下一代标砖，以及在2015年6余额发布。<br> ECMScript和JavaScript的关系：前者是后者的语法规格，后者是前者的一种实现</p>
+<h2 id="新特性"><a href="#新特性" class="headerlink" title="新特性"></a>新特性</h2><h3 id="let、const"><a href="#let、const" class="headerlink" title="let、const"></a>let、const</h3><p>let定义的变量不会被变量提升，const定义的常量不能被修改<br>const定义了一个对象，对象的属性是可以被修改的，例：student.name = “cc”</p>
+<h3 id="import、export"><a href="#import、export" class="headerlink" title="import、export"></a>import、export</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">// 全部导入</span><br><span class="line">import people from <span class="string">'./example'</span></span><br><span class="line">// 将整个模块当作单一对象进行导入，该模块的所有导出都会作为对象的属性存在</span><br><span class="line">import * as example from <span class="string">"./example.js"</span></span><br><span class="line">console.log(example.name)</span><br><span class="line">console.log(example.getName())</span><br><span class="line">// 导入部分，引入非 default 时，使用花括号</span><br><span class="line">import &#123;name, age&#125; from <span class="string">'./example'</span></span><br><span class="line">// 导出默认, 有且只有一个默认</span><br><span class="line"><span class="built_in">export</span> default App</span><br><span class="line">// 部分导出</span><br><span class="line"><span class="built_in">export</span> class App extend Component &#123;&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="class、extends、super"><a href="#class、extends、super" class="headerlink" title="class、extends、super"></a>class、extends、super</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">class Animal &#123;</span><br><span class="line">    <span class="function"><span class="title">constructor</span></span>() &#123;</span><br><span class="line">    　　this.type = <span class="string">'animal'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    says(say) &#123;</span><br><span class="line">    　　console.log(this.type + <span class="string">' says '</span> + say);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">let</span> animal = new Animal();</span><br><span class="line">animal.says(<span class="string">'hello'</span>); //animal says hello</span><br><span class="line">class Cat extends Animal &#123;</span><br><span class="line">　　<span class="function"><span class="title">constructor</span></span>() &#123;</span><br><span class="line">　　　　super();</span><br><span class="line">　　　　this.type = <span class="string">'cat'</span>;</span><br><span class="line">　　&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">let</span> cat = new Cat();</span><br><span class="line">cat.says(<span class="string">'hello'</span>); //cat says hello</span><br></pre></td></tr></table></figure>
+<p>首先定义了一个”类”，有constructor构造方法，this关键字则代表实例对象。换句话来说，constructor内定义的方法和属性是实例对象自己的，而constructor外定义的方法和属性则是所有实例对象可以共享的<br>class之间可以通过extends实现继承。如实例中Cat类，通过extends关键字，继承了Animal类的所有属性和fnagfa。<br>super关键字，它指代父亲的实例（即父亲的this对象）。子类必须在constructor方法中调用super方法，否则实例时会报错。因为子类没有自己的this对象，而是继承父类的this对象，然后对其进行加工。如果不调用，子类就得不到this对象<br>ES6的继承机制，实质是看创造父类的实例对象this（所以必须先调用super方法），然后再用子类的构造函数修改this。</p>
+<h3 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h3><p>函数的快捷写法。不需要function来创建函数，省略retrun，继承当前上下文的this<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">// ES5</span><br><span class="line">var arr1 = [1, 2, 3];</span><br><span class="line">var newArr1 = arr1.map(<span class="keyword">function</span>(x) &#123;</span><br><span class="line">　　<span class="built_in">return</span> x + 1;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">// ES6</span><br><span class="line"><span class="built_in">let</span> newArr2 = arr1.map((x) =&gt; &#123;</span><br><span class="line">　　x + 1</span><br><span class="line">&#125;);</span><br><span class="line">// ES6 函数有且只有一个参数是，可以省略括号，函数中有且只有一个表达式可以省略&#123;&#125;</span><br><span class="line"><span class="built_in">let</span> newArr2 = arr1.map(x =&gt; x + 1 );</span><br></pre></td></tr></table></figure></p>
+<h3 id="tempalte-string-模版字符串"><a href="#tempalte-string-模版字符串" class="headerlink" title="tempalte string(模版字符串)"></a>tempalte string(模版字符串)</h3><p>第一个用途：字符串拼接。将表达式嵌入字符串中进行拼接，语法 <code>hello ${变量}</code><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">// es5</span><br><span class="line">var name1 = <span class="string">"bai"</span>;</span><br><span class="line">console.log(<span class="string">'hello '</span> + name1);</span><br><span class="line">// es6</span><br><span class="line">const name2 = <span class="string">"ming"</span>;</span><br><span class="line">console.log(`hello <span class="variable">$&#123;name2&#125;</span>`);</span><br></pre></td></tr></table></figure></p>
+<p>第二个用途：多行字符串拼接<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">// es5</span><br><span class="line">var msg = <span class="string">"Hi \</span></span><br><span class="line"><span class="string">man!"</span>;</span><br><span class="line">// es6</span><br><span class="line">const template = `&lt;div&gt;</span><br><span class="line">&lt;span&gt;hello world&lt;/span&gt;</span><br><span class="line">&lt;/div&gt;`;</span><br></pre></td></tr></table></figure></p>
+<h3 id="destructing-解构"><a href="#destructing-解构" class="headerlink" title="destructing (解构)"></a>destructing (解构)</h3><p>简化数组和对象中信息的提取<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> people2 = &#123;</span><br><span class="line">　　name: <span class="string">'ming'</span>,</span><br><span class="line">　　age: 20,</span><br><span class="line">　　color: [<span class="string">'red'</span>, <span class="string">'blue'</span>]</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">let</span> &#123; name, age &#125; = people2;</span><br><span class="line"><span class="built_in">let</span> [first, second] = people2.color;</span><br><span class="line">console.log(`<span class="variable">$&#123;name&#125;</span>----<span class="variable">$&#123;age&#125;</span>----<span class="variable">$&#123;first&#125;</span>`);</span><br></pre></td></tr></table></figure></p>
+<h3 id="default-函数默认参数"><a href="#default-函数默认参数" class="headerlink" title="default 函数默认参数"></a>default 函数默认参数</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">// ES5 给函数定义参数默认值</span><br><span class="line"><span class="keyword">function</span> foo(num) &#123;</span><br><span class="line">　　num = num || 200;</span><br><span class="line">　　<span class="built_in">return</span> num;</span><br><span class="line">&#125;</span><br><span class="line">// ES6</span><br><span class="line"><span class="keyword">function</span> foo(num = 200) &#123;</span><br><span class="line">　　<span class="built_in">return</span> num;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="rest-arguments-（rest参数）"><a href="#rest-arguments-（rest参数）" class="headerlink" title="rest arguments （rest参数）"></a>rest arguments （rest参数）</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> foo(x, y, ...rest) &#123;</span><br><span class="line">　　<span class="built_in">return</span> ((x + y) * rest.length);</span><br><span class="line">&#125;</span><br><span class="line">foo(1, 2, <span class="string">'hello'</span>, <span class="literal">true</span>, 7); // 9</span><br></pre></td></tr></table></figure>
+<h3 id="Spread-Operator-（展开运算符）"><a href="#Spread-Operator-（展开运算符）" class="headerlink" title="Spread Operator （展开运算符）"></a>Spread Operator （展开运算符）</h3><p>第一个用途：组装数组<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> color = [<span class="string">'red'</span>, <span class="string">'yellow'</span>];</span><br><span class="line"><span class="built_in">let</span> colorful = [...color, <span class="string">'green'</span>, <span class="string">'blue'</span>];</span><br><span class="line">console.log(colorful); // [<span class="string">"red"</span>, <span class="string">"yellow"</span>, <span class="string">"green"</span>, <span class="string">"blue"</span>]</span><br></pre></td></tr></table></figure></p>
+<p>第二个用途：获取数组除了某几项的其他项<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> num = [1, 3, 5, 7, 9];</span><br><span class="line"><span class="built_in">let</span> [first, second, ...rest] = num;</span><br><span class="line">console.log(rest); // [5, 7, 9]</span><br></pre></td></tr></table></figure></p>
+<h3 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">/// ES5</span><br><span class="line"><span class="keyword">function</span> people(name, age) &#123;</span><br><span class="line">　　<span class="built_in">return</span> &#123;</span><br><span class="line">　　　　name: name,</span><br><span class="line">　　　　age: age</span><br><span class="line">　　&#125;;</span><br><span class="line">&#125;</span><br><span class="line">// ES6</span><br><span class="line"><span class="keyword">function</span> people(name, age) &#123;</span><br><span class="line">　　<span class="built_in">return</span> &#123;</span><br><span class="line">　　　　name,</span><br><span class="line">　　　　age</span><br><span class="line">　　&#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>另外：Object.assign()<br>ES6 对象提供了Object.assign()这个方法来实现浅复制。Object.assign()可以把任意多个源对象自身可枚举的属性拷贝给目标对象，然后返回目标对象。第一参数即为目标对象。在实际项目中，我们为了不改变源对象。一般会把目标对象传为{}<br>用法1：合并对象<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var first = &#123; name: <span class="string">"Bob"</span> &#125;;</span><br><span class="line">var last = &#123; lastName: <span class="string">"Smith"</span> &#125;;</span><br><span class="line">var person = Object.assign(first, last);</span><br><span class="line">console.log(person);</span><br><span class="line">// Output:</span><br><span class="line">// &#123; name: <span class="string">"Bob"</span>, lastName: <span class="string">"Smith"</span> &#125;</span><br></pre></td></tr></table></figure></p>
+<p>用法2：克隆对象<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123; person: <span class="string">"Bob Smith"</span>&#125;;</span><br><span class="line">var <span class="built_in">clone</span> = Object.assign(&#123;&#125;, obj);</span><br></pre></td></tr></table></figure></p>
+<h3 id="Promise"><a href="#Promise" class="headerlink" title="Promise"></a>Promise</h3><p>用同步的方式写一步代码<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// 发起异步请求</span><br><span class="line">fetch(<span class="string">'/api/todos'</span>)</span><br><span class="line">.<span class="keyword">then</span>(res =&gt; res.json())</span><br><span class="line">.<span class="keyword">then</span>(data =&gt; (&#123; data &#125;))</span><br><span class="line">.catch(err =&gt; (&#123; err &#125;));</span><br></pre></td></tr></table></figure></p>
+<h3 id="Generators"><a href="#Generators" class="headerlink" title="Generators"></a>Generators</h3><p>生成器（generator）是能返回一个迭代器的函数<br>生成器也是一种函数，最直观的表现就是比普通的function多一个*号，在其函数体内可以使用yield关键字，函数会在每个yield后暂停<br>如：银行取号排队办理业务<br>迭代器：调用一个generator时，它将返回一个迭代器对象。这个跌打器对象拥有一个叫做next的方法帮组你重启generator函数并得到了下一个值。nenxt方法不返回值，它返回的对象具有两个属性：done和value。calue是你获得的值，done用来表明你的generator是否已停止提供值。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">// 生成器</span><br><span class="line"><span class="keyword">function</span> *<span class="function"><span class="title">createIterator</span></span>() &#123;</span><br><span class="line">    yield 1;</span><br><span class="line">    yield 2;</span><br><span class="line">    yield 3;</span><br><span class="line">&#125;</span><br><span class="line">// 生成器能像正规函数那样被调用，但会返回一个迭代器</span><br><span class="line"><span class="built_in">let</span> iterator = createIterator();</span><br><span class="line">console.log(iterator.next().value); // 1</span><br><span class="line">console.log(iterator.next().value); // 2</span><br><span class="line">console.log(iterator.next().value); // 3</span><br></pre></td></tr></table></figure></p>
+<p>参考文献：<a href="https://www.cnblogs.com/fangsmile/p/7081194.html" target="_blank" rel="noopener">https://www.cnblogs.com/fangsmile/p/7081194.html</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/04/flex布局/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Chen Qi">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="CC_Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/12/04/flex布局/" itemprop="url">flex布局</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-04T14:14:02+08:00">
+                2018-12-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>弹性盒子 display:flex<br>flex为复合属性，且必须配合父元素display:flex使用。<br>以下6个属性设置在子元素上：</p>
+<ul><br>    <li>flex-grow：放大比例</li><br>    <li>flex-shrink：缩小比例</li><br>    <li>flex-basis：伸缩基准值</li><br>    <li>flex：前面三者的缩写</li><br>    <li>order：排列顺序</li><br>    <li>align：单个元素对齐方式ß</li><br></ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/04/input/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Chen Qi">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="CC_Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/12/04/input/" itemprop="url">单选框和复选框</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-04T13:50:55+08:00">
+                2018-12-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>input的功能可以说是非常强大了，他的属性不同，呈现的效果是完全不一样的</p>
+<h2 id="单选框"><a href="#单选框" class="headerlink" title="单选框"></a>单选框</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;label&gt;性别：&lt;label&gt;</span><br><span class="line">男：&lt;input <span class="built_in">type</span>=<span class="string">'radio'</span> name=<span class="string">'gender'</span>&gt;</span><br><span class="line">女：&lt;input <span class="built_in">type</span>=<span class="string">'radio'</span> name=<span class="string">'gender'</span>&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="复选框"><a href="#复选框" class="headerlink" title="复选框"></a>复选框</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;label&gt;爱好：&lt;label&gt;</span><br><span class="line">篮球：&lt;input <span class="built_in">type</span>=<span class="string">'checkbox'</span> name=<span class="string">'hobby'</span> value=<span class="string">"1"</span>&gt;</span><br><span class="line">足球：&lt;input <span class="built_in">type</span>=<span class="string">'checkbox'</span> name=<span class="string">'hobby'</span> value=<span class="string">"2"</span>&gt;</span><br><span class="line">跑步：&lt;input <span class="built_in">type</span>=<span class="string">'checkbox'</span> name=<span class="string">'hobby'</span> value=<span class="string">"3"</span>&gt;</span><br><span class="line">跳舞：&lt;input <span class="built_in">type</span>=<span class="string">'checkbox'</span> name=<span class="string">'hobby'</span> value=<span class="string">"4"</span>&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h2><table>
+<thead>
+<tr>
+<th>属性</th>
+<th>值及功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type</td>
+<td>radio:单选框  checkbox:复选框</td>
+</tr>
+<tr>
+<td>value</td>
+<td>提交数据到后台的值</td>
+</tr>
+<tr>
+<td>checked</td>
+<td>当设置 checked=true或者”checked” 时，该选项被默认选中</td>
+</tr>
+<tr>
+<td>disabled</td>
+<td>true：禁用  false(默认):非禁用</td>
+</tr>
+</tbody>
+</table>
+<p>checkbox视觉上忧伤三种状态： checked(选中)、unchecked(未选中)、indeterminate(不确定的)</p>
+<p>element中的input：<a href="http://element-cn.eleme.io/#/zh-CN/component/input" target="_blank" rel="noopener">http://element-cn.eleme.io/#/zh-CN/component/input</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/03/正则表达式/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1320,435 +1729,13 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/22/git/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Chen Qi">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="CC_Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/11/22/git/" itemprop="url">git使用</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-22T14:55:15+08:00">
-                2018-11-22
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>mac系统自带有git，我们只需要打开终端，然后输入git系统会有提示，根据提示完成后面的操作，就可以使用git了</p>
-<h2 id="git常用语法"><a href="#git常用语法" class="headerlink" title="git常用语法"></a>git常用语法</h2><h3 id="创建目录"><a href="#创建目录" class="headerlink" title="创建目录"></a>创建目录</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir demo</span><br></pre></td></tr></table></figure>
-<h3 id="文件创建与编辑"><a href="#文件创建与编辑" class="headerlink" title="文件创建与编辑"></a>文件创建与编辑</h3><p>1.创建一个文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">touch file</span><br></pre></td></tr></table></figure></p>
-<p>2.创建一个文件并进入一般模式<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi 文件名</span><br></pre></td></tr></table></figure></p>
-<p>也可以vi一个已经存在的文件，进入一般模式<br>3.一般模式进入插入模式 按i键<br>4.插入模式进入一般模式  按esc<br>5.一般模式进入命令模式 依次按 :wq<br>6.查看文件内容<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat 文件名</span><br></pre></td></tr></table></figure></p>
-<h3 id="初始化一个git仓库"><a href="#初始化一个git仓库" class="headerlink" title="初始化一个git仓库"></a>初始化一个git仓库</h3><p>1.远程仓库地址<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> 远程仓库地址</span><br></pre></td></tr></table></figure></p>
-<p>2.在本地文件下<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br></pre></td></tr></table></figure></p>
-<h3 id="git状态"><a href="#git状态" class="headerlink" title="git状态"></a>git状态</h3><p>git的状态分为三种：工作区-&gt;暂存区(索引区)-&gt;版本区</p>
-<p>1.查看状态<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git status</span><br></pre></td></tr></table></figure></p>
-<p>当文件名是红色时—工作区<br>当文件名是绿色时—暂存区<br>不显示—-版本区</p>
-<p>2.工作区-&gt;️暂存区<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add 文件名</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br></pre></td></tr></table></figure>
-<p>.表示将全部工作区的文件移入暂存区</p>
-<p>3.暂存区-&gt;版本区<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit -m <span class="string">"file1提交"</span></span><br></pre></td></tr></table></figure></p>
-<p>第一次提交的时候必须写-m和引号中的内容</p>
-<p>4.暂存区-&gt;工作区<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git rm --cache 文件名</span><br></pre></td></tr></table></figure></p>
-<h3 id="提交远程仓库"><a href="#提交远程仓库" class="headerlink" title="提交远程仓库"></a>提交远程仓库</h3><ol>
-<li>查看本地仓库是否已关联远程仓库<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>2.若没有远程仓库或想提交另一个远程仓库，为当前仓库添加远程仓库<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote add 远程仓库别名 url（远程地址）</span><br></pre></td></tr></table></figure></p>
-<p>3.把文件提交到远程仓库<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push [-u/-f] 远程仓库 本地仓库</span><br></pre></td></tr></table></figure></p>
-<p>[-u/-f]第一次提交时，必须写上其中一个</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/20/两栏布局-右侧自适应/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Chen Qi">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="CC_Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/11/20/两栏布局-右侧自适应/" itemprop="url">两栏布局-右侧自适应</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-20T17:17:55+08:00">
-                2018-11-20
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>利用简单的css实现左侧盒子200px定宽，右侧盒子自适应<br>分析：如果想让两个div在一行内展示，则需要改变div默认的display：block<br>实现方式：float，position，flex，table, border</p>
-<h2 id="结构布局"><a href="#结构布局" class="headerlink" title="结构布局"></a>结构布局</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=<span class="string">"content"</span>&gt;</span><br><span class="line">    &lt;div class=<span class="string">"left"</span>&gt;1111111&lt;/div&gt;</span><br><span class="line">    &lt;div class=<span class="string">"right"</span>&gt;2222&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
-<h2 id="基础样式"><a href="#基础样式" class="headerlink" title="基础样式"></a>基础样式</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">* &#123;</span><br><span class="line">    padding: 0;</span><br><span class="line">    margin: 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.left &#123;</span><br><span class="line">    background-color: red;</span><br><span class="line">    width: 200px;</span><br><span class="line">    height: 300px;</span><br><span class="line">&#125;</span><br><span class="line">.right &#123;</span><br><span class="line">    background-color: <span class="comment">#000;</span></span><br><span class="line">    height: 300px;</span><br><span class="line">    color: <span class="comment">#fff;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="左侧固定左侧自适应"><a href="#左侧固定左侧自适应" class="headerlink" title="左侧固定左侧自适应"></a>左侧固定左侧自适应</h2><h3 id="方法一：浮动（float"><a href="#方法一：浮动（float" class="headerlink" title="方法一：浮动（float)"></a>方法一：浮动（float)</h3><p>思路：给left添加float:left样式，使其脱离标准文档流，后面元素就可以占据本来left所占据的行，再给右侧的div设置margin-right:200px使两个盒子不重叠。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">.left &#123;</span><br><span class="line">    <span class="built_in">float</span>: left;</span><br><span class="line">&#125;</span><br><span class="line">.right &#123;</span><br><span class="line">    margin-left: 200px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h3 id="方法二-浮动和overflow"><a href="#方法二-浮动和overflow" class="headerlink" title="方法二:浮动和overflow"></a>方法二:浮动和overflow</h3><p>思路：设置float属性（不为none）时，会创建BFC，再设置overflow（不为visible）时也会产生BFC<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">.left &#123;</span><br><span class="line">     <span class="built_in">float</span>: left;</span><br><span class="line"> &#125;</span><br><span class="line">.right &#123;</span><br><span class="line">    overflow: auto;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h3 id="方法三；positon-absolute或者fixed"><a href="#方法三；positon-absolute或者fixed" class="headerlink" title="方法三；positon:absolute或者fixed"></a>方法三；positon:absolute或者fixed</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">left &#123;</span><br><span class="line">    position: absolute;</span><br><span class="line">    /*position: fixed;*/</span><br><span class="line">&#125;</span><br><span class="line">.right &#123;</span><br><span class="line">    margin-left: 200px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="方法四；display-flex"><a href="#方法四；display-flex" class="headerlink" title="方法四；display:flex"></a>方法四；display:flex</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">.content &#123;</span><br><span class="line">    display: flex;</span><br><span class="line">&#125;</span><br><span class="line">.right &#123;</span><br><span class="line">    flex: 1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="方法五；dispaly-table"><a href="#方法五；dispaly-table" class="headerlink" title="方法五；dispaly:table"></a>方法五；dispaly:table</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">.content &#123;</span><br><span class="line">    display: table;</span><br><span class="line">    width: 100%;</span><br><span class="line">&#125;</span><br><span class="line">.left,.right &#123;</span><br><span class="line">    display: table-cell;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="方法六；box-sizing"><a href="#方法六；box-sizing" class="headerlink" title="方法六；box-sizing"></a>方法六；box-sizing</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">.content &#123;</span><br><span class="line">    box-sizing: content-box;</span><br><span class="line">    font-size: 0;</span><br><span class="line">&#125;</span><br><span class="line">.left,</span><br><span class="line">.right &#123;</span><br><span class="line">    display: inline-block;</span><br><span class="line">    vertical-align: top;</span><br><span class="line">    font-size: 14px;</span><br><span class="line">    box-sizing: border-box;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.right &#123;</span><br><span class="line">    width: calc(100% - 200px);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>这个问题大的整体思路就是，div是块级元素，当我们不设置它的宽度时，它的宽度就是一行，换句话说此时它的宽度就会随着浏览器的窗口大小而改变，那么我们需要做的工作就是把左侧盒子设置固定的宽度，并让这两个盒子在一行内显示</p>
-<h2 id="注解"><a href="#注解" class="headerlink" title="注解"></a>注解</h2><p><span style="color:red">box-sizing</span></p>
-<style>
-    table th:first-of-type{
-        width:100px
-    }
-</style>
-
-<table>
-<thead>
-<tr>
-<th>值</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>content-box</td>
-<td>这是由 CSS2.1 规定的宽度高度行为。<br>宽度和高度分别应用到元素的内容框.<br>在宽度和高度之外绘制元素的内边距和边框。</td>
-</tr>
-<tr>
-<td>boxder-box</td>
-<td>为元素设定的宽度和高度决定了元素的边框盒。<br>就是说，为元素指定的任何内边距和边框都将在已设定的宽度和高度内进行绘制。<br>通过从已设定的宽度和高度分别减去边框和内边距才能得到内容的</td>
-</tr>
-<tr>
-<td>inherit</td>
-<td>规定应从父元素继承 box-sizing 属性的值。</td>
-</tr>
-</tbody>
-</table>
-<p><span style="color:red">标准文档流：</span>一种默认状态，文档流指的是元素排版布局过程中，元素会自动从左往右，从上往下的流式排列。并最终窗体自上而下分成一行行，并在每行中从左至右的顺序排放元素。</p>
-<p><span style="color:red">BFC：</span>块级格式化上下文 (Block Fromatting Context)是按照块级盒子布局的。<br>    W3C对BFC的定义如下：<br>    浮动元素和绝对定位元素，非块级盒子的块级容器（例如 inline-blocks, table-cells, 和 table-captions），以及overflow值不为“visiable”的块级盒子，都会为他们的内容创建新的BFC（块级格式上下文）。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/20/pos_dis_float/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Chen Qi">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="CC_Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/11/20/pos_dis_float/" itemprop="url">positon、display、float</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-20T16:25:06+08:00">
-                2018-11-20
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="display属性规定元素生成框的类型。"><a href="#display属性规定元素生成框的类型。" class="headerlink" title="display属性规定元素生成框的类型。"></a>display属性规定元素生成框的类型。</h2><p>none-缺省值（用于隐藏元素，元素会消失于视界和文档流中），<br>block-块级元素，<br>inline-block-行内块级元素。</p>
-<h2 id="position属性规定元素的定位类型，常用于布局。"><a href="#position属性规定元素的定位类型，常用于布局。" class="headerlink" title="position属性规定元素的定位类型，常用于布局。"></a>position属性规定元素的定位类型，常用于布局。</h2><p>static-默认：元素出现在正常文档流中（此时不受top、left、right、bottom、z-index等属性影响）；<br>absolute-绝对定位：脱离文档流，相对于它第一个非static父元素进行定；<br>fixed-固定定位：相对于浏览器窗口进行定位；relative生成相对定位的元素，相对于其正常文档流中的位置进行定位，简单来说就是相对于浏览器窗口进行定位，例如：固定导航。</p>
-<h3 id="float属性"><a href="#float属性" class="headerlink" title="float属性"></a>float属性</h3><p>定义一个元素浮动方向，最初用于图像使文本环绕，现在是一种布局方式。不论浮动元素本身是何种框类型，浮动后会生成一个块级框。</p>
-<h2 id="三者关系"><a href="#三者关系" class="headerlink" title="三者关系"></a>三者关系</h2><p><img src="../../../../images/relation.png"><br>1，如果’display’设置为’none’，用户端必须忽略掉’position’和’float’。在这种情况下，元素不产生框。<br>2，否则，’position’设置为’absolute’或’fixed’，’display’设置为’block’且’float’设置为’none’。框的位置将由’top’，’right’，’bottom’和’left’属性和该框的包含块确定。<br>3，否则，如果’float’的值不是’none’，’display’设置为’block’并且该框浮动。<br>4，否则，应用指定的其它’display’属性。<br>即如果’position’设置为’absolute’或’fixed’且‘float’的值不为‘none’，display的值就会被设置为‘block’，所以设置display: inline; float: left;等同于float:left，display:inline 的属性并未生效。因为用户端会忽略掉对’display‘的设置。float:left和display:inline-block当然是不等同的。</p>
-<p>position:absolute和float会隐式的改变display类型，<br>不论之前是什么类型的元素（display:none除外），只要设置了position:absolute或float，都会让元素以display:inline-block的方式显示，可以设置长宽，默认宽度并不占满父元素，就算是显示的设置display:inline或display:block，仍然无效。<br>float在IE6下的双倍边距bug就是利用添加display:inline来解决的<br>注意一点的是，position:relative并不能够隐式的改变display的类型</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
 
 
           </div>
@@ -1792,7 +1779,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>

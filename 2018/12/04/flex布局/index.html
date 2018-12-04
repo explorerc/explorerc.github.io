@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="{  margin: 0;  padding: 0;}看代码的收获与问题  收获    user-select: none; 文本不能选择     vm.$refs        首先给元素设置属性 ref=”logint”        然后我们就可以通过 vm.$refs.input找到这个元素        css3自定义动画    12345678@keyframes com-rota">
+<meta name="description" content="弹性盒子 display:flexflex为复合属性，且必须配合父元素display:flex使用。以下6个属性设置在子元素上：     flex-grow：放大比例    flex-shrink：缩小比例    flex-basis：伸缩基准值    flex：前面三者的缩写    order：排列顺序    align：单个元素对齐方式ß">
 <meta property="og:type" content="article">
-<meta property="og:title" content="20181126">
-<meta property="og:url" content="http://yoursite.com/2018/11/26/result1/index.html">
+<meta property="og:title" content="flex布局">
+<meta property="og:url" content="http://yoursite.com/2018/12/04/flex布局/index.html">
 <meta property="og:site_name" content="CC_Blog">
-<meta property="og:description" content="{  margin: 0;  padding: 0;}看代码的收获与问题  收获    user-select: none; 文本不能选择     vm.$refs        首先给元素设置属性 ref=”logint”        然后我们就可以通过 vm.$refs.input找到这个元素        css3自定义动画    12345678@keyframes com-rota">
+<meta property="og:description" content="弹性盒子 display:flexflex为复合属性，且必须配合父元素display:flex使用。以下6个属性设置在子元素上：     flex-grow：放大比例    flex-shrink：缩小比例    flex-basis：伸缩基准值    flex：前面三者的缩写    order：排列顺序    align：单个元素对齐方式ß">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-11-26T10:39:49.623Z">
+<meta property="og:updated_time" content="2018-12-04T06:14:02.897Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="20181126">
-<meta name="twitter:description" content="{  margin: 0;  padding: 0;}看代码的收获与问题  收获    user-select: none; 文本不能选择     vm.$refs        首先给元素设置属性 ref=”logint”        然后我们就可以通过 vm.$refs.input找到这个元素        css3自定义动画    12345678@keyframes com-rota">
+<meta name="twitter:title" content="flex布局">
+<meta name="twitter:description" content="弹性盒子 display:flexflex为复合属性，且必须配合父元素display:flex使用。以下6个属性设置在子元素上：     flex-grow：放大比例    flex-shrink：缩小比例    flex-basis：伸缩基准值    flex：前面三者的缩写    order：排列顺序    align：单个元素对齐方式ß">
 
 
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/11/26/result1/">
+  <link rel="canonical" href="http://yoursite.com/2018/12/04/flex布局/">
 
 
 
 
 
-  <title>20181126 | CC_Blog</title>
+  <title>flex布局 | CC_Blog</title>
   
 
 
@@ -232,7 +232,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/26/result1/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/04/flex布局/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Chen Qi">
@@ -249,7 +249,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">20181126</h1>
+          <h1 class="post-title" itemprop="name headline">flex布局</h1>
         
 
         <div class="post-meta">
@@ -261,8 +261,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-26T18:39:49+08:00">
-                2018-11-26
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-04T14:14:02+08:00">
+                2018-12-04
               </time>
             
 
@@ -299,21 +299,8 @@
       
 
       
-        <p><style></p>
-<ul>
-<li>{<br>  margin: 0;<br>  padding: 0;<br>}<br></style><br>看代码的收获与问题
-
-</p><h2 id="收获"><a href="#收获" class="headerlink" title="收获"></a>收获</h2><ol><br>    <li>user-select: none; 文本不能选择 </li><br>    <li>vm.$refs<br>        首先给元素设置属性 ref=”logint”<br>        然后我们就可以通过 vm.$refs.input找到这个元素<br>    </li><br>    <li>css3自定义动画<br>    <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">@keyframes com-rotating &#123;</span><br><span class="line">      from &#123;</span><br><span class="line">        transform: rotate(0deg);</span><br><span class="line">      &#125;</span><br><span class="line">      to &#123;</span><br><span class="line">        transform: rotate(360deg);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure><br><br>    </li><br>    <li>window.requestAnimationFrame() 方法告诉浏览器您希望执行动画并请求浏览器在下一次重绘之前调用指定的函数来更新动画。<br>        该方法使用一个回调函数作为参数，这个回调函数会在浏览器重绘之前调用。<br>     </li><br>     <li>兼容浏览器<br>        <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&amp;::-moz-placeholder &#123;</span><br><span class="line">      color: <span class="comment">#bfbfbf;</span></span><br><span class="line">      opacity: 1;</span><br><span class="line">    &#125;</span><br><span class="line">    &amp;:-ms-input-placeholder &#123;</span><br><span class="line">      color: <span class="comment">#bfbfbf;</span></span><br><span class="line">    &#125;</span><br><span class="line">    &amp;::-webkit-input-placeholder &#123;</span><br><span class="line">      color: <span class="comment">#bfbfbf;</span></span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure><br><br>     </li><br>     <li>属性选择器<br>     <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&amp;[disabled] &#123;</span><br><span class="line"> cursor: not-allowed;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br><br>     </li><br><br></ol>
-
-
-<h2 id="问题和疑惑"><a href="#问题和疑惑" class="headerlink" title="问题和疑惑"></a>问题和疑惑</h2><ol><br>    <li>为什么每个文件夹下面都必有两个文件 com.vue 和 index.js 文件</li><br>    <li>能看懂代码，但是很多时候有一点理不清思路</li><br>    <li>需加强对es6相关语法的学习</li><br>    <li>需加强对css3的学习</li><br></ol>
-
-
-
-
-
-
-
+        <p>弹性盒子 display:flex<br>flex为复合属性，且必须配合父元素display:flex使用。<br>以下6个属性设置在子元素上：</p>
+<ul><br>    <li>flex-grow：放大比例</li><br>    <li>flex-shrink：缩小比例</li><br>    <li>flex-basis：伸缩基准值</li><br>    <li>flex：前面三者的缩写</li><br>    <li>order：排列顺序</li><br>    <li>align：单个元素对齐方式ß</li><br></ul>
 
       
     </div>
@@ -338,8 +325,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/11/23/vue/" rel="next" title="vue">
-                <i class="fa fa-chevron-left"></i> vue
+              <a href="/2018/12/04/input/" rel="next" title="单选框和复选框">
+                <i class="fa fa-chevron-left"></i> 单选框和复选框
               </a>
             
           </div>
@@ -348,8 +335,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/11/27/client和offset/" rel="prev" title="javascript中offsetWidth、clientWidth、width、scrollWidth、clientX、screenX、offsetX、pageX">
-                javascript中offsetWidth、clientWidth、width、scrollWidth、clientX、screenX、offsetX、pageX <i class="fa fa-chevron-right"></i>
+              <a href="/2018/12/04/ES6/" rel="prev" title="ES6特性">
+                ES6特性 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -402,17 +389,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Table of Contents
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Overview
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -454,22 +432,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#收获"><span class="nav-number">1.</span> <span class="nav-text">收获</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#问题和疑惑"><span class="nav-number">2.</span> <span class="nav-text">问题和疑惑</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       

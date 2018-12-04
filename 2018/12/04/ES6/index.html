@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="ES6简介 ECMScript6简称ES6，是JavaScript语言的下一代标砖，以及在2015年6余额发布。 ECMScript和JavaScript的关系：前者是后者的语法规格，后者是前者的一种实现 新特性let、constlet定义的变量不会被变量提升，const定义的常量不能被修改const定义了一个对象，对象的属性是可以被修改的，例：student.name = “cc” import">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ES6特性">
+<meta property="og:url" content="http://yoursite.com/2018/12/04/ES6/index.html">
+<meta property="og:site_name" content="CC_Blog">
+<meta property="og:description" content="ES6简介 ECMScript6简称ES6，是JavaScript语言的下一代标砖，以及在2015年6余额发布。 ECMScript和JavaScript的关系：前者是后者的语法规格，后者是前者的一种实现 新特性let、constlet定义的变量不会被变量提升，const定义的常量不能被修改const定义了一个对象，对象的属性是可以被修改的，例：student.name = “cc” import">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-12-04T08:56:12.403Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ES6特性">
+<meta name="twitter:description" content="ES6简介 ECMScript6简称ES6，是JavaScript语言的下一代标砖，以及在2015年6余额发布。 ECMScript和JavaScript的关系：前者是后者的语法规格，后者是前者的一种实现 新特性let、constlet定义的变量不会被变量提升，const定义的常量不能被修改const定义了一个对象，对象的属性是可以被修改的，例：student.name = “cc” import">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/12/04/ES6/">
+
+
+
+
+
+  <title>ES6特性 | CC_Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">CC_Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/04/ES6/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Chen Qi">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="CC_Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">ES6特性</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-04T16:56:12+08:00">
+                2018-12-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="ES6简介"><a href="#ES6简介" class="headerlink" title="ES6简介"></a>ES6简介</h2><p> ECMScript6简称ES6，是JavaScript语言的下一代标砖，以及在2015年6余额发布。<br> ECMScript和JavaScript的关系：前者是后者的语法规格，后者是前者的一种实现</p>
+<h2 id="新特性"><a href="#新特性" class="headerlink" title="新特性"></a>新特性</h2><h3 id="let、const"><a href="#let、const" class="headerlink" title="let、const"></a>let、const</h3><p>let定义的变量不会被变量提升，const定义的常量不能被修改<br>const定义了一个对象，对象的属性是可以被修改的，例：student.name = “cc”</p>
+<h3 id="import、export"><a href="#import、export" class="headerlink" title="import、export"></a>import、export</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">// 全部导入</span><br><span class="line">import people from <span class="string">'./example'</span></span><br><span class="line">// 将整个模块当作单一对象进行导入，该模块的所有导出都会作为对象的属性存在</span><br><span class="line">import * as example from <span class="string">"./example.js"</span></span><br><span class="line">console.log(example.name)</span><br><span class="line">console.log(example.getName())</span><br><span class="line">// 导入部分，引入非 default 时，使用花括号</span><br><span class="line">import &#123;name, age&#125; from <span class="string">'./example'</span></span><br><span class="line">// 导出默认, 有且只有一个默认</span><br><span class="line"><span class="built_in">export</span> default App</span><br><span class="line">// 部分导出</span><br><span class="line"><span class="built_in">export</span> class App extend Component &#123;&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="class、extends、super"><a href="#class、extends、super" class="headerlink" title="class、extends、super"></a>class、extends、super</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">class Animal &#123;</span><br><span class="line">    <span class="function"><span class="title">constructor</span></span>() &#123;</span><br><span class="line">    　　this.type = <span class="string">'animal'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    says(say) &#123;</span><br><span class="line">    　　console.log(this.type + <span class="string">' says '</span> + say);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">let</span> animal = new Animal();</span><br><span class="line">animal.says(<span class="string">'hello'</span>); //animal says hello</span><br><span class="line">class Cat extends Animal &#123;</span><br><span class="line">　　<span class="function"><span class="title">constructor</span></span>() &#123;</span><br><span class="line">　　　　super();</span><br><span class="line">　　　　this.type = <span class="string">'cat'</span>;</span><br><span class="line">　　&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">let</span> cat = new Cat();</span><br><span class="line">cat.says(<span class="string">'hello'</span>); //cat says hello</span><br></pre></td></tr></table></figure>
+<p>首先定义了一个”类”，有constructor构造方法，this关键字则代表实例对象。换句话来说，constructor内定义的方法和属性是实例对象自己的，而constructor外定义的方法和属性则是所有实例对象可以共享的<br>class之间可以通过extends实现继承。如实例中Cat类，通过extends关键字，继承了Animal类的所有属性和fnagfa。<br>super关键字，它指代父亲的实例（即父亲的this对象）。子类必须在constructor方法中调用super方法，否则实例时会报错。因为子类没有自己的this对象，而是继承父类的this对象，然后对其进行加工。如果不调用，子类就得不到this对象<br>ES6的继承机制，实质是看创造父类的实例对象this（所以必须先调用super方法），然后再用子类的构造函数修改this。</p>
+<h3 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h3><p>函数的快捷写法。不需要function来创建函数，省略retrun，继承当前上下文的this<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">// ES5</span><br><span class="line">var arr1 = [1, 2, 3];</span><br><span class="line">var newArr1 = arr1.map(<span class="keyword">function</span>(x) &#123;</span><br><span class="line">　　<span class="built_in">return</span> x + 1;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">// ES6</span><br><span class="line"><span class="built_in">let</span> newArr2 = arr1.map((x) =&gt; &#123;</span><br><span class="line">　　x + 1</span><br><span class="line">&#125;);</span><br><span class="line">// ES6 函数有且只有一个参数是，可以省略括号，函数中有且只有一个表达式可以省略&#123;&#125;</span><br><span class="line"><span class="built_in">let</span> newArr2 = arr1.map(x =&gt; x + 1 );</span><br></pre></td></tr></table></figure></p>
+<h3 id="tempalte-string-模版字符串"><a href="#tempalte-string-模版字符串" class="headerlink" title="tempalte string(模版字符串)"></a>tempalte string(模版字符串)</h3><p>第一个用途：字符串拼接。将表达式嵌入字符串中进行拼接，语法 <code>hello ${变量}</code><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">// es5</span><br><span class="line">var name1 = <span class="string">"bai"</span>;</span><br><span class="line">console.log(<span class="string">'hello '</span> + name1);</span><br><span class="line">// es6</span><br><span class="line">const name2 = <span class="string">"ming"</span>;</span><br><span class="line">console.log(`hello <span class="variable">$&#123;name2&#125;</span>`);</span><br></pre></td></tr></table></figure></p>
+<p>第二个用途：多行字符串拼接<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">// es5</span><br><span class="line">var msg = <span class="string">"Hi \</span></span><br><span class="line"><span class="string">man!"</span>;</span><br><span class="line">// es6</span><br><span class="line">const template = `&lt;div&gt;</span><br><span class="line">&lt;span&gt;hello world&lt;/span&gt;</span><br><span class="line">&lt;/div&gt;`;</span><br></pre></td></tr></table></figure></p>
+<h3 id="destructing-解构"><a href="#destructing-解构" class="headerlink" title="destructing (解构)"></a>destructing (解构)</h3><p>简化数组和对象中信息的提取<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> people2 = &#123;</span><br><span class="line">　　name: <span class="string">'ming'</span>,</span><br><span class="line">　　age: 20,</span><br><span class="line">　　color: [<span class="string">'red'</span>, <span class="string">'blue'</span>]</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">let</span> &#123; name, age &#125; = people2;</span><br><span class="line"><span class="built_in">let</span> [first, second] = people2.color;</span><br><span class="line">console.log(`<span class="variable">$&#123;name&#125;</span>----<span class="variable">$&#123;age&#125;</span>----<span class="variable">$&#123;first&#125;</span>`);</span><br></pre></td></tr></table></figure></p>
+<h3 id="default-函数默认参数"><a href="#default-函数默认参数" class="headerlink" title="default 函数默认参数"></a>default 函数默认参数</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">// ES5 给函数定义参数默认值</span><br><span class="line"><span class="keyword">function</span> foo(num) &#123;</span><br><span class="line">　　num = num || 200;</span><br><span class="line">　　<span class="built_in">return</span> num;</span><br><span class="line">&#125;</span><br><span class="line">// ES6</span><br><span class="line"><span class="keyword">function</span> foo(num = 200) &#123;</span><br><span class="line">　　<span class="built_in">return</span> num;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="rest-arguments-（rest参数）"><a href="#rest-arguments-（rest参数）" class="headerlink" title="rest arguments （rest参数）"></a>rest arguments （rest参数）</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> foo(x, y, ...rest) &#123;</span><br><span class="line">　　<span class="built_in">return</span> ((x + y) * rest.length);</span><br><span class="line">&#125;</span><br><span class="line">foo(1, 2, <span class="string">'hello'</span>, <span class="literal">true</span>, 7); // 9</span><br></pre></td></tr></table></figure>
+<h3 id="Spread-Operator-（展开运算符）"><a href="#Spread-Operator-（展开运算符）" class="headerlink" title="Spread Operator （展开运算符）"></a>Spread Operator （展开运算符）</h3><p>第一个用途：组装数组<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> color = [<span class="string">'red'</span>, <span class="string">'yellow'</span>];</span><br><span class="line"><span class="built_in">let</span> colorful = [...color, <span class="string">'green'</span>, <span class="string">'blue'</span>];</span><br><span class="line">console.log(colorful); // [<span class="string">"red"</span>, <span class="string">"yellow"</span>, <span class="string">"green"</span>, <span class="string">"blue"</span>]</span><br></pre></td></tr></table></figure></p>
+<p>第二个用途：获取数组除了某几项的其他项<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> num = [1, 3, 5, 7, 9];</span><br><span class="line"><span class="built_in">let</span> [first, second, ...rest] = num;</span><br><span class="line">console.log(rest); // [5, 7, 9]</span><br></pre></td></tr></table></figure></p>
+<h3 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">/// ES5</span><br><span class="line"><span class="keyword">function</span> people(name, age) &#123;</span><br><span class="line">　　<span class="built_in">return</span> &#123;</span><br><span class="line">　　　　name: name,</span><br><span class="line">　　　　age: age</span><br><span class="line">　　&#125;;</span><br><span class="line">&#125;</span><br><span class="line">// ES6</span><br><span class="line"><span class="keyword">function</span> people(name, age) &#123;</span><br><span class="line">　　<span class="built_in">return</span> &#123;</span><br><span class="line">　　　　name,</span><br><span class="line">　　　　age</span><br><span class="line">　　&#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>另外：Object.assign()<br>ES6 对象提供了Object.assign()这个方法来实现浅复制。Object.assign()可以把任意多个源对象自身可枚举的属性拷贝给目标对象，然后返回目标对象。第一参数即为目标对象。在实际项目中，我们为了不改变源对象。一般会把目标对象传为{}<br>用法1：合并对象<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var first = &#123; name: <span class="string">"Bob"</span> &#125;;</span><br><span class="line">var last = &#123; lastName: <span class="string">"Smith"</span> &#125;;</span><br><span class="line">var person = Object.assign(first, last);</span><br><span class="line">console.log(person);</span><br><span class="line">// Output:</span><br><span class="line">// &#123; name: <span class="string">"Bob"</span>, lastName: <span class="string">"Smith"</span> &#125;</span><br></pre></td></tr></table></figure></p>
+<p>用法2：克隆对象<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123; person: <span class="string">"Bob Smith"</span>&#125;;</span><br><span class="line">var <span class="built_in">clone</span> = Object.assign(&#123;&#125;, obj);</span><br></pre></td></tr></table></figure></p>
+<h3 id="Promise"><a href="#Promise" class="headerlink" title="Promise"></a>Promise</h3><p>用同步的方式写一步代码<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// 发起异步请求</span><br><span class="line">fetch(<span class="string">'/api/todos'</span>)</span><br><span class="line">.<span class="keyword">then</span>(res =&gt; res.json())</span><br><span class="line">.<span class="keyword">then</span>(data =&gt; (&#123; data &#125;))</span><br><span class="line">.catch(err =&gt; (&#123; err &#125;));</span><br></pre></td></tr></table></figure></p>
+<h3 id="Generators"><a href="#Generators" class="headerlink" title="Generators"></a>Generators</h3><p>生成器（generator）是能返回一个迭代器的函数<br>生成器也是一种函数，最直观的表现就是比普通的function多一个*号，在其函数体内可以使用yield关键字，函数会在每个yield后暂停<br>如：银行取号排队办理业务<br>迭代器：调用一个generator时，它将返回一个迭代器对象。这个跌打器对象拥有一个叫做next的方法帮组你重启generator函数并得到了下一个值。nenxt方法不返回值，它返回的对象具有两个属性：done和value。calue是你获得的值，done用来表明你的generator是否已停止提供值。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">// 生成器</span><br><span class="line"><span class="keyword">function</span> *<span class="function"><span class="title">createIterator</span></span>() &#123;</span><br><span class="line">    yield 1;</span><br><span class="line">    yield 2;</span><br><span class="line">    yield 3;</span><br><span class="line">&#125;</span><br><span class="line">// 生成器能像正规函数那样被调用，但会返回一个迭代器</span><br><span class="line"><span class="built_in">let</span> iterator = createIterator();</span><br><span class="line">console.log(iterator.next().value); // 1</span><br><span class="line">console.log(iterator.next().value); // 2</span><br><span class="line">console.log(iterator.next().value); // 3</span><br></pre></td></tr></table></figure></p>
+<p>参考文献：<a href="https://www.cnblogs.com/fangsmile/p/7081194.html" target="_blank" rel="noopener">https://www.cnblogs.com/fangsmile/p/7081194.html</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/12/04/flex布局/" rel="next" title="flex布局">
+                <i class="fa fa-chevron-left"></i> flex布局
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Chen Qi</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#ES6简介"><span class="nav-number">1.</span> <span class="nav-text">ES6简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#新特性"><span class="nav-number">2.</span> <span class="nav-text">新特性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#let、const"><span class="nav-number">2.1.</span> <span class="nav-text">let、const</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#import、export"><span class="nav-number">2.2.</span> <span class="nav-text">import、export</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#class、extends、super"><span class="nav-number">2.3.</span> <span class="nav-text">class、extends、super</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#箭头函数"><span class="nav-number">2.4.</span> <span class="nav-text">箭头函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#tempalte-string-模版字符串"><span class="nav-number">2.5.</span> <span class="nav-text">tempalte string(模版字符串)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#destructing-解构"><span class="nav-number">2.6.</span> <span class="nav-text">destructing (解构)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#default-函数默认参数"><span class="nav-number">2.7.</span> <span class="nav-text">default 函数默认参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#rest-arguments-（rest参数）"><span class="nav-number">2.8.</span> <span class="nav-text">rest arguments （rest参数）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Spread-Operator-（展开运算符）"><span class="nav-number">2.9.</span> <span class="nav-text">Spread Operator （展开运算符）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对象"><span class="nav-number">2.10.</span> <span class="nav-text">对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Promise"><span class="nav-number">2.11.</span> <span class="nav-text">Promise</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generators"><span class="nav-number">2.12.</span> <span class="nav-text">Generators</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Chen Qi</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
