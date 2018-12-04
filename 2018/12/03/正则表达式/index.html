@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="mac系统自带有git，我们只需要打开终端，然后输入git系统会有提示，根据提示完成后面的操作，就可以使用git了 git常用语法创建目录1mkdir demo 文件创建与编辑1.创建一个文件1touch file 2.创建一个文件并进入一般模式1vi 文件名 也可以vi一个已经存在的文件，进入一般模式3.一般模式进入插入模式 按i键4.插入模式进入一般模式  按esc5.一般模式进入命令模式 依">
+<meta name="description" content="正则表达式有一些普通字符和一些元字符组成。普通字符包括大小写的字母和数字，而元字符则具有特殊含义。匹配有两种概念：一种时匹配字符，一种是匹配位置 元字符   元字符 描述     \ 简单理解就是转义字符。将下一个字符标记符，或一个向后引用，或者一个八进制转义符。例如：”\n”匹配\n，”\n”匹配换行符   ^ 行首   $ 行尾   * 前面子表达式表达式任意次。例如：zo能匹配z、zo、zo">
 <meta property="og:type" content="article">
-<meta property="og:title" content="git使用">
-<meta property="og:url" content="http://yoursite.com/2018/11/22/git/index.html">
+<meta property="og:title" content="正则表达式">
+<meta property="og:url" content="http://yoursite.com/2018/12/03/正则表达式/index.html">
 <meta property="og:site_name" content="CC_Blog">
-<meta property="og:description" content="mac系统自带有git，我们只需要打开终端，然后输入git系统会有提示，根据提示完成后面的操作，就可以使用git了 git常用语法创建目录1mkdir demo 文件创建与编辑1.创建一个文件1touch file 2.创建一个文件并进入一般模式1vi 文件名 也可以vi一个已经存在的文件，进入一般模式3.一般模式进入插入模式 按i键4.插入模式进入一般模式  按esc5.一般模式进入命令模式 依">
+<meta property="og:description" content="正则表达式有一些普通字符和一些元字符组成。普通字符包括大小写的字母和数字，而元字符则具有特殊含义。匹配有两种概念：一种时匹配字符，一种是匹配位置 元字符   元字符 描述     \ 简单理解就是转义字符。将下一个字符标记符，或一个向后引用，或者一个八进制转义符。例如：”\n”匹配\n，”\n”匹配换行符   ^ 行首   $ 行尾   * 前面子表达式表达式任意次。例如：zo能匹配z、zo、zo">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-11-22T06:55:15.430Z">
+<meta property="og:updated_time" content="2018-12-03T03:51:34.790Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="git使用">
-<meta name="twitter:description" content="mac系统自带有git，我们只需要打开终端，然后输入git系统会有提示，根据提示完成后面的操作，就可以使用git了 git常用语法创建目录1mkdir demo 文件创建与编辑1.创建一个文件1touch file 2.创建一个文件并进入一般模式1vi 文件名 也可以vi一个已经存在的文件，进入一般模式3.一般模式进入插入模式 按i键4.插入模式进入一般模式  按esc5.一般模式进入命令模式 依">
+<meta name="twitter:title" content="正则表达式">
+<meta name="twitter:description" content="正则表达式有一些普通字符和一些元字符组成。普通字符包括大小写的字母和数字，而元字符则具有特殊含义。匹配有两种概念：一种时匹配字符，一种是匹配位置 元字符   元字符 描述     \ 简单理解就是转义字符。将下一个字符标记符，或一个向后引用，或者一个八进制转义符。例如：”\n”匹配\n，”\n”匹配换行符   ^ 行首   $ 行尾   * 前面子表达式表达式任意次。例如：zo能匹配z、zo、zo">
 
 
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/11/22/git/">
+  <link rel="canonical" href="http://yoursite.com/2018/12/03/正则表达式/">
 
 
 
 
 
-  <title>git使用 | CC_Blog</title>
+  <title>正则表达式 | CC_Blog</title>
   
 
 
@@ -232,7 +232,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/22/git/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/03/正则表达式/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Chen Qi">
@@ -249,7 +249,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">git使用</h1>
+          <h1 class="post-title" itemprop="name headline">正则表达式</h1>
         
 
         <div class="post-meta">
@@ -261,8 +261,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-22T14:55:15+08:00">
-                2018-11-22
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-03T11:51:34+08:00">
+                2018-12-03
               </time>
             
 
@@ -299,29 +299,110 @@
       
 
       
-        <p>mac系统自带有git，我们只需要打开终端，然后输入git系统会有提示，根据提示完成后面的操作，就可以使用git了</p>
-<h2 id="git常用语法"><a href="#git常用语法" class="headerlink" title="git常用语法"></a>git常用语法</h2><h3 id="创建目录"><a href="#创建目录" class="headerlink" title="创建目录"></a>创建目录</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir demo</span><br></pre></td></tr></table></figure>
-<h3 id="文件创建与编辑"><a href="#文件创建与编辑" class="headerlink" title="文件创建与编辑"></a>文件创建与编辑</h3><p>1.创建一个文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">touch file</span><br></pre></td></tr></table></figure></p>
-<p>2.创建一个文件并进入一般模式<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi 文件名</span><br></pre></td></tr></table></figure></p>
-<p>也可以vi一个已经存在的文件，进入一般模式<br>3.一般模式进入插入模式 按i键<br>4.插入模式进入一般模式  按esc<br>5.一般模式进入命令模式 依次按 :wq<br>6.查看文件内容<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat 文件名</span><br></pre></td></tr></table></figure></p>
-<h3 id="初始化一个git仓库"><a href="#初始化一个git仓库" class="headerlink" title="初始化一个git仓库"></a>初始化一个git仓库</h3><p>1.远程仓库地址<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> 远程仓库地址</span><br></pre></td></tr></table></figure></p>
-<p>2.在本地文件下<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br></pre></td></tr></table></figure></p>
-<h3 id="git状态"><a href="#git状态" class="headerlink" title="git状态"></a>git状态</h3><p>git的状态分为三种：工作区-&gt;暂存区(索引区)-&gt;版本区</p>
-<p>1.查看状态<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git status</span><br></pre></td></tr></table></figure></p>
-<p>当文件名是红色时—工作区<br>当文件名是绿色时—暂存区<br>不显示—-版本区</p>
-<p>2.工作区-&gt;️暂存区<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add 文件名</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br></pre></td></tr></table></figure>
-<p>.表示将全部工作区的文件移入暂存区</p>
-<p>3.暂存区-&gt;版本区<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit -m <span class="string">"file1提交"</span></span><br></pre></td></tr></table></figure></p>
-<p>第一次提交的时候必须写-m和引号中的内容</p>
-<p>4.暂存区-&gt;工作区<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git rm --cache 文件名</span><br></pre></td></tr></table></figure></p>
-<h3 id="提交远程仓库"><a href="#提交远程仓库" class="headerlink" title="提交远程仓库"></a>提交远程仓库</h3><ol>
-<li>查看本地仓库是否已关联远程仓库<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>2.若没有远程仓库或想提交另一个远程仓库，为当前仓库添加远程仓库<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote add 远程仓库别名 url（远程地址）</span><br></pre></td></tr></table></figure></p>
-<p>3.把文件提交到远程仓库<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push [-u/-f] 远程仓库 本地仓库</span><br></pre></td></tr></table></figure></p>
-<p>[-u/-f]第一次提交时，必须写上其中一个</p>
+        <p>正则表达式有一些普通字符和一些元字符组成。普通字符包括大小写的字母和数字，而元字符则具有特殊含义。<br>匹配有两种概念：一种时匹配字符，一种是匹配位置</p>
+<h2 id="元字符"><a href="#元字符" class="headerlink" title="元字符"></a>元字符</h2><table>
+<thead>
+<tr>
+<th>元字符</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>\</td>
+<td>简单理解就是转义字符。将下一个字符标记符，或一个向后引用，或者一个八进制转义符。例如：”\n”匹配\n，”\n”匹配换行符</td>
+</tr>
+<tr>
+<td>^</td>
+<td>行首</td>
+</tr>
+<tr>
+<td>$</td>
+<td>行尾</td>
+</tr>
+<tr>
+<td>*</td>
+<td>前面子表达式表达式任意次。例如：zo能匹配z、zo、zoo。等价于{0,}</td>
+</tr>
+<tr>
+<td>+</td>
+<td>前面子表达式表达式大于等于1次。例如：zo能匹配zo、zoo。等价于{1,}</td>
+</tr>
+<tr>
+<td>?</td>
+<td>前面子表达式表达式0次或1次。例如：do(es)能匹配do、does。等价于{0,1}</td>
+</tr>
+<tr>
+<td>{n}</td>
+<td>匹配确定的n次，n为非负整数。例如：o{2}能匹配food中的两个o。</td>
+</tr>
+<tr>
+<td>{n,}</td>
+<td>至少匹配的n次，n为非负整数。例如：o{2}能匹配fooooood中的所有的o。</td>
+</tr>
+<tr>
+<td>{n,m}</td>
+<td>匹配n至m次，n为非负整数。例如：o{1,3}能匹配fooooood中的前三个o为1组，后三个o为一组。</td>
+</tr>
+<tr>
+<td>[xyz]</td>
+<td>匹配xyz任意一个</td>
+</tr>
+<tr>
+<td>[^xyz]</td>
+<td>匹配未包含的任意字符</td>
+</tr>
+<tr>
+<td>[a-z]</td>
+<td>字母范围。</td>
+</tr>
+<tr>
+<td>[^a-z]</td>
+<td>非字母范围。</td>
+</tr>
+<tr>
+<td>\b</td>
+<td>匹配单词的边界，单词与空格间的位置。例如：er\b可以匹配到her中的er，不能匹配herb中的</td>
+</tr>
+<tr>
+<td>\B</td>
+<td>匹配非单词的边界。</td>
+</tr>
+<tr>
+<td>\cx</td>
+<td>匹配有x说明的控制符，x必须是[a-Z]中的一个。例如：\cM匹配的时control—M或者回车符</td>
+</tr>
+<tr>
+<td>\d</td>
+<td>匹配数字，等价于[0-9]</td>
+</tr>
+<tr>
+<td>\D</td>
+<td>匹配非数字，等价于[^0-9]</td>
+</tr>
+<tr>
+<td>\f</td>
+<td>换页，等价于\x0c和\cL</td>
+</tr>
+<tr>
+<td>\n</td>
+<td>换行，等价于\x0a和\cJ</td>
+</tr>
+<tr>
+<td>\r</td>
+<td>回车，等价于\x0d和\cM</td>
+</tr>
+<tr>
+<td>\d</td>
+<td>任意不可见字符，包括空格、制表符、换行符等等，等价于[\f\n\t\r\v]</td>
+</tr>
+<tr>
+<td>\D</td>
+<td>任意可见字符，包括空格、制表符、换行符等等，等价于[^\f\n\t\r\v]</td>
+</tr>
+</tbody>
+</table>
+<p><em>、+限定符都是贪婪的，因为它们会尽可能多的匹配文字，只有在它们的后面加上一个?就可以实现非贪婪或最小匹配。<br>通过在 </em>、+ 或 ? 限定符之后放置 ?，该表达式从”贪心”表达式转换为”非贪心”表达式或者最小匹配。</p>
 
       
     </div>
@@ -346,8 +427,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/11/20/两栏布局-右侧自适应/" rel="next" title="两栏布局-右侧自适应">
-                <i class="fa fa-chevron-left"></i> 两栏布局-右侧自适应
+              <a href="/2018/12/02/支付流程解析/" rel="next" title="vue扫码支付功能的实现">
+                <i class="fa fa-chevron-left"></i> vue扫码支付功能的实现
               </a>
             
           </div>
@@ -355,10 +436,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/11/23/vue/" rel="prev" title="vue">
-                vue <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -472,7 +549,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#git常用语法"><span class="nav-number">1.</span> <span class="nav-text">git常用语法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建目录"><span class="nav-number">1.1.</span> <span class="nav-text">创建目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文件创建与编辑"><span class="nav-number">1.2.</span> <span class="nav-text">文件创建与编辑</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#初始化一个git仓库"><span class="nav-number">1.3.</span> <span class="nav-text">初始化一个git仓库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git状态"><span class="nav-number">1.4.</span> <span class="nav-text">git状态</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#提交远程仓库"><span class="nav-number">1.5.</span> <span class="nav-text">提交远程仓库</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#元字符"><span class="nav-number">1.</span> <span class="nav-text">元字符</span></a></li></ol></div>
             
 
           </div>
