@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keyword" content="">
+    <meta name="theme-color" content="#600090">
+    <meta name="msapplication-navbutton-color" content="#600090">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#600090">
+    <link rel="shortcut icon" href="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-person-128.png">
+    <link rel="alternate" type="application/atom+xml" title="CC" href="/atom.xml">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.css">
+    <title>
+        
+        易盾验证｜undefined
+        
+    </title>
+
+    <link rel="canonical" href="http://yoursite.com/2018/12/06/易盾验证/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/blog-style.css">
+
+    <!-- Pygments Github CSS -->
+    <link rel="stylesheet" href="/css/syntax.css">
+</head>
+
+<style>
+
+    header.intro-header {
+        background-image: url('')
+    }
+</style>
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="" class="animated fadeIn">
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top " id="nav-top" data-ispost="true" data-istags="false
+" data-ishome="false">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand animated pulse" href="/">
+                <span class="brand-logo">
+                    CC
+                </span>
+                's Blog
+            </a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <!-- /.navbar-collapse -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+					
+                    
+					
+					
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+//    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+<!-- Main Content -->
+
+<!--only post-->
+
+
+<img class="wechat-title-img" src="">
+
+
+<style>
+    
+    header.intro-header {
+        background-image: url('')
+    }
+
+    
+</style>
+
+<header class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
+                <div class="post-heading">
+                    <h1>易盾验证</h1>
+                    
+                    <span class="meta">
+                         作者 Chen Qi
+                        <span>
+                          日期 2018-12-06
+                         </span>
+                    </span>
+                    <div class="tags text-center">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="post-title-haojen">
+        <span>
+            易盾验证
+        </span>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <!-- Post Container -->
+            <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
+                <p>易盾是网易云旗下的一个产品<br>验证码三种模式：float(发式)、embed(嵌入式)、popup(弹出式)</p>
+<h2 id="兼容性"><a href="#兼容性" class="headerlink" title="兼容性"></a>兼容性</h2><p>IE7+、Chrome、Firefox、Safari、Opera、主流手机浏览器、iOS 及 Android上的内嵌Webview</p>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><h3 id="开始使用"><a href="#开始使用" class="headerlink" title="开始使用"></a>开始使用</h3><p>引入初始化js<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=<span class="string">"//cstaticdun.126.net/load.min.js"</span>&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
+<h3 id="调用初始化函数"><a href="#调用初始化函数" class="headerlink" title="调用初始化函数"></a>调用初始化函数</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">initNECaptcha(config, onload, onerror)</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">// initNECaptcha为全局函数，可直接调用</span><br><span class="line">initNECaptcha(&#123;</span><br><span class="line">    // config对象，参数配置</span><br><span class="line">    captchaId: <span class="string">'从易盾申请的captchaId'</span>,</span><br><span class="line">    element: <span class="string">'#captcha'</span>,</span><br><span class="line">    mode: <span class="string">'float'</span>,</span><br><span class="line">    width: <span class="string">'320px'</span></span><br><span class="line">&#125;, <span class="keyword">function</span> (instance) &#123;</span><br><span class="line">    // 初始化成功后得到验证实例instance，可以调用实例的方法</span><br><span class="line">&#125;, <span class="keyword">function</span> (err) &#123;</span><br><span class="line">    // 初始化失败后触发该函数，err对象描述当前错误信息</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h2 id="参数配置"><a href="#参数配置" class="headerlink" title="参数配置"></a>参数配置</h2><p>这里指初始化时传入的config对象，即调用初始化函数initNECaptcha时传入的第一个参数。智能验证码设置参数有些不同，详见表格下方特别说明。</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>参数类型</th>
+<th>必填</th>
+<th>默认</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>captchaId</td>
+<td>string</td>
+<td>是</td>
+<td>无</td>
+<td>验证码id</td>
+</tr>
+<tr>
+<td>element</td>
+<td>string</td>
+<td>否</td>
+<td>*</td>
+<td>HTMLElement</td>
+</tr>
+<tr>
+<td>mode</td>
+<td>string</td>
+<td>否</td>
+<td>pc-&gt;float、移动端-&gt;popup</td>
+<td>验证码模式</td>
+</tr>
+<tr>
+<td>protocol</td>
+<td>string</td>
+<td>否</td>
+<td>与永无网站的协议一致</td>
+<td>验证码传输数据使用的网络协议，可选：http、https</td>
+</tr>
+<tr>
+<td>width</td>
+<td>number</td>
+<td>否</td>
+<td>auto</td>
+<td>宽度</td>
+</tr>
+<tr>
+<td>lang</td>
+<td>string</td>
+<td>否</td>
+<td>zh-CN</td>
+<td>验证码语言选项。支持”zh-CN”、”en”，即简体中文和英文</td>
+</tr>
+<tr>
+<td>onReady</td>
+<td>function</td>
+<td>否</td>
+<td>无</td>
+<td>NECaptcha所有工作准备就绪，用户可以使用验证码时触发该回调。具体使用见完整示例</td>
+</tr>
+<tr>
+<td>onVertify</td>
+<td>function</td>
+<td>否</td>
+<td>无</td>
+<td>验证码验证结束回调函数。具体使用见完整示例</td>
+</tr>
+</tbody>
+</table>
+<h2 id="实例方法"><a href="#实例方法" class="headerlink" title="实例方法"></a>实例方法</h2><p>这里指initNECaptcha初始化成功，onload触发时传入的实例的方法。<br>refresh：刷新验证码，获取新的验证信息<br>destroy：销毁当前实例<br>popUp：当验证码是常规验证码并且mode为”popup”时，可调用该实例方法弹出验证码进行验证<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">initNECaptcha(config, <span class="keyword">function</span> onload (instance) &#123;</span><br><span class="line">    // 可在此处调用实例方法</span><br><span class="line">&#125;, onerror)</span><br></pre></td></tr></table></figure></p>
+<h3 id="form表单"><a href="#form表单" class="headerlink" title="form表单"></a>form表单</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;form action=<span class="string">"/login"</span> method=<span class="string">"post"</span>&gt;</span><br><span class="line">   &lt;input  <span class="built_in">type</span>=<span class="string">"text"</span> name=<span class="string">"username"</span> placeholder=<span class="string">"用户名"</span>&gt;</span><br><span class="line">   &lt;input  <span class="built_in">type</span>=<span class="string">"password"</span> name=<span class="string">"password"</span> placeholder=<span class="string">"密码"</span>&gt;</span><br><span class="line">   &lt;input  <span class="built_in">type</span>=<span class="string">"hidden"</span> name=<span class="string">"captchaId"</span> value=<span class="string">"从易盾申请的captchaId"</span>&gt;</span><br><span class="line">   &lt;div id=<span class="string">"captcha"</span>&gt;&lt;/div&gt; &lt;!-- 验证码容器元素 --&gt;</span><br><span class="line">   &lt;button <span class="built_in">type</span>=<span class="string">"submit"</span>&gt;登录&lt;/button&gt;</span><br><span class="line">&lt;/form&gt;</span><br><span class="line">&lt;script src=<span class="string">"//cstaticdun.126.net/load.min.js"</span>&gt;&lt;/script&gt;&lt;!-- 初始化JS --&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    initNECaptcha(&#123;</span><br><span class="line">      captchaId: <span class="string">'从易盾申请的captchaId'</span>,</span><br><span class="line">      element: <span class="string">'#captcha'</span>,</span><br><span class="line">      mode: <span class="string">'float'</span>,</span><br><span class="line">      width: 320</span><br><span class="line">    &#125;, <span class="keyword">function</span> onload (instance) &#123;</span><br><span class="line">      // 初始化成功后，用户输入对应用户名和密码，以及完成验证后，直接点击登录按钮即可</span><br><span class="line">    &#125;, <span class="keyword">function</span> onerror (err) &#123;</span><br><span class="line">      // 验证码初始化失败处理逻辑，例如：提示用户点击按钮重新初始化</span><br><span class="line">    &#125;)</span><br><span class="line">&lt;script&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="onVerify"><a href="#onVerify" class="headerlink" title="onVerify"></a>onVerify</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=<span class="string">"form-container"</span>&gt;</span><br><span class="line">    &lt;input  <span class="built_in">type</span>=<span class="string">"text"</span> name=<span class="string">"username"</span> id=<span class="string">"username"</span> placeholder=<span class="string">"用户名"</span>&gt;</span><br><span class="line">    &lt;input  <span class="built_in">type</span>=<span class="string">"password"</span> name=<span class="string">"password"</span> id=<span class="string">"password"</span> placeholder=<span class="string">"密码"</span>&gt;</span><br><span class="line">    &lt;div id=<span class="string">"captcha"</span>&gt;&lt;/div&gt; &lt;!-- 验证码容器元素 --&gt;</span><br><span class="line">    登录</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;script src=<span class="string">"//cstaticdun.126.net/load.min.js"</span>&gt;&lt;/script&gt;&lt;!-- 初始化JS --&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    initNECaptcha(&#123;</span><br><span class="line">      captchaId: <span class="string">'从易盾申请的captchaId'</span>,</span><br><span class="line">      element: <span class="string">'#captcha'</span>,</span><br><span class="line">      mode: <span class="string">'float'</span>,</span><br><span class="line">      width: 320,</span><br><span class="line">      onReady: <span class="keyword">function</span> (instance) &#123;</span><br><span class="line">        // 验证码一切准备就绪，此时可正常使用验证码的相关功能</span><br><span class="line">      &#125;,</span><br><span class="line">      onVerify: <span class="keyword">function</span> (err, data) &#123;</span><br><span class="line">        /**</span><br><span class="line">         * 第一个参数是err（Error的实例），验证失败才有err对象</span><br><span class="line">         * 第二个参数是data对象，验证成功后的相关信息，data数据结构为key-value，如下：</span><br><span class="line">         * &#123;</span><br><span class="line">         *   validate: <span class="string">'xxxxx'</span> // 二次验证信息</span><br><span class="line">         * &#125;</span><br><span class="line">         */</span><br><span class="line">        // 点击登录按钮后可调用服务端接口，以下为伪代码，仅作示例用</span><br><span class="line">        ajax(<span class="string">'/login'</span>, &#123;</span><br><span class="line">          captchaId: <span class="string">'从易盾申请的captchaId'</span>,</span><br><span class="line">          username: $(<span class="string">'#username'</span>).val(),</span><br><span class="line">          password: $(<span class="string">'#password'</span>).val(),</span><br><span class="line">          validate: data.validate</span><br><span class="line">        &#125;, <span class="keyword">function</span> onsuccess (data) &#123;</span><br><span class="line">          // 登录成功后，相关处理逻辑</span><br><span class="line">        &#125;)</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;, <span class="keyword">function</span> onload (instance) &#123;</span><br><span class="line">      // 初始化成功</span><br><span class="line">    &#125;, <span class="keyword">function</span> onerror (err) &#123;</span><br><span class="line">      // 验证码初始化失败处理逻辑，例如：提示用户点击按钮重新初始化</span><br><span class="line">    &#125;)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="popup"><a href="#popup" class="headerlink" title="popup"></a>popup</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;button id=<span class="string">"j-popup"</span>&gt;点击弹出验证码&lt;/button&gt;</span><br><span class="line">&lt;div id=<span class="string">"captcha"</span>&gt;&lt;/div&gt;</span><br><span class="line">&lt;script  charset=<span class="string">"UTF-8"</span> <span class="built_in">type</span>=<span class="string">"text/javascript"</span> src=<span class="string">"http://cstaticdun.126.net/load.min.js"</span>&gt;&lt;/script&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">  var captchaIns;</span><br><span class="line">  initNECaptcha(&#123;</span><br><span class="line">    element: <span class="string">'#captcha'</span>,</span><br><span class="line">    captchaId: <span class="string">'从易盾申请的captchaId'</span>,</span><br><span class="line">    mode: <span class="string">'popup'</span>,</span><br><span class="line">    width: <span class="string">'320px'</span></span><br><span class="line">  &#125;, <span class="keyword">function</span> (instance) &#123;</span><br><span class="line">    // 初始化成功后得到验证实例instance，可以调用实例的方法</span><br><span class="line">    captchaIns = instance</span><br><span class="line">  &#125;, <span class="keyword">function</span> (err) &#123;</span><br><span class="line">    // 初始化失败后触发该函数，err对象描述当前错误信息</span><br><span class="line">  &#125;)</span><br><span class="line">  // 监听button的点击事件，弹出验证码</span><br><span class="line">  document.getElementById(<span class="string">'j-popup'</span>).addEventListener(<span class="string">'click'</span>, <span class="function"><span class="title">function</span></span> () &#123;</span><br><span class="line">    captchaIns.popUp()</span><br><span class="line">&lt;/scripr&gt;</span><br></pre></td></tr></table></figure>
+<p>注意：onload和onReady的区别：<br>   onload和onReady触发时，均会返回验证码的实例，即传入的第一个参数。二者触发时机有所不同，onload触发时，初始化函数结束和完成实例的生成，注意这并不代表验证码是可用的（比如验证码相关背景图片和信息并没有加载），此方法只触发一次。onReady触发时，说明验证码准备就绪（比如背景图片等信息均已加载），在popup模式下，每次弹出均会触发onReady，其他模式下onReady只触发一次。</p>
+<p>文章来自：<a href="https://blog.csdn.net/w97531/article/details/80448239" target="_blank" rel="noopener">网站验证码WEB前端接入实例</a></p>
+
+                <hr>
+                
+
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/2018/12/08/vue项目搭建/" data-toggle="tooltip" data-placement="top" title="搭建vue开发环境">&larr; Previous Post</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/2018/12/05/全屏与居中/" data-toggle="tooltip" data-placement="top" title="全屏与居中">Next Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+
+                
+
+                
+
+
+                <!--加入新的评论系统-->
+                
+
+                
+
+            </div>
+
+            <div class="hidden-xs col-sm-3 toc-col">
+                <div class="toc-wrap">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#兼容性"><span class="toc-text">兼容性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用"><span class="toc-text">使用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#开始使用"><span class="toc-text">开始使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#调用初始化函数"><span class="toc-text">调用初始化函数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参数配置"><span class="toc-text">参数配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#实例方法"><span class="toc-text">实例方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#form表单"><span class="toc-text">form表单</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#onVerify"><span class="toc-text">onVerify</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#popup"><span class="toc-text">popup</span></a></li></ol></li></ol>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Sidebar Container -->
+
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+
+                <!-- Friends Blog -->
+                
+            </div>
+        </div>
+
+    </div>
+</article>
+
+
+
+
+
+
+
+<!-- Footer -->
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
+                <br>
+                <ul class="list-inline text-center">
+                
+                
+                
+
+                
+
+                
+
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; CC 2018
+                    <br>
+                    <span id="busuanzi_container_site_pv" style="font-size: 12px;">PV: <span id="busuanzi_value_site_pv"></span> Times</span>
+                    <br>
+                    Theme by <a href="https://haojen.github.io/">Haojen Ma</a>
+                </p>
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/blog.js"></script>
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("http://yoursite.com/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+<!-- Google Analytics -->
+
+
+
+<!-- Baidu Tongji -->
+
+
+<!-- swiftype -->
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install','','2.0.0');
+</script>
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<!--wechat title img-->
+<img class="wechat-title-img" src="">
+</body>
+
+</html>
