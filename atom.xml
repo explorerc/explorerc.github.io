@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-12-22T01:56:25.376Z</updated>
+  <updated>2018-12-22T02:55:47.319Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,13 +17,34 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>微信官方接口</title>
+    <link href="http://yoursite.com/2018/12/22/%E5%BE%AE%E4%BF%A1%E5%AE%98%E6%96%B9%E6%8E%A5%E5%8F%A3/"/>
+    <id>http://yoursite.com/2018/12/22/微信官方接口/</id>
+    <published>2018-12-22T02:55:47.319Z</published>
+    <updated>2018-12-22T02:55:47.319Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="对接微信公众号平台"><a href="#对接微信公众号平台" class="headerlink" title="对接微信公众号平台"></a>对接微信公众号平台</h2><p>1）获取微信API借口<br>看微信|公众平台开发者文档中的接入指南<br>2）下载API接口文件<br>看微信|公众平台开发者文档<br>解压–&gt;wx_sample.php<br>3）复制wx_sample.php到项目（第一层目录），并更名为api.php<br>4）确认api.php文件中TOKEN常量的定义，并通过svn上传到BAE<br>5）打开微信公众平台的开发者中心<br>URL：上面自定的网址/api.php (一定要把接口文件放在网址后面)<br>Token：weixin (接口文件中TOKEN的值)<br>确认无误后点击确认按钮，若失败，再进行提交<br>6）通过微信手机将端测试<br>第一次发消息测试，系统不会任何返回信息，因为接口文件值负责检测<br>7）开启自动恢复<br>a. 修改接口文件：注释掉valid方法，因为默认验证通过后，就会退出<br>    <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">// <span class="variable">$wechatObj</span>-&gt;valid</span><br></pre></td></tr></table></figure></p><p>b. 开启自动回复<br>    <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$wechatObj</span>-&gt;response</span><br></pre></td></tr></table></figure></p><ol start="8"><li>提交修改的代码，再进行测试</li></ol><h2 id="微信官方接口分析"><a href="#微信官方接口分析" class="headerlink" title="微信官方接口分析"></a>微信官方接口分析</h2><p>define(“TOKEN”,”weixin”); // 定义TOKEN密钥<br>$wechatObj = new wechatCallbackapiTest(); // 实例化微信对象</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;对接微信公众号平台&quot;&gt;&lt;a href=&quot;#对接微信公众号平台&quot; class=&quot;headerlink&quot; title=&quot;对接微信公众号平台&quot;&gt;&lt;/a&gt;对接微信公众号平台&lt;/h2&gt;&lt;p&gt;1）获取微信API借口&lt;br&gt;看微信|公众平台开发者文档中的接入指南&lt;br&gt;2）下载
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>微信平台开发</title>
     <link href="http://yoursite.com/2018/12/22/%E5%BE%AE%E4%BF%A1%E5%B9%B3%E5%8F%B0%E5%BC%80%E5%8F%91/"/>
     <id>http://yoursite.com/2018/12/22/微信平台开发/</id>
-    <published>2018-12-22T01:56:25.375Z</published>
-    <updated>2018-12-22T01:56:25.376Z</updated>
+    <published>2018-12-22T02:28:47.037Z</published>
+    <updated>2018-12-22T02:28:47.037Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="开发者模式"><a href="#开发者模式" class="headerlink" title="开发者模式"></a>开发者模式</h2><h3 id="微信公众平台账号"><a href="#微信公众平台账号" class="headerlink" title="微信公众平台账号"></a>微信公众平台账号</h3><p>订阅号：个人版用户，每天可以发一条消息<br>服务号：企业版用户，每月可以群发四条消息</p><h3 id="在线虚拟逐句或服务器（SAE云引擎、BAE云引擎、阿里云服务器）"><a href="#在线虚拟逐句或服务器（SAE云引擎、BAE云引擎、阿里云服务器）" class="headerlink" title="在线虚拟逐句或服务器（SAE云引擎、BAE云引擎、阿里云服务器）"></a>在线虚拟逐句或服务器（SAE云引擎、BAE云引擎、阿里云服务器）</h3><h3 id="Tortoise（SVN客户端软件）"><a href="#Tortoise（SVN客户端软件）" class="headerlink" title="Tortoise（SVN客户端软件）"></a>Tortoise（SVN客户端软件）</h3><h2 id="开发者模式原理"><a href="#开发者模式原理" class="headerlink" title="开发者模式原理"></a>开发者模式原理</h2><p><img src="../images/post_img/wechat_yuanli.png"></p>]]></content>
+    <content type="html"><![CDATA[<h2 id="开发者模式"><a href="#开发者模式" class="headerlink" title="开发者模式"></a>开发者模式</h2><h3 id="微信公众平台账号"><a href="#微信公众平台账号" class="headerlink" title="微信公众平台账号"></a>微信公众平台账号</h3><p>订阅号：个人版用户，每天可以发一条消息<br>服务号：企业版用户，每月可以群发四条消息</p><h3 id="在线虚拟逐句或服务器（SAE云引擎、BAE云引擎、阿里云服务器）"><a href="#在线虚拟逐句或服务器（SAE云引擎、BAE云引擎、阿里云服务器）" class="headerlink" title="在线虚拟逐句或服务器（SAE云引擎、BAE云引擎、阿里云服务器）"></a>在线虚拟逐句或服务器（SAE云引擎、BAE云引擎、阿里云服务器）</h3><h3 id="Tortoise（SVN客户端软件）"><a href="#Tortoise（SVN客户端软件）" class="headerlink" title="Tortoise（SVN客户端软件）"></a>Tortoise（SVN客户端软件）</h3><h2 id="开发者模式原理"><a href="#开发者模式原理" class="headerlink" title="开发者模式原理"></a>开发者模式原理</h2><p><img src="../../../../images/post_img/wechat_yuanli.png"></p><h2 id="自定义云服务器（BAE）"><a href="#自定义云服务器（BAE）" class="headerlink" title="自定义云服务器（BAE）"></a>自定义云服务器（BAE）</h2><ol><li>自定义云平台<br><a href="http://bce.baidu.com/index.html" target="_blank" rel="noopener">http://bce.baidu.com/index.html</a></li><li>登录BAE云引擎<br>产品服务—&gt; 应用引擎BAE</li><li>单击添加部署按钮<br>名称：任意都可以<br>类型：根据项目需要（我这儿选择的PHP-web）（一定不要选错)<br>域名：自定义<br>执行单元个数：1<br>执行单元套餐：256<br>其他的默认<br>确认无误后，点击确定<br>第二次确认无误后，点击确认<br>单击管理控制台</li><li>访问我们的域名<br>域名/index.php</li><li>管理BAE云服务器<br>a. 新建文件夹，并进入<br>b. 鼠标右键<br>svn检出操作<br>百度云里复制SVN/GIT地址<br>然后根据提示输入用户名和密码（百度的账户和密码）</li><li>可以修改index.php文件<br>鼠标右键通过svn提交代码到百度云<br>配置自动发布：百度云只能够-&gt;配置文件-&gt;发布设置-&gt;开启自动发布</li></ol>]]></content>
     
     <summary type="html">
     
@@ -424,28 +445,6 @@
       
         &lt;p&gt;看代码&lt;/p&gt;
 &lt;h2 id=&quot;收获&quot;&gt;&lt;a href=&quot;#收获&quot; class=&quot;headerlink&quot; title=&quot;收获&quot;&gt;&lt;/a&gt;收获&lt;/h2&gt;&lt;ol&gt;&lt;br&gt;    &lt;li&gt;过渡(transition)的钩子函数：beforeEnter、enter、afterEnt
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>javascript中offsetWidth、clientWidth、width、scrollWidth、clientX、screenX、offsetX、pageX</title>
-    <link href="http://yoursite.com/2018/11/27/client%E5%92%8Coffset/"/>
-    <id>http://yoursite.com/2018/11/27/client和offset/</id>
-    <published>2018-11-27T02:46:35.419Z</published>
-    <updated>2018-11-27T02:46:35.419Z</updated>
-    
-    <content type="html"><![CDATA[<p>盒子模型：content、padding、border、margin<br>w表示宽度<br>h表示高度</p><h2 id="width和height"><a href="#width和height" class="headerlink" title="width和height"></a>width和height</h2><p>offsetWidth  :返回元素的宽度（contentW+paddingW+borderW）</p><p>offsetHeight  :返回元素的高度（contentH+paddingH+borderH）</p><p>clientWidth    :返回元素的宽度（contentW+paddingW）</p><p>clientHeight   :返回元素的高度（contentH+paddingH）</p><p>style.width     :返回元素的宽度（contentW）</p><p>style.height    :返回元素的高度（contentH）</p><p>scrollWidth    :返回元素的宽度（包括元素宽度、内边距和溢出尺寸，不包括边框和外边距），无溢出的情况，与clientWidth相同）</p><p>scrollHeigh    :返回元素的高度（包括元素高度、内边距和溢出尺寸，不包括边框和外边距），无溢出的情况，与clientHeight相同）</p><ol><li><p>style.width 返回的是字符串，如28px，offsetWidth返回的是数值28；</p></li><li><p>style.width/style.height与scrollWidth/scrollHeight是可读写的属性，clientWidth/clientHeight与offsetWidth/offsetHeight是只读属性</p></li><li><p>style.width的值需要事先定义，否则取到的值为空。而且必须要定义在html里(内联样式)，如果定义在css里，style.height的值仍然为空，但元素偏移有效；而offsetWidth则仍能取到。</p></li></ol><p>//———————————————————————————————–</p><h2 id="top与left"><a href="#top与left" class="headerlink" title="top与left"></a>top与left</h2><p>offsetTop    :返回元素的上外缘距离最近采用定位父元素内壁的距离，如果父元素中没有采用定位的，则是获取上外边缘距离文档内壁的距离。所谓的定位就是position属性值为relative、absolute或者fixed。返回值是一个整数，单位是像素。此属性是只读的。</p><p>offsetLeft       :此属性和offsetTop的原理是一样的，只不过方位不同，这里就不多介绍了。</p><p>scrollLeft        :此属性可以获取或者设置对象的最左边到对象在当前窗口显示的范围内的左边的距离，也就是元素被滚动条向左拉动的距离。返回值是一个整数，单位是像素。此属性是可读写的。</p><p>scrollTop   :此属性可以获取或者设置对象的最顶部到对象在当前窗口显示的范围内的顶边的距离，也就是元素滚动条被向下拉动的距离。返回值是一个整数，单位是像素。此属性是可读写的。</p><p>//————————————————————————————————-</p><h2 id="X和Y"><a href="#X和Y" class="headerlink" title="X和Y"></a>X和Y</h2><p>当鼠标事件发生时（不管是onclick，还是omousemove，onmouseover等）</p><p>clientX     :鼠标相对于浏览器（这里说的是浏览器的有效区域）左上角x轴的坐标；  不随滚动条滚动而改变；</p><p>clientY     :鼠标相对于浏览器（这里说的是浏览器的有效区域）左上角y轴的坐标；  不随滚动条滚动而改变；</p><p>pageX      :鼠标相对于浏览器（这里说的是浏览器的有效区域）左上角x轴的坐标；  随滚动条滚动而改变；</p><p>pageY      :鼠标相对于浏览器（这里说的是浏览器的有效区域）左上角y轴的坐标；  随滚动条滚动而改变；</p><p>screenX   :鼠标相对于显示器屏幕左上角x轴的坐标；</p><p>screenY    :鼠标相对于显示器屏幕左上角y轴的坐标；</p><p>offsetX      :鼠标相对于事件源左上角X轴的坐标</p><p>offsetY      :鼠标相对于事件源左上角Y轴的坐标</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;盒子模型：content、padding、border、margin&lt;br&gt;w表示宽度&lt;br&gt;h表示高度&lt;/p&gt;
-&lt;h2 id=&quot;width和height&quot;&gt;&lt;a href=&quot;#width和height&quot; class=&quot;headerlink&quot; title=&quot;width和he
       
     
     </summary>
