@@ -18,11 +18,11 @@
     <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.css">
     <title>
         
-        单选框和复选框｜Haojen&#39;s blog
+        Haojen&#39;s blog
         
     </title>
 
-    <link rel="canonical" href="http://haojen.github.io/2018/12/04/input/">
+    <link rel="canonical" href="http://haojen.github.io/archives/page/4/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -43,7 +43,7 @@
 <!-- hack iOS CSS :active style -->
 <body ontouchstart="" class="animated fadeIn">
 <!-- Navigation -->
-<nav class="navbar navbar-default navbar-custom navbar-fixed-top " id="nav-top" data-ispost="true" data-istags="false
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top " id="nav-top" data-ispost="false" data-istags="false
 " data-ishome="false">
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
@@ -132,158 +132,157 @@
 
 <!-- Main Content -->
 
-<!--only post-->
 
-
-<img class="wechat-title-img" src="post-default.jpg">
-
-
-<style>
-    
-    header.intro-header {
-        background-image: url('post-default.jpg')
-    }
-
-    
-</style>
-
-<header class="intro-header">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
-                <div class="post-heading">
-                    <h1>单选框和复选框</h1>
-                    
-                    <span class="meta">
-                         作者 Chen Qi
-                        <span>
-                          日期 2018-12-04
-                         </span>
-                    </span>
-                    <div class="tags text-center">
-                        
+<!-- Page Header -->
+<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 visible-xs-block visible-sm-block">
+    <div class="row">
+        <header class="intro-header">
+            <div class="container">
+                <div class="site-heading text-center">
+                    <div class="about-me">
+                        <!--移动端头部显示-->
+                        <img src="">
+                        <h5><a href="/about/">Chen Qi</a></h5>
+                        <p></p>
                     </div>
                 </div>
             </div>
-        </div>
+        </header>
     </div>
-    <div class="post-title-haojen">
-        <span>
-            单选框和复选框
-        </span>
-    </div>
-</header>
-
-<!-- Post Content -->
-<article>
-    <div class="container">
-        <div class="row">
-            <!-- Post Container -->
-            <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
-                <p>input的功能可以说是非常强大了，他的属性不同，呈现的效果是完全不一样的</p>
-<h2>单选框</h2>
-<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;label&gt;性别：&lt;label&gt;</span><br><span class="line">男：&lt;input <span class="built_in">type</span>=<span class="string">'radio'</span> name=<span class="string">'gender'</span>&gt;</span><br><span class="line">女：&lt;input <span class="built_in">type</span>=<span class="string">'radio'</span> name=<span class="string">'gender'</span>&gt;</span><br></pre></td></tr></table></figure></p>
-<h2>复选框</h2>
-<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;label&gt;爱好：&lt;label&gt;</span><br><span class="line">篮球：&lt;input <span class="built_in">type</span>=<span class="string">'checkbox'</span> name=<span class="string">'hobby'</span> value=<span class="string">"1"</span>&gt;</span><br><span class="line">足球：&lt;input <span class="built_in">type</span>=<span class="string">'checkbox'</span> name=<span class="string">'hobby'</span> value=<span class="string">"2"</span>&gt;</span><br><span class="line">跑步：&lt;input <span class="built_in">type</span>=<span class="string">'checkbox'</span> name=<span class="string">'hobby'</span> value=<span class="string">"3"</span>&gt;</span><br><span class="line">跳舞：&lt;input <span class="built_in">type</span>=<span class="string">'checkbox'</span> name=<span class="string">'hobby'</span> value=<span class="string">"4"</span>&gt;</span><br></pre></td></tr></table></figure></p>
-<h2>属性</h2>
-<table>
-<thead>
-<tr>
-<th>属性</th>
-<th>值及功能</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>type</td>
-<td>radio:单选框  checkbox:复选框</td>
-</tr>
-<tr>
-<td>value</td>
-<td>提交数据到后台的值</td>
-</tr>
-<tr>
-<td>checked</td>
-<td>当设置 checked=true或者&quot;checked&quot; 时，该选项被默认选中</td>
-</tr>
-<tr>
-<td>disabled</td>
-<td>true：禁用  false(默认):非禁用</td>
-</tr>
-</tbody>
-</table>
-<p>checkbox视觉上忧伤三种状态： checked(选中)、unchecked(未选中)、indeterminate(不确定的)</p>
-<p>element中的input：http://element-cn.eleme.io/#/zh-CN/component/input</p>
-
-                <hr>
-                
-
-                <ul class="pager">
-                    
-                    <li class="previous">
-                        <a href="/2018/12/04/flex布局/" data-toggle="tooltip" data-placement="top" title="flex布局">&larr; Previous Post</a>
-                    </li>
-                    
-                    
-                    <li class="next">
-                        <a href="/2018/12/03/正则表达式/" data-toggle="tooltip" data-placement="top" title="正则表达式">Next Post &rarr;</a>
-                    </li>
-                    
-                </ul>
-
-                
-
-                
+</div>
+<!-- Main Content -->
+<div class="container custom-haojen-container">
+    <!-- Post Container -->
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-1 col-md-8 col-md-offset-1 col-sm-12 col-xs-12 post-container">
+            <!-- Main Content -->
 
 
-                <!--加入新的评论系统-->
-                
 
-                
-
-            </div>
-
-            <div class="hidden-xs col-sm-3 toc-col">
-                <div class="toc-wrap">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">单选框</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">复选框</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">属性</span></a></li></ol>
-                </div>
-            </div>
+<div class="post-preview " style="background-image: url('')">
+    <a href="/2018/11/20/两栏布局-右侧自适应/">
+        <h2 class="post-title">
+            两栏布局-右侧自适应
+        </h2>
+        <p class="post-meta">
+            <i class="fa fa-calendar" aria-hidden="true"></i> 2018-11-20
+        </p>
+        
+        <div class="post-content-preview">
+            <p>
+                利用简单的css实现左侧盒子200px定宽，右侧盒子自适应
+分析：如果想让两个div在一行内展示，则需要改变div默认的display：block
+实现方式：float，position，flex，table, border
+结构布局
+1234&lt;div class="content"&gt..
+            </p>
         </div>
+    </a>
 
-        <div class="row">
-            <!-- Sidebar Container -->
+</div>
 
-            <div class="
-                col-lg-8 col-lg-offset-2
-                col-md-10 col-md-offset-1
-                sidebar-container">
+<hr>
 
-                <!-- Featured Tags -->
-                
-                <section>
-                    <!-- no hr -->
-                    <h5 class="text-center">
-                        <a href="/tags/">FEATURED TAGS</a>
-                    </h5>
-                    <div class="tags">
+
+
+<div class="post-preview " style="background-image: url('')">
+    <a href="/2018/11/20/pos_dis_float/">
+        <h2 class="post-title">
+            positon、display、float
+        </h2>
+        <p class="post-meta">
+            <i class="fa fa-calendar" aria-hidden="true"></i> 2018-11-20
+        </p>
+        
+        <div class="post-content-preview">
+            <p>
+                display属性规定元素生成框的类型。
+none-缺省值（用于隐藏元素，元素会消失于视界和文档流中），
+block-块级元素，
+inline-block-行内块级元素。
+position属性规定元素的定位类型，常用于布局。
+static-默认：元素出现在正常文档流中（此时不受top、left、..
+            </p>
+        </div>
+    </a>
+
+</div>
+
+<hr>
+
+
+
+
+<!-- 翻页 pager -->
+
+<ul class="pager">
+    
+    <li class="previous">
+        <a href="/archives/page/3/">&larr; Newer Posts</a>
+    </li>
+    
+    
+</ul>
+
+
+        </div>
+        <!-- Sidebar Container -->
+        <div class="
+                col-lg-3 col-lg-offset-0
+                col-md-3 col-md-offset-0
+                col-sm-12
+                col-xs-12
+                sidebar-container
+            ">
+
+            <!-- About Me -->
+            <section class="visible-md visible-lg" style="padding: 0 18px">
+                <div class="short-about">
+                    <!--侧边栏头像-->
+                    
+                    <h5><a href="/about/">Chen Qi</a></h5>
+                    
+                    <hr>
+                    <!-- SNS Link 社交 -->
+                    <ul class="list-inline">
                         
-                    </div>
-                </section>
-                
+                        
+                        
 
-                <!-- Friends Blog -->
-                
-            </div>
+                        
+
+                        
+
+                        
+                        <li>
+                            <a target="_blank" href="https://github.com/explorerc">
+                                        <span class="fa-stack fa-lg">
+                                            <i class="fa fa-circle fa-stack-2x"></i>
+                                            <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                        </span>
+                            </a>
+                        </li>
+                        
+
+                        
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Featured Tags  标签 -->
+            
+            <section>
+                <div class="tags">
+                    
+                </div>
+            </section>
+            
+
+            
+
         </div>
-
     </div>
-</article>
-
-
-
-
-
-
+</div>
 
 <!-- Footer -->
 <!-- Footer -->
