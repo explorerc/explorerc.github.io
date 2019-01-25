@@ -2,11 +2,11 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>CC</title>
   <icon>https://www.gravatar.com/avatar/73d9f5e835e1fe3f26ab6aed46d01719</icon>
-  
+  <subtitle>个人博客</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://haojen.github.io/"/>
-  <updated>2018-12-22T02:55:47.319Z</updated>
+  <updated>2019-01-14T04:46:03.203Z</updated>
   <id>http://haojen.github.io/</id>
   
   <author>
@@ -15,6 +15,87 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>在页面中打开链接</title>
+    <link href="http://haojen.github.io/2019/01/14/%E5%9C%A8%E6%96%B0%E9%A1%B5%E9%9D%A2%E4%B8%AD%E6%89%93%E5%BC%80%E9%93%BE%E6%8E%A5/"/>
+    <id>http://haojen.github.io/2019/01/14/在新页面中打开链接/</id>
+    <published>2019-01-14T04:46:03.203Z</published>
+    <updated>2019-01-14T04:46:03.203Z</updated>
+    
+    <content type="html"><![CDATA[<h2>在新页面打开链接</h2><h3>超链接</h3><p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href=<span class="string">"//www.baidu.com"</span> title=<span class="string">"百度"</span> target=<span class="string">"_blank"</span>&gt;百度&lt;/a&gt;</span><br></pre></td></tr></table></figure></p><h2>js</h2><p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">window.open = <span class="string">'//www.baidu.com"'</span></span><br></pre></td></tr></table></figure></p><h2>在当前页打开链接</h2><h3>超链接</h3><p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href=<span class="string">"//www.baidu.com"</span> title=<span class="string">"百度"</span> ta&gt;百度&lt;/a&gt;</span><br></pre></td></tr></table></figure></p><h3>js</h3><p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">window.loaction.href = <span class="string">'//www.baidu.com"'</span></span><br></pre></td></tr></table></figure></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2&gt;在新页面打开链接&lt;/h2&gt;
+&lt;h3&gt;超链接&lt;/h3&gt;
+&lt;p&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/t
+      
+    
+    </summary>
+    
+    
+      <category term="a元素" scheme="http://haojen.github.io/tags/a%E5%85%83%E7%B4%A0/"/>
+    
+      <category term="网页" scheme="http://haojen.github.io/tags/%E7%BD%91%E9%A1%B5/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>设备像素</title>
+    <link href="http://haojen.github.io/2019/01/10/%E8%AE%BE%E5%A4%87%E5%83%8F%E7%B4%A0/"/>
+    <id>http://haojen.github.io/2019/01/10/设备像素/</id>
+    <published>2019-01-10T01:30:00.000Z</published>
+    <updated>2019-01-11T01:40:35.092Z</updated>
+    
+    <content type="html"><![CDATA[<h2>概念</h2><p>css像素（CSS Pixel）：适用于web编程，值得是我们在样式代码中逻辑像素，是一个抽象概念，世纪并不存在设备独立像素（Device Independent Pixel）:与设备无关的逻辑像素，大四表可以通过程序控制和使用的虚拟像素，是一个总体概念设备像素（Independent Pixel）：物理像素，涉笔控制显示的最小单位，我们常说的1920*1000像素分辨率就是用的设备像素单位</p><h2>关系</h2><p>设备独立像素是包含css像素的大类，所以我们直接讨论设备独立像素和设备像素之间的区别和联系。pc端--1个独立设备像素=1个设备像素（在100%，未缩放的情况下；如果缩放大200%可以说1个独立设备像素=2个设备像素）移动端--根据设备不同由较大的差异，根据ppi不同我们可以得到不同的换算关系，标准屏幕（160pi下1个独立设备像素=2个设备像素）</p><h3>ppi(pixel per inch):</h3><pre><code>表示每英寸所包含的像素点树木，树枝越高，说明屏幕能以更高密度显示图像计算公式    屏幕分辨率：X✖️Y    PPI = √￣（XX+YY）/屏幕尺寸ppi在120-160之间的手机被归位低密度手机     160-240中密度     240-320高密度     320高密度</code></pre><h3>dpr(device pixel ratio)</h3><pre><code>设备像素比，设备像素/设备独立像素，代表设备独立像素到设备像素的转换关系，获取：window.devicePixelRatio</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2&gt;概念&lt;/h2&gt;
+&lt;p&gt;css像素（CSS Pixel）：适用于web编程，值得是我们在样式代码中逻辑像素，是一个抽象概念，世纪并不存在
+设备独立像素（Device Independent Pixel）:与设备无关的逻辑像素，大四表可以通过程序控制和使用的虚拟像素，是一个总
+      
+    
+    </summary>
+    
+    
+      <category term="像素" scheme="http://haojen.github.io/tags/%E5%83%8F%E7%B4%A0/"/>
+    
+      <category term="开发" scheme="http://haojen.github.io/tags/%E5%BC%80%E5%8F%91/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>css3中的resize，user-select属性，多列布局特性，怪异盒子模型，倒影</title>
+    <link href="http://haojen.github.io/2019/01/09/css3-resize%E7%AD%89/"/>
+    <id>http://haojen.github.io/2019/01/09/css3-resize等/</id>
+    <published>2019-01-09T01:30:00.000Z</published>
+    <updated>2019-01-11T01:45:56.308Z</updated>
+    
+    <content type="html"><![CDATA[<h2>resize</h2><p>盒子大小的拖动<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">resize: both; // 支持宽高拖动</span><br><span class="line">resize: none; // 支持狂傲拖动</span><br></pre></td></tr></table></figure></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2&gt;resize&lt;/h2&gt;
+&lt;p&gt;盒子大小的拖动
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;lin
+      
+    
+    </summary>
+    
+    
+      <category term="css3" scheme="http://haojen.github.io/tags/css3/"/>
+    
+      <category term="resize" scheme="http://haojen.github.io/tags/resize/"/>
+    
+  </entry>
   
   <entry>
     <title>微信官方接口</title>
@@ -135,29 +216,6 @@ master分支主要用于pull代码和push代码，cq分支主要用于修改代�
 &lt;p&gt;git status&lt;/p&gt;
 &lt;h2&gt;将代码从工作区提交到缓存区&lt;/h2&gt;
 &lt;p&gt;git
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>css3中的resize，user-select属性，多列布局特性，怪异盒子模型，倒影</title>
-    <link href="http://haojen.github.io/2018/12/10/css3-resize%E7%AD%89/"/>
-    <id>http://haojen.github.io/2018/12/10/css3-resize等/</id>
-    <published>2018-12-10T02:26:06.594Z</published>
-    <updated>2018-12-10T02:26:06.594Z</updated>
-    
-    <content type="html"><![CDATA[<h2>resize</h2><p>盒子大小的拖动<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">resize: both; // 支持宽高拖动</span><br><span class="line">resize: none; // 支持狂傲拖动</span><br></pre></td></tr></table></figure></p><h2>新特性</h2><h3>let、const</h3><p>let定义的变量不会被变量提升，const定义的常量不能被修改const定义了一个对象，对象的属性是可以被修改的，例：student.name = &quot;cc&quot;</p><h3>import、export</h3><p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">// 全部导入</span><br><span class="line">import people from <span class="string">'./example'</span></span><br><span class="line">// 将整个模块当作单一对象进行导入，该模块的所有导出都会作为对象的属性存在</span><br><span class="line">import * as example from <span class="string">"./example.js"</span></span><br><span class="line">console.log(example.name)</span><br><span class="line">console.log(example.getName())</span><br><span class="line">// 导入部分，引入非 default 时，使用花括号</span><br><span class="line">import &#123;name, age&#125; from <span class="string">'./example'</span></span><br><span class="line">// 导出默认, 有且只有一个默认</span><br><span class="line"><span class="built_in">export</span> default App</span><br><span class="line">// 部分导出</span><br><span class="line"><span class="built_in">export</span> class App extend Component &#123;&#125;;</span><br></pre></td></tr></table></figure></p><h3>class、extends、super</h3><p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">class Animal &#123;</span><br><span class="line">    <span class="function"><span class="title">constructor</span></span>() &#123;</span><br><span class="line">    　　this.type = <span class="string">'animal'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    says(say) &#123;</span><br><span class="line">    　　console.log(this.type + <span class="string">' says '</span> + say);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">let</span> animal = new Animal();</span><br><span class="line">animal.says(<span class="string">'hello'</span>); //animal says hello</span><br><span class="line">class Cat extends Animal &#123;</span><br><span class="line">　　<span class="function"><span class="title">constructor</span></span>() &#123;</span><br><span class="line">　　　　super();</span><br><span class="line">　　　　this.type = <span class="string">'cat'</span>;</span><br><span class="line">　　&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">let</span> cat = new Cat();</span><br><span class="line">cat.says(<span class="string">'hello'</span>); //cat says hello</span><br></pre></td></tr></table></figure></p><p>首先定义了一个&quot;类&quot;，有constructor构造方法，this关键字则代表实例对象。换句话来说，constructor内定义的方法和属性是实例对象自己的，而constructor外定义的方法和属性则是所有实例对象可以共享的class之间可以通过extends实现继承。如实例中Cat类，通过extends关键字，继承了Animal类的所有属性和fnagfa。super关键字，它指代父亲的实例（即父亲的this对象）。子类必须在constructor方法中调用super方法，否则实例时会报错。因为子类没有自己的this对象，而是继承父类的this对象，然后对其进行加工。如果不调用，子类就得不到this对象ES6的继承机制，实质是看创造父类的实例对象this（所以必须先调用super方法），然后再用子类的构造函数修改this。</p><h3>箭头函数</h3><p>函数的快捷写法。不需要function来创建函数，省略retrun，继承当前上下文的this<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">// ES5</span><br><span class="line">var arr1 = [1, 2, 3];</span><br><span class="line">var newArr1 = arr1.map(<span class="keyword">function</span>(x) &#123;</span><br><span class="line">　　<span class="built_in">return</span> x + 1;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">// ES6</span><br><span class="line"><span class="built_in">let</span> newArr2 = arr1.map((x) =&gt; &#123;</span><br><span class="line">　　x + 1</span><br><span class="line">&#125;);</span><br><span class="line">// ES6 函数有且只有一个参数是，可以省略括号，函数中有且只有一个表达式可以省略&#123;&#125;</span><br><span class="line"><span class="built_in">let</span> newArr2 = arr1.map(x =&gt; x + 1 );</span><br></pre></td></tr></table></figure></p><h3>tempalte string(模版字符串)</h3><p>第一个用途：字符串拼接。将表达式嵌入字符串中进行拼接，语法 <code>hello ${变量}</code><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">// es5</span><br><span class="line">var name1 = <span class="string">"bai"</span>;</span><br><span class="line">console.log(<span class="string">'hello '</span> + name1);</span><br><span class="line">// es6</span><br><span class="line">const name2 = <span class="string">"ming"</span>;</span><br><span class="line">console.log(`hello <span class="variable">$&#123;name2&#125;</span>`);</span><br></pre></td></tr></table></figure></p><p>第二个用途：多行字符串拼接<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">// es5</span><br><span class="line">var msg = <span class="string">"Hi \</span></span><br><span class="line"><span class="string">man!"</span>;</span><br><span class="line">// es6</span><br><span class="line">const template = `&lt;div&gt;</span><br><span class="line">&lt;span&gt;hello world&lt;/span&gt;</span><br><span class="line">&lt;/div&gt;`;</span><br></pre></td></tr></table></figure></p><h3>destructing (解构)</h3><p>简化数组和对象中信息的提取<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> people2 = &#123;</span><br><span class="line">　　name: <span class="string">'ming'</span>,</span><br><span class="line">　　age: 20,</span><br><span class="line">　　color: [<span class="string">'red'</span>, <span class="string">'blue'</span>]</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">let</span> &#123; name, age &#125; = people2;</span><br><span class="line"><span class="built_in">let</span> [first, second] = people2.color;</span><br><span class="line">console.log(`<span class="variable">$&#123;name&#125;</span>----<span class="variable">$&#123;age&#125;</span>----<span class="variable">$&#123;first&#125;</span>`);</span><br></pre></td></tr></table></figure></p><h3>default 函数默认参数</h3><p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">// ES5 给函数定义参数默认值</span><br><span class="line"><span class="keyword">function</span> foo(num) &#123;</span><br><span class="line">　　num = num || 200;</span><br><span class="line">　　<span class="built_in">return</span> num;</span><br><span class="line">&#125;</span><br><span class="line">// ES6</span><br><span class="line"><span class="keyword">function</span> foo(num = 200) &#123;</span><br><span class="line">　　<span class="built_in">return</span> num;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><h3>rest arguments （rest参数）</h3><p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> foo(x, y, ...rest) &#123;</span><br><span class="line">　　<span class="built_in">return</span> ((x + y) * rest.length);</span><br><span class="line">&#125;</span><br><span class="line">foo(1, 2, <span class="string">'hello'</span>, <span class="literal">true</span>, 7); // 9</span><br></pre></td></tr></table></figure></p><h3>Spread Operator （展开运算符）</h3><p>第一个用途：组装数组<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> color = [<span class="string">'red'</span>, <span class="string">'yellow'</span>];</span><br><span class="line"><span class="built_in">let</span> colorful = [...color, <span class="string">'green'</span>, <span class="string">'blue'</span>];</span><br><span class="line">console.log(colorful); // [<span class="string">"red"</span>, <span class="string">"yellow"</span>, <span class="string">"green"</span>, <span class="string">"blue"</span>]</span><br></pre></td></tr></table></figure></p><p>第二个用途：获取数组除了某几项的其他项<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> num = [1, 3, 5, 7, 9];</span><br><span class="line"><span class="built_in">let</span> [first, second, ...rest] = num;</span><br><span class="line">console.log(rest); // [5, 7, 9]</span><br></pre></td></tr></table></figure></p><h3>对象</h3><p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">/// ES5</span><br><span class="line"><span class="keyword">function</span> people(name, age) &#123;</span><br><span class="line">　　<span class="built_in">return</span> &#123;</span><br><span class="line">　　　　name: name,</span><br><span class="line">　　　　age: age</span><br><span class="line">　　&#125;;</span><br><span class="line">&#125;</span><br><span class="line">// ES6</span><br><span class="line"><span class="keyword">function</span> people(name, age) &#123;</span><br><span class="line">　　<span class="built_in">return</span> &#123;</span><br><span class="line">　　　　name,</span><br><span class="line">　　　　age</span><br><span class="line">　　&#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p>另外：Object.assign()ES6 对象提供了Object.assign()这个方法来实现浅复制。Object.assign()可以把任意多个源对象自身可枚举的属性拷贝给目标对象，然后返回目标对象。第一参数即为目标对象。在实际项目中，我们为了不改变源对象。一般会把目标对象传为{}用法1：合并对象<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var first = &#123; name: <span class="string">"Bob"</span> &#125;;</span><br><span class="line">var last = &#123; lastName: <span class="string">"Smith"</span> &#125;;</span><br><span class="line">var person = Object.assign(first, last);</span><br><span class="line">console.log(person);</span><br><span class="line">// Output:</span><br><span class="line">// &#123; name: <span class="string">"Bob"</span>, lastName: <span class="string">"Smith"</span> &#125;</span><br></pre></td></tr></table></figure></p><p>用法2：克隆对象<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123; person: <span class="string">"Bob Smith"</span>&#125;;</span><br><span class="line">var <span class="built_in">clone</span> = Object.assign(&#123;&#125;, obj);</span><br></pre></td></tr></table></figure></p><h3>Promise</h3><p>用同步的方式写一步代码<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// 发起异步请求</span><br><span class="line">fetch(<span class="string">'/api/todos'</span>)</span><br><span class="line">.<span class="keyword">then</span>(res =&gt; res.json())</span><br><span class="line">.<span class="keyword">then</span>(data =&gt; (&#123; data &#125;))</span><br><span class="line">.catch(err =&gt; (&#123; err &#125;));</span><br></pre></td></tr></table></figure></p><h3>Generators</h3><p>生成器（generator）是能返回一个迭代器的函数生成器也是一种函数，最直观的表现就是比普通的function多一个*号，在其函数体内可以使用yield关键字，函数会在每个yield后暂停如：银行取号排队办理业务迭代器：调用一个generator时，它将返回一个迭代器对象。这个跌打器对象拥有一个叫做next的方法帮组你重启generator函数并得到了下一个值。nenxt方法不返回值，它返回的对象具有两个属性：done和value。calue是你获得的值，done用来表明你的generator是否已停止提供值。<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">// 生成器</span><br><span class="line"><span class="keyword">function</span> *<span class="function"><span class="title">createIterator</span></span>() &#123;</span><br><span class="line">    yield 1;</span><br><span class="line">    yield 2;</span><br><span class="line">    yield 3;</span><br><span class="line">&#125;</span><br><span class="line">// 生成器能像正规函数那样被调用，但会返回一个迭代器</span><br><span class="line"><span class="built_in">let</span> iterator = createIterator();</span><br><span class="line">console.log(iterator.next().value); // 1</span><br><span class="line">console.log(iterator.next().value); // 2</span><br><span class="line">console.log(iterator.next().value); // 3</span><br></pre></td></tr></table></figure></p><p>参考文献：https://www.cnblogs.com/fangsmile/p/7081194.html</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2&gt;resize&lt;/h2&gt;
-&lt;p&gt;盒子大小的拖动
-&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;lin
       
     
     </summary>
@@ -460,58 +518,6 @@ flex为复合属性，且必须配合父元素display:flex使用。
 &lt;li&gt;弹出一个对话框&lt;/li&gt;
 &lt;li&gt;用户充值金额，点击下一步，在这部中执行的操作有两个请求，
 函数a：请求根据用户填写的金额，拿
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>vue中前端接口的调用两种方式</title>
-    <link href="http://haojen.github.io/2018/12/02/vue%E4%B8%AD%E5%89%8D%E6%8E%A5%E5%8F%A3%E8%B0%83%E7%94%A8/"/>
-    <id>http://haojen.github.io/2018/12/02/vue中前接口调用/</id>
-    <published>2018-12-02T02:18:03.162Z</published>
-    <updated>2018-12-02T02:18:03.163Z</updated>
-    
-    <content type="html"><![CDATA[<p>在做实际项目中，我遇到的两种调用api的方式</p><h2>第一种方式</h2><h3>接口文件</h3><p>文件名：a-manger.js文件地址：src/api/a-manger.js文件内容：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">import utils from <span class="string">'src/utils'</span></span><br><span class="line">// utils文件夹里面放我们需要用到的ajax相关的文件</span><br><span class="line">const AManger = &#123;</span><br><span class="line">  queryName (userid) &#123;</span><br><span class="line">    <span class="built_in">return</span> utils.ajax(&#123;</span><br><span class="line">      method: <span class="string">'post'</span>  //请求方式：post和get</span><br><span class="line">      url: <span class="string">'接口地址'</span></span><br><span class="line">      params: userid</span><br><span class="line">      // 注意 这儿传入的是 userid = 值，es6简写</span><br><span class="line">      // 多个参数是，params就是一个对象，比如 params: &#123;id: id,name: name&#125;</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">export</span> default aManger</span><br></pre></td></tr></table></figure></p><p>&lt;span style='color:red&gt;注意:&lt;/span&gt; 文件末尾一定要写上export defauly aManger</p><h3>使用文件</h3><p>文件名：b.vue文件内容：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;此处内容省略&lt;template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">  import aManger from <span class="string">'src/api/a-manger'</span></span><br><span class="line"></span><br><span class="line">    <span class="built_in">export</span> default &#123;</span><br><span class="line">      name: <span class="string">'b'</span>,</span><br><span class="line">        <span class="function"><span class="title">data</span></span>()&#123;</span><br><span class="line">          <span class="built_in">return</span> &#123;</span><br><span class="line">            name: <span class="string">''</span></span><br><span class="line">          &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">      methods: &#123;</span><br><span class="line">        f (userid) &#123;</span><br><span class="line">          aManger.queryName(userid).<span class="keyword">then</span>((res) =&gt; &#123;</span><br><span class="line">            // res就是后台返回的结果</span><br><span class="line">            // 一定要判断返回的结果</span><br><span class="line">            <span class="keyword">if</span> (res.code === 200)&#123;</span><br><span class="line">              this.name = res.data.name</span><br><span class="line">            &#125;</span><br><span class="line">          &#125;)</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">&lt;span style=<span class="string">'color:red&gt;注意:&lt;/span&gt; 如果在调用f函数时，想要立即拿到name的值，就需要使用对f以及调用这个地方aynsc和await</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">## 第二种方式</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">### 接口文件</span></span><br><span class="line"><span class="string">文件名：d-manger.js</span></span><br><span class="line"><span class="string">文件地址：src/api/d-manger.js</span></span><br><span class="line"><span class="string">文件内容：</span></span><br><span class="line"><span class="string">```bash</span></span><br><span class="line"><span class="string">export default &#123;</span></span><br><span class="line"><span class="string">  GET_ACTIVITY_INFO: '</span>接口地址<span class="string">'</span></span><br><span class="line"><span class="string">&#125;</span></span><br></pre></td></tr></table></figure></p><p>&lt;span style='color:red&gt;注意:&lt;/span&gt; 冒号前的名字要全部大写</p><h3>使用文件</h3><p>文件名：b.vue文件内容：</p><pre><code class="language-bash">&lt;template&gt;此处内容省略&lt;template&gt;&lt;script&gt;  import dManger from 'src/api/d-manger'    export default {      name: 'b',        data(){          return {            name: ''          }        },      methods: {        f () {          this.$get(dManger.GET_ACTIVITY_INFO,{            activityId: this.activityId          }).then((res) =&gt; {            if (res.code === 200){              this.activityId = res.data            }          })        }      }    }&lt;script&gt;&lt;span style='color:red&gt;注意:&lt;/span&gt; 如果在调用f函数时，想要立即拿到name的值，就需要使用对f以及调用这个地方aynsc和await</code></pre>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;在做实际项目中，我遇到的两种调用api的方式&lt;/p&gt;
-&lt;h2&gt;第一种方式&lt;/h2&gt;
-&lt;h3&gt;接口文件&lt;/h3&gt;
-&lt;p&gt;文件名：a-manger.js
-文件地址：src/api/a-manger.js
-文件内容：
-&lt;figure class=&quot;highlight bash&quot;&gt;
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>20181127收获与问题</title>
-    <link href="http://haojen.github.io/2018/11/27/20181127/"/>
-    <id>http://haojen.github.io/2018/11/27/20181127/</id>
-    <published>2018-11-27T05:45:39.504Z</published>
-    <updated>2018-11-27T05:45:39.505Z</updated>
-    
-    <content type="html"><![CDATA[<p>看代码</p><h2>收获</h2><p>&lt;ol&gt;&lt;li&gt;过渡(transition)的钩子函数：beforeEnter、enter、afterEnter&lt;/li&gt;&lt;li&gt;this.$el是在mounted中才会出现的,它指的是当前组件的的元素&lt;/li&gt;&lt;li&gt;offset和client&lt;/li&gt;&lt;li&gt;this.$nextTick：&lt;/li&gt;&lt;li&gt;&lt;/li&gt;&lt;li&gt;&lt;/li&gt;&lt;li&gt;&lt;/li&gt;&lt;li&gt;&lt;/li&gt;&lt;li&gt;&lt;/li&gt;&lt;/ol&gt;</p><h2>问题</h2><p>&lt;ol&gt;&lt;li&gt;slot的用法&lt;/li&gt;&lt;li&gt;v-if后面this的指向&lt;/li&gt;&lt;li&gt;$emit的用法&lt;/li&gt;&lt;li&gt;ComConstructor是什么<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">const instance = new ComConstructor(&#123;</span><br><span class="line">    propsData: &#123;</span><br><span class="line">        ...rest</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p><pre><code>play-video里面的fun.js文件  &lt;/li&gt;&lt;li&gt;&lt;/li&gt;&lt;li&gt;&lt;/li&gt;&lt;li&gt;&lt;/li&gt;&lt;li&gt;&lt;/li&gt;&lt;li&gt;&lt;/li&gt;</code></pre><p>&lt;/ol&gt;</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;看代码&lt;/p&gt;
-&lt;h2&gt;收获&lt;/h2&gt;
-&lt;p&gt;&amp;lt;ol&amp;gt;
-&amp;lt;li&amp;gt;过渡(transition)的钩子函数：beforeEnter、enter、afterEnter&amp;lt;/li&amp;gt;
-&amp;lt;li&amp;gt;this.$el是在mounted中才会出现的
       
     
     </summary>

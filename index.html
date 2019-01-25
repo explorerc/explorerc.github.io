@@ -80,7 +80,7 @@
                         
 							
                         <li>
-                            <a href="/Tags/">Tags</a>
+                            <a href="/About/">About</a>
                         </li>
 							
 						
@@ -88,7 +88,15 @@
                         
 							
                         <li>
-                            <a href="/About/">About</a>
+                            <a href="/Tags/">标签</a>
+                        </li>
+							
+						
+                    
+                        
+							
+                        <li>
+                            <a href="/timeline/">timeline</a>
                         </li>
 							
 						
@@ -280,6 +288,85 @@
 
 
 <div class="post-preview " style="background-image: url('')">
+    <a href="/2019/01/14/在新页面中打开链接/">
+        <h2 class="post-title">
+            在页面中打开链接
+        </h2>
+        <p class="post-meta">
+            <i class="fa fa-calendar" aria-hidden="true"></i> 2019-01-14
+        </p>
+        
+        <div class="post-content-preview">
+            <p>
+                在新页面打开链接
+超链接
+1&lt;a href="//www.baidu.com" title="百度" target="_blank"&gt;百度&lt;/a&gt;
+js
+1window.open = '//www.baidu.com"'
+在当前页打开链接
+超链接
+1&lt;a href=..
+            </p>
+        </div>
+    </a>
+
+</div>
+
+<hr>
+
+
+
+<div class="post-preview " style="background-image: url('')">
+    <a href="/2019/01/10/设备像素/">
+        <h2 class="post-title">
+            设备像素
+        </h2>
+        <p class="post-meta">
+            <i class="fa fa-calendar" aria-hidden="true"></i> 2019-01-10
+        </p>
+        
+        <div class="post-content-preview">
+            <p>
+                概念
+css像素（CSS Pixel）：适用于web编程，值得是我们在样式代码中逻辑像素，是一个抽象概念，世纪并不存在
+设备独立像素（Device Independent Pixel）:与设备无关的逻辑像素，大四表可以通过程序控制和使用的虚拟像素，是一个总体概念
+设备像素（Independent..
+            </p>
+        </div>
+    </a>
+
+</div>
+
+<hr>
+
+
+
+<div class="post-preview " style="background-image: url('')">
+    <a href="/2019/01/09/css3-resize等/">
+        <h2 class="post-title">
+            css3中的resize，user-select属性，多列布局特性，怪异盒子模型，倒影
+        </h2>
+        <p class="post-meta">
+            <i class="fa fa-calendar" aria-hidden="true"></i> 2019-01-09
+        </p>
+        
+        <div class="post-content-preview">
+            <p>
+                resize
+盒子大小的拖动
+12resize: both; // 支持宽高拖动resize: none; // 支持狂傲拖动
+
+            </p>
+        </div>
+    </a>
+
+</div>
+
+<hr>
+
+
+
+<div class="post-preview " style="background-image: url('')">
     <a href="/2018/12/22/微信官方接口/">
         <h2 class="post-title">
             微信官方接口
@@ -419,34 +506,6 @@ git ..
 
 
 <div class="post-preview " style="background-image: url('')">
-    <a href="/2018/12/10/css3-resize等/">
-        <h2 class="post-title">
-            css3中的resize，user-select属性，多列布局特性，怪异盒子模型，倒影
-        </h2>
-        <p class="post-meta">
-            <i class="fa fa-calendar" aria-hidden="true"></i> 2018-12-10
-        </p>
-        
-        <div class="post-content-preview">
-            <p>
-                resize
-盒子大小的拖动
-12resize: both; // 支持宽高拖动resize: none; // 支持狂傲拖动
-新特性
-let、const
-let定义的变量不会被变量提升，const定义的常量不能被修改
-const定义了一个对象，对象的属性是可以被修改的，例：student.na..
-            </p>
-        </div>
-    </a>
-
-</div>
-
-<hr>
-
-
-
-<div class="post-preview " style="background-image: url('')">
     <a href="/2018/12/09/vuex/">
         <h2 class="post-title">
             vuex
@@ -494,59 +553,6 @@ Vue.use(VueRouter)
 配置路由
 1 . 创建组件 引入组件
 2 ..
-            </p>
-        </div>
-    </a>
-
-</div>
-
-<hr>
-
-
-
-<div class="post-preview " style="background-image: url('')">
-    <a href="/2018/12/09/vue小知识/">
-        <h2 class="post-title">
-            vue项目
-        </h2>
-        <p class="post-meta">
-            <i class="fa fa-calendar" aria-hidden="true"></i> 2018-12-09
-        </p>
-        
-        <div class="post-content-preview">
-            <p>
-                组件
-&lt;ol&gt;
-&lt;li&gt;watch监听对象
-每个监听都是有handler的，也可以不写；监听对象时，必须写上deep
-1234567watch: &#123;  user: &#123; hander(newValue,oldValue) =&gt; &#123;    ..
-            </p>
-        </div>
-    </a>
-
-</div>
-
-<hr>
-
-
-
-<div class="post-preview " style="background-image: url('')">
-    <a href="/2018/12/09/vue组件传值/">
-        <h2 class="post-title">
-            vue组件传值
-        </h2>
-        <p class="post-meta">
-            <i class="fa fa-calendar" aria-hidden="true"></i> 2018-12-09
-        </p>
-        
-        <div class="post-content-preview">
-            <p>
-                父组件给子组件传值：
-1 . 父组件调用子组件的时候 绑定动态属性
-    &lt;v-head :title='title'&gt;&lt;/v-head&gt;
-    引号中的title表示父组件中的数据
-2 . 在子组件里面通过 props接受父组件传过来的数据
-    props:[&..
             </p>
         </div>
     </a>
@@ -619,6 +625,18 @@ Vue.use(VueRouter)
             <section>
                 <div class="tags">
                     
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                 </div>
             </section>
             
@@ -660,7 +678,7 @@ Vue.use(VueRouter)
 
                 </ul>
                 <p class="copyright text-muted">
-                    Copyright &copy; CC 2018
+                    Copyright &copy; CC 2019
                     <br>
                     <span id="busuanzi_container_site_pv" style="font-size: 12px;">PV: <span id="busuanzi_value_site_pv"></span> Times</span>
                     <br>

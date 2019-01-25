@@ -80,7 +80,7 @@
                         
 							
                         <li>
-                            <a href="/Tags/">Tags</a>
+                            <a href="/About/">About</a>
                         </li>
 							
 						
@@ -88,7 +88,15 @@
                         
 							
                         <li>
-                            <a href="/About/">About</a>
+                            <a href="/Tags/">标签</a>
+                        </li>
+							
+						
+                    
+                        
+							
+                        <li>
+                            <a href="/timeline/">timeline</a>
                         </li>
 							
 						
@@ -276,6 +284,59 @@
     <div class="row">
         <div class="col-lg-8 col-lg-offset-1 col-md-8 col-md-offset-1 col-sm-12 col-xs-12 post-container">
             <!-- Main Content -->
+
+
+
+<div class="post-preview " style="background-image: url('')">
+    <a href="/2018/12/09/vue小知识/">
+        <h2 class="post-title">
+            vue项目
+        </h2>
+        <p class="post-meta">
+            <i class="fa fa-calendar" aria-hidden="true"></i> 2018-12-09
+        </p>
+        
+        <div class="post-content-preview">
+            <p>
+                组件
+&lt;ol&gt;
+&lt;li&gt;watch监听对象
+每个监听都是有handler的，也可以不写；监听对象时，必须写上deep
+1234567watch: &#123;  user: &#123; hander(newValue,oldValue) =&gt; &#123;    ..
+            </p>
+        </div>
+    </a>
+
+</div>
+
+<hr>
+
+
+
+<div class="post-preview " style="background-image: url('')">
+    <a href="/2018/12/09/vue组件传值/">
+        <h2 class="post-title">
+            vue组件传值
+        </h2>
+        <p class="post-meta">
+            <i class="fa fa-calendar" aria-hidden="true"></i> 2018-12-09
+        </p>
+        
+        <div class="post-content-preview">
+            <p>
+                父组件给子组件传值：
+1 . 父组件调用子组件的时候 绑定动态属性
+    &lt;v-head :title='title'&gt;&lt;/v-head&gt;
+    引号中的title表示父组件中的数据
+2 . 在子组件里面通过 props接受父组件传过来的数据
+    props:[&..
+            </p>
+        </div>
+    </a>
+
+</div>
+
+<hr>
 
 
 
@@ -503,61 +564,6 @@ flex为复合属性，且必须配合父元素display:flex使用。
 
 
 
-<div class="post-preview " style="background-image: url('')">
-    <a href="/2018/12/02/vue中前接口调用/">
-        <h2 class="post-title">
-            vue中前端接口的调用两种方式
-        </h2>
-        <p class="post-meta">
-            <i class="fa fa-calendar" aria-hidden="true"></i> 2018-12-02
-        </p>
-        
-        <div class="post-content-preview">
-            <p>
-                在做实际项目中，我遇到的两种调用api的方式
-第一种方式
-接口文件
-文件名：a-manger.js
-文件地址：src/api/a-manger.js
-文件内容：
-1234567891011121314import utils from 'src/utils'// utils文件夹里面放我们需要用..
-            </p>
-        </div>
-    </a>
-
-</div>
-
-<hr>
-
-
-
-<div class="post-preview " style="background-image: url('')">
-    <a href="/2018/11/27/20181127/">
-        <h2 class="post-title">
-            20181127收获与问题
-        </h2>
-        <p class="post-meta">
-            <i class="fa fa-calendar" aria-hidden="true"></i> 2018-11-27
-        </p>
-        
-        <div class="post-content-preview">
-            <p>
-                看代码
-收获
-&lt;ol&gt;
-&lt;li&gt;过渡(transition)的钩子函数：beforeEnter、enter、afterEnter&lt;/li&gt;
-&lt;li&gt;this.$el是在mounted中才会出现的,它指的是当前组件的的元素&lt;/li&gt;
-&l..
-            </p>
-        </div>
-    </a>
-
-</div>
-
-<hr>
-
-
-
 
 <!-- 翻页 pager -->
 
@@ -624,6 +630,18 @@ flex为复合属性，且必须配合父元素display:flex使用。
             <section>
                 <div class="tags">
                     
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                 </div>
             </section>
             
@@ -665,7 +683,7 @@ flex为复合属性，且必须配合父元素display:flex使用。
 
                 </ul>
                 <p class="copyright text-muted">
-                    Copyright &copy; CC 2018
+                    Copyright &copy; CC 2019
                     <br>
                     <span id="busuanzi_container_site_pv" style="font-size: 12px;">PV: <span id="busuanzi_value_site_pv"></span> Times</span>
                     <br>
