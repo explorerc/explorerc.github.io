@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://haojen.github.io/"/>
-  <updated>2019-01-14T04:46:03.203Z</updated>
+  <updated>2019-01-29T02:01:58.449Z</updated>
   <id>http://haojen.github.io/</id>
   
   <author>
@@ -15,6 +15,37 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>thinkPHP框架安装</title>
+    <link href="http://haojen.github.io/2019/01/29/thinkPHP%E6%A1%86%E6%9E%B6%E7%9A%84%E5%AE%89%E8%A3%85/"/>
+    <id>http://haojen.github.io/2019/01/29/thinkPHP框架的安装/</id>
+    <published>2019-01-29T01:38:00.000Z</published>
+    <updated>2019-01-29T02:01:58.449Z</updated>
+    
+    <content type="html"><![CDATA[<h2>thinkPHP概述</h2><p>是一个免费开源的、快速、简单的面向对象的轻量级的PHP开发框架，是为了便捷WEB应用开发会和简化应用开发尔诞生的</p><h2>检测环境</h2><p>&lt;ol&gt;&lt;li&gt;PHP &gt;= 5.4.0 &lt;/li&gt;&lt;li&gt;PDO PHP Extension &lt;/li&gt;&lt;li&gt;MBString PHP Extension &lt;/li&gt;&lt;li&gt;CURL PHP Extension&lt;/li&gt;&lt;/ol&gt;</p><p>方法：在一个php页面中 echo phpInfo()</p><h2>源代码安装</h2><p>&lt;ol&gt;&lt;li&gt;&lt;a href='http://www.thinkphp.cn/down.html'&gt;thinkPHP源代码下载&lt;/a&gt;&lt;/li&gt;&lt;li&gt;解压文件&lt;/li&gt;&lt;li&gt;将文件拷贝网站的根目录(你自己放项目的目录，也可以不拷贝，直接修改apache里面的项目文件指向)&lt;/li&gt;&lt;li&gt;重命名(按你自己的需要)&lt;/li&gt;&lt;li&gt;若你在第三不的时候拷贝的，此时就可以访问http://loaclhost/项目名/phblic&lt;/li&gt;&lt;/ol&gt;</p><p>&lt;span style='color:red'&gt;注意：&lt;span&gt;Apache的默认端口是80，若该端口没有与其他应用的端口产生冲突，我们未修改端口，我们访问localhost的时候，就不用写80</p><h2>Composer安装</h2><h3>概念</h3><p>PHP用来管理依赖关系的工具，类似linux中的yum源</p><h3>方法</h3><p>&lt;ol&gt;&lt;li&gt;&lt;a href='https://getcomposer.org/download/'&gt;官网下载软件&lt;/a&gt;&lt;/li&gt;&lt;li&gt;解压文件&lt;/li&gt;&lt;li&gt;将文件拷贝网站的根目录(你自己放项目的目录，也可以不拷贝，直接修改apache里面的项目文件指向)&lt;/li&gt;&lt;li&gt;重命名(按你自己的需要)&lt;/li&gt;&lt;li&gt;若你在第三不的时候拷贝的，此时就可以访问http://loaclhost/项目名/phblic&lt;/li&gt;&lt;span style='color:red'&gt;注意：&lt;span&gt;Apache的默认端口是80，若该端口没有与其他应用的端口产生冲突，我们未修改端口，我们访问localhost的时候，就不用写80&lt;/ol&gt;</p><h2>git安装</h2>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2&gt;thinkPHP概述&lt;/h2&gt;
+&lt;p&gt;是一个免费开源的、快速、简单的面向对象的轻量级的PHP开发框架，是为了便捷WEB应用开发会和简化应用开发尔诞生的&lt;/p&gt;
+&lt;h2&gt;检测环境&lt;/h2&gt;
+&lt;p&gt;&amp;lt;ol&amp;gt;
+&amp;lt;li&amp;gt;PHP &amp;gt;= 5.4.0 &amp;l
+      
+    
+    </summary>
+    
+    
+      <category term="ThinkPHP" scheme="http://haojen.github.io/tags/ThinkPHP/"/>
+    
+      <category term="git" scheme="http://haojen.github.io/tags/git/"/>
+    
+      <category term="Composer" scheme="http://haojen.github.io/tags/Composer/"/>
+    
+  </entry>
   
   <entry>
     <title>在页面中打开链接</title>
@@ -491,33 +522,6 @@ flex为复合属性，且必须配合父元素display:flex使用。
 &lt;th&gt;元字符&lt;/th&gt;
 &lt;th&gt;描述&lt;/th&gt;
 
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>vue扫码支付功能的实现</title>
-    <link href="http://haojen.github.io/2018/12/02/%E6%94%AF%E4%BB%98%E6%B5%81%E7%A8%8B%E8%A7%A3%E6%9E%90/"/>
-    <id>http://haojen.github.io/2018/12/02/支付流程解析/</id>
-    <published>2018-12-02T08:26:14.429Z</published>
-    <updated>2018-12-02T08:26:14.429Z</updated>
-    
-    <content type="html"><![CDATA[<p>简述：生成二维码，用户扫码支付后，然后跳转到指定的的页面</p><h2>过程解析</h2><ol><li>用户点击充值按钮</li><li>弹出一个对话框</li><li>用户充值金额，点击下一步，在这部中执行的操作有两个请求，函数a：请求根据用户填写的金额，拿到订单号；函数b：请求根据订单号拿到我们需要的二维码；</li><li>弹出第二个对话框，第二个对话框的内容有充值的金额和二维码，充值金额在这个框中仍然可以修改，</li><li>在用户修改完成，点击保存的时候，再调用函数a和b</li><li>系统通过函数b，检测到用户扫码成功后，跳转到支付成功页面，并调用显示余额</li></ol><h2>函数a</h2><p>函数a中只需要往后台发送一个请求，就是请求订单号</p><h2>函数b</h2><p>函数b中主要有两个请求，第一个请求：根据订单号获得二维码第二个请求：往后台发送用户信息，并监控用户是否以及扫码支付</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;简述：生成二维码，用户扫码支付后，然后跳转到指定的的页面&lt;/p&gt;
-&lt;h2&gt;过程解析&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;用户点击充值按钮&lt;/li&gt;
-&lt;li&gt;弹出一个对话框&lt;/li&gt;
-&lt;li&gt;用户充值金额，点击下一步，在这部中执行的操作有两个请求，
-函数a：请求根据用户填写的金额，拿
       
     
     </summary>
