@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://haojen.github.io/"/>
-  <updated>2019-01-29T02:01:58.449Z</updated>
+  <updated>2019-02-02T01:15:35.454Z</updated>
   <id>http://haojen.github.io/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="http://haojen.github.io/2019/01/29/thinkPHP%E6%A1%86%E6%9E%B6%E7%9A%84%E5%AE%89%E8%A3%85/"/>
     <id>http://haojen.github.io/2019/01/29/thinkPHP框架的安装/</id>
     <published>2019-01-29T01:38:00.000Z</published>
-    <updated>2019-01-29T02:01:58.449Z</updated>
+    <updated>2019-02-02T01:15:35.454Z</updated>
     
-    <content type="html"><![CDATA[<h2>thinkPHP概述</h2><p>是一个免费开源的、快速、简单的面向对象的轻量级的PHP开发框架，是为了便捷WEB应用开发会和简化应用开发尔诞生的</p><h2>检测环境</h2><p>&lt;ol&gt;&lt;li&gt;PHP &gt;= 5.4.0 &lt;/li&gt;&lt;li&gt;PDO PHP Extension &lt;/li&gt;&lt;li&gt;MBString PHP Extension &lt;/li&gt;&lt;li&gt;CURL PHP Extension&lt;/li&gt;&lt;/ol&gt;</p><p>方法：在一个php页面中 echo phpInfo()</p><h2>源代码安装</h2><p>&lt;ol&gt;&lt;li&gt;&lt;a href='http://www.thinkphp.cn/down.html'&gt;thinkPHP源代码下载&lt;/a&gt;&lt;/li&gt;&lt;li&gt;解压文件&lt;/li&gt;&lt;li&gt;将文件拷贝网站的根目录(你自己放项目的目录，也可以不拷贝，直接修改apache里面的项目文件指向)&lt;/li&gt;&lt;li&gt;重命名(按你自己的需要)&lt;/li&gt;&lt;li&gt;若你在第三不的时候拷贝的，此时就可以访问http://loaclhost/项目名/phblic&lt;/li&gt;&lt;/ol&gt;</p><p>&lt;span style='color:red'&gt;注意：&lt;span&gt;Apache的默认端口是80，若该端口没有与其他应用的端口产生冲突，我们未修改端口，我们访问localhost的时候，就不用写80</p><h2>Composer安装</h2><h3>概念</h3><p>PHP用来管理依赖关系的工具，类似linux中的yum源</p><h3>方法</h3><p>&lt;ol&gt;&lt;li&gt;&lt;a href='https://getcomposer.org/download/'&gt;官网下载软件&lt;/a&gt;&lt;/li&gt;&lt;li&gt;解压文件&lt;/li&gt;&lt;li&gt;将文件拷贝网站的根目录(你自己放项目的目录，也可以不拷贝，直接修改apache里面的项目文件指向)&lt;/li&gt;&lt;li&gt;重命名(按你自己的需要)&lt;/li&gt;&lt;li&gt;若你在第三不的时候拷贝的，此时就可以访问http://loaclhost/项目名/phblic&lt;/li&gt;&lt;span style='color:red'&gt;注意：&lt;span&gt;Apache的默认端口是80，若该端口没有与其他应用的端口产生冲突，我们未修改端口，我们访问localhost的时候，就不用写80&lt;/ol&gt;</p><h2>git安装</h2>]]></content>
+    <content type="html"><![CDATA[<h2>thinkPHP概述</h2><p>是一个免费开源的、快速、简单的面向对象的轻量级的PHP开发框架，是为了便捷WEB应用开发会和简化应用开发尔诞生的</p><h2>检测环境</h2><p>&lt;ol&gt;&lt;li&gt;PHP &gt;= 5.4.0 &lt;/li&gt;&lt;li&gt;PDO PHP Extension &lt;/li&gt;&lt;li&gt;MBString PHP Extension &lt;/li&gt;&lt;li&gt;CURL PHP Extension&lt;/li&gt;&lt;/ol&gt;</p><p>方法：在一个php页面中 echo phpInfo()</p><h2>源代码安装</h2><p>&lt;p&gt;&lt;ol&gt;&lt;li&gt;&lt;a href='http://www.thinkphp.cn/down.html'&gt;thinkPHP源代码下载&lt;/a&gt;&lt;/li&gt;&lt;li&gt;解压文件&lt;/li&gt;&lt;li&gt;将文件拷贝网站的根目录(你自己放项目的目录，也可以不拷贝，直接修改apache里面的项目文件指向)&lt;/li&gt;&lt;li&gt;重命名(按你自己的需要)&lt;/li&gt;&lt;li&gt;若你在第三不的时候拷贝的，此时就可以访问http://loaclhost/项目名/phblic&lt;/li&gt;&lt;/ol&gt;&lt;/p&gt;</p><p>&lt;span style='color:red'&gt;注意：&lt;span&gt;Apache的默认端口是80，若该端口没有与其他应用的端口产生冲突，我们未修改端口，我们访问localhost的时候，就不用写80</p><h2>Composer安装</h2><h3>概念</h3><p>PHP用来管理依赖关系的工具，类似linux中的yum源</p><h3>方法</h3><p>&lt;ol&gt;&lt;li&gt;&lt;a href='https://getcomposer.org/download/'&gt;官网下载软件&lt;/a&gt;&lt;/li&gt;&lt;li&gt;解压文件&lt;/li&gt;&lt;li&gt;将文件拷贝网站的根目录(你自己放项目的目录，也可以不拷贝，直接修改apache里面的项目文件指向)&lt;/li&gt;&lt;li&gt;重命名(按你自己的需要)&lt;/li&gt;&lt;li&gt;若你在第三不的时候拷贝的，此时就可以访问http://loaclhost/项目名/phblic&lt;/li&gt;&lt;span style='color:red'&gt;注意：&lt;span&gt;Apache的默认端口是80，若该端口没有与其他应用的端口产生冲突，我们未修改端口，我们访问localhost的时候，就不用写80&lt;/ol&gt;</p><h2>git安装</h2>]]></content>
     
     <summary type="html">
     
