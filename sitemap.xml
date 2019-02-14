@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://haojen.github.io/tags/index.html</loc>
+    
+    <lastmod>2019-02-14T09:52:22.379Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://haojen.github.io/2019/02/13/190213-beforEach%20/</loc>
     
     <lastmod>2019-02-14T09:30:24.826Z</lastmod>
@@ -222,13 +229,6 @@
     <loc>http://haojen.github.io/2019/02/11/190211-vuex/</loc>
     
     <lastmod>2019-02-13T03:10:01.633Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://haojen.github.io/tags/index.html</loc>
-    
-    <lastmod>2019-01-25T10:35:55.357Z</lastmod>
     
   </url>
   
