@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://haojen.github.io/"/>
-  <updated>2019-02-13T02:44:52.605Z</updated>
+  <updated>2019-02-14T07:16:17.836Z</updated>
   <id>http://haojen.github.io/</id>
   
   <author>
@@ -17,11 +17,88 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>学习中的优秀资源</title>
+    <link href="http://haojen.github.io/2019/02/14/190205-markdown/"/>
+    <id>http://haojen.github.io/2019/02/14/190205-markdown/</id>
+    <published>2019-02-14T03:24:00.000Z</published>
+    <updated>2019-02-14T07:16:17.836Z</updated>
+    
+    <content type="html"><![CDATA[<p>最近发现我写的博客.md文件里面识别不了html代码了，为了让整个blog看上去美观一点，可读性更高一点，我觉得学习一下markdwon语法</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;最近发现我写的博客.md文件里面识别不了html代码了，为了让整个blog看上去美观一点，可读性更高一点，我觉得学习一下markdwon语法&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+      <category term="markdown" scheme="http://haojen.github.io/tags/markdown/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>学习中的优秀资源</title>
+    <link href="http://haojen.github.io/2019/02/14/190214-%E4%BC%98%E7%A7%80%E8%B5%84%E6%BA%90/"/>
+    <id>http://haojen.github.io/2019/02/14/190214-优秀资源/</id>
+    <published>2019-02-14T03:24:00.000Z</published>
+    <updated>2019-02-14T03:51:23.134Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="http://www.ruanyifeng.com/blog/" target="_blank" rel="noopener">阮一峰的网络日志</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;a href=&quot;http://www.ruanyifeng.com/blog/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;阮一峰的网络日志&lt;/a&gt;&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+      <category term="学习资源" scheme="http://haojen.github.io/tags/%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%BA%90/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>js中的同步与异步</title>
+    <link href="http://haojen.github.io/2019/02/14/190214-%E5%90%8C%E5%BC%82%E6%AD%A5/"/>
+    <id>http://haojen.github.io/2019/02/14/190214-同异步/</id>
+    <published>2019-02-14T03:24:00.000Z</published>
+    <updated>2019-02-14T06:09:56.827Z</updated>
+    
+    <content type="html"><![CDATA[<p>在我们写一些方法的是，同步与异步这个问题是是非重要的，有可能关系到我们能否拿到某个值的问题</p><h2>概念</h2><ol><li>同步：简单理解事情发生有严格的先后顺序，一个时间点只会发生一件事情</li><li>异步：一个时间点会发生一件活多件事情，事情的发生互相不耽误</li></ol><p>javascript是一门&quot;单线程&quot;的语言，就想一条流水线，要么加工，要么包装，不能同时进行多个任务和流程</p><h2>setTimeout和setInterval</h2><p>最基础的异步是setTimeout和setInterval函数，很常见，但是很少人有人知道其实这就是异步，因为它们可以控制js的执行顺序。我们也可以简单地理解为：可以改变程序正常执行顺序的操作就可以看成是异步操作。</p><p>尽管setTimeout的time延迟时间为0，其中的function也会被放图一个队列中(任务队列)，等待下一个机会执行，当前的代码(指不需要加入队列中的程序）必须在该队列的程序完成之前玩笑，因此结果可能与预期结果不相同</p><p>队列（任务队列），放的就是setTimeout中的function，这些function依次加入该队列,即该队列中所有function中的程序将会在该队列意外的所有代码执行完毕后在依次执行。因为在执行程序的时候,浏览器会默认setTimeout以及ajax请求请求这一类的方法都是耗时程序（尽管可能不耗时)，将这些加入一个对垒中，该队列是一个存储耗时程序的队列，在所有不耗时程序执行完成，再来依次执行该队列中的程序。</p><p>javascript是单线程。单线程就意味着，所有任务需要排队，前一个任务结束，才会执行后一个任务。如果前一个任务耗时很长,后一个任务就不得不一直等着。于是就有一个概念——任务队列。如果排队是因为计算量大，CPU忙不过来，倒也算了，但是很多时候CPU是闲着的，因为IO设备（输入输出设备）很慢（比如Ajax操作从网络读取数据），不得不等着结果出来，再往下执行。于是JavaScript语言的设计者意识到，这时主线程完全可以不管IO设备，挂起处于等待中的任务，先运行排在后面的任务。等到IO设备返回了结果，再回过头，把挂起的任务继续执行下去。</p><p>于是，所有任务可以分成两种，一种是同步任务（synchronous），另一种是异步任务（asynchronous。同步任务指的是，在主线程上排队执行的任务，只有前一个任务执行完毕，才能执行后一个任务；异步任务指的是，不进入主线程、而进入&quot;任务队列&quot;（task queue）的任务，只有等主线程任务执行完毕，&quot;任务队列&quot;开始通知主线程，请求执行任务，该任务才会进入主线程执行。</p><h2>运行机制</h2><ol><li>所有同步任务都在主线程上执行，形成一个执行栈（execute context stack）</li><li>主线程之外，加油一个&quot;任务对垒&quot;（task queue）。只有异步任务有了运行结果，就在&quot;任务队列&quot;之中放置一个事件。</li><li>一旦&quot;执行栈&quot;中的所有同步任务执行完毕，系统就会读取&quot;执行队列&quot;，看看里面有哪些事件。那些对应的异步任务，于是结束等待状态，进入执行栈，开始执行。</li><li>主线程不断重复上面的第三部</li></ol><p>&quot;任务队列&quot;是一个事件的队列（也可以理解成消息的队列），IO设备完成一项任务，就在&quot;任务队列&quot;中添加一个事件，表示相关的异步任务可以进入&quot;执行栈&quot;了。主线程读取&quot;任务队列&quot;，就是读取里面有哪些事件。&quot;任务队列&quot;中的事件，除了IO设备的事件以外，还包括一些用户产生的事件（比如鼠标点击、页面滚动等等），比如$(selectot).click(function)，这些都是相对耗时的操作。只要指定过这些事件的回调函数，这些事件发生时就会进入&quot;任务队列&quot;，等待主线程读取。所谓&quot;回调函数&quot;（callback），就是那些会被主线程挂起来的代码，前面说的点击事件$(selectot).click(function)中的function就是一个回调函数。异步任务必须指定回调函数，当主线程开始执行异步任务，就是执行对应的回调函数。例如ajax的success，complete，error也都指定了各自的回调函数，这些函数就会加入“任务队列”中，等待执行。</p><p>文献参考：<a href="https://blog.csdn.net/qq_22855325/article/details/72958345" target="_blank" rel="noopener">YinghaoGuo：js中的同步和异步的个人理解 </a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;在我们写一些方法的是，同步与异步这个问题是是非重要的，有可能关系到我们能否拿到某个值的问题&lt;/p&gt;
+&lt;h2&gt;概念&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;同步：简单理解事情发生有严格的先后顺序，一个时间点只会发生一件事情&lt;/li&gt;
+&lt;li&gt;异步：一个时间点会发生一件活多件事情，事情的发
+      
+    
+    </summary>
+    
+    
+      <category term="html" scheme="http://haojen.github.io/tags/html/"/>
+    
+      <category term="js" scheme="http://haojen.github.io/tags/js/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Vue-route的beforEach实现导航守卫（路由跳转前验证登录） </title>
-    <link href="http://haojen.github.io/2019/02/13/Vue-route%E7%9A%84beforEach%E5%AE%9E%E7%8E%B0%E5%AF%BC%E8%88%AA%E5%AE%88%E5%8D%AB%EF%BC%88%E8%B7%AF%E7%94%B1%E8%B7%B3%E8%BD%AC%E5%89%8D%E9%AA%8C%E8%AF%81%E7%99%BB%E5%BD%95%EF%BC%89%20/"/>
-    <id>http://haojen.github.io/2019/02/13/Vue-route的beforEach实现导航守卫（路由跳转前验证登录） /</id>
+    <link href="http://haojen.github.io/2019/02/13/190213-beforEach%20/"/>
+    <id>http://haojen.github.io/2019/02/13/190213-beforEach /</id>
     <published>2019-02-12T16:00:00.000Z</published>
-    <updated>2019-02-13T02:44:52.605Z</updated>
+    <updated>2019-02-13T02:46:59.803Z</updated>
     
     <content type="html"><![CDATA[<p>vue-route提供的beforeRouteUpadate可以方便实现导航守卫</p><p><a href="http:////router.vuejs.org/zh/guide/advanced/navigation-guards.html" target="_blank" rel="noopener">官方文档</a></p><h2>全局前置守卫</h2><p>1、注册全局前置守卫（router.beforeEach）<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">const router = new VueRouter(&#123; ... &#125;)</span><br><span class="line"></span><br><span class="line">router.beforeEach((to, from, next) =&gt; &#123;</span><br><span class="line">  // ...</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p><ul><li>to: 即将进入的目标路由对象</li><li>from： 当前导航真要离开的路由</li><li>next： 一定要调用该方法来resolve这个钩子，执行效果依赖next方法调用参数。<ul><li>next(): 进行管道中的下一个钩子。如果全部钩子执行完了，则导航的状态就是 confirmed （确认的）。</li><li>next(false): 中断当前的导航。如果浏览器的 URL 改变了（可能是用户手动或者浏览器后退按钮），那么 URL 地址会重置到 from 路由对应的地址。</li><li>next('/') 或者 next({ path: '/' }): 跳转到一个不同的地址。当前的导航被中断，然后进行一个新的导航。</li><li>next(error): (2.4.0+) 如果传入 next 的参数是一个 Error 实例，则导航会被终止且该错误会被传递给 router.onError() 注册过的回调。</li></ul></li></ul><h2>问题</h2><p><code>alert('Hello World');</code></p>]]></content>
     
@@ -45,13 +122,68 @@
   </entry>
   
   <entry>
-    <title>thinkPHP框架安装</title>
-    <link href="http://haojen.github.io/2019/01/29/thinkPHP%E6%A1%86%E6%9E%B6%E7%9A%84%E5%AE%89%E8%A3%85/"/>
-    <id>http://haojen.github.io/2019/01/29/thinkPHP框架的安装/</id>
-    <published>2019-01-29T01:38:00.000Z</published>
-    <updated>2019-02-02T01:15:35.454Z</updated>
+    <title>vuex2</title>
+    <link href="http://haojen.github.io/2019/02/12/190212-vuex2/"/>
+    <id>http://haojen.github.io/2019/02/12/190212-vuex2/</id>
+    <published>2019-02-11T16:00:00.000Z</published>
+    <updated>2019-02-14T06:41:30.578Z</updated>
     
-    <content type="html"><![CDATA[<h2>thinkPHP概述</h2><p>是一个免费开源的、快速、简单的面向对象的轻量级的PHP开发框架，是为了便捷WEB应用开发会和简化应用开发尔诞生的</p><h2>检测环境</h2><p>&lt;ol&gt;&lt;li&gt;PHP &gt;= 5.4.0 &lt;/li&gt;&lt;li&gt;PDO PHP Extension &lt;/li&gt;&lt;li&gt;MBString PHP Extension &lt;/li&gt;&lt;li&gt;CURL PHP Extension&lt;/li&gt;&lt;/ol&gt;</p><p>方法：在一个php页面中 echo phpInfo()</p><h2>源代码安装</h2><p>&lt;p&gt;&lt;ol&gt;&lt;li&gt;&lt;a href='http://www.thinkphp.cn/down.html'&gt;thinkPHP源代码下载&lt;/a&gt;&lt;/li&gt;&lt;li&gt;解压文件&lt;/li&gt;&lt;li&gt;将文件拷贝网站的根目录(你自己放项目的目录，也可以不拷贝，直接修改apache里面的项目文件指向)&lt;/li&gt;&lt;li&gt;重命名(按你自己的需要)&lt;/li&gt;&lt;li&gt;若你在第三不的时候拷贝的，此时就可以访问http://loaclhost/项目名/phblic&lt;/li&gt;&lt;/ol&gt;&lt;/p&gt;</p><p>&lt;span style='color:red'&gt;注意：&lt;span&gt;Apache的默认端口是80，若该端口没有与其他应用的端口产生冲突，我们未修改端口，我们访问localhost的时候，就不用写80</p><h2>Composer安装</h2><h3>概念</h3><p>PHP用来管理依赖关系的工具，类似linux中的yum源</p><h3>方法</h3><p>&lt;ol&gt;&lt;li&gt;&lt;a href='https://getcomposer.org/download/'&gt;官网下载软件&lt;/a&gt;&lt;/li&gt;&lt;li&gt;解压文件&lt;/li&gt;&lt;li&gt;将文件拷贝网站的根目录(你自己放项目的目录，也可以不拷贝，直接修改apache里面的项目文件指向)&lt;/li&gt;&lt;li&gt;重命名(按你自己的需要)&lt;/li&gt;&lt;li&gt;若你在第三不的时候拷贝的，此时就可以访问http://loaclhost/项目名/phblic&lt;/li&gt;&lt;span style='color:red'&gt;注意：&lt;span&gt;Apache的默认端口是80，若该端口没有与其他应用的端口产生冲突，我们未修改端口，我们访问localhost的时候，就不用写80&lt;/ol&gt;</p><h2>git安装</h2>]]></content>
+    <content type="html"><![CDATA[<p>Vuex是一个专为Vue.js应用程序开发的状态管理模式。它采用集中式存储管理应用的所有组件的状态，并以相应的规则保证状态以一种可预测的方式发生变化.Vuex也集成到Vue的官方调试工具devtools扩展，提供了诸如零配置的time-travel调试，状态快照导入导出等高级调试功能。</p><p><a href="https://vuex.vuejs.org/zh/installation.html" target="_blank" rel="noopener">官方文档</a></p><h2>安装</h2><h3>npm</h3><p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install vuex --save</span><br></pre></td></tr></table></figure></p><p>模块化的项目中，必须通过Vue.user()来引用Vuex就拿一个我们公司现在完整vue项目来说，我们需要在一个store中index.js文件（全局）中引用<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">import Vuex from <span class="string">'vuex'</span></span><br><span class="line">Vue.use(Vuex)</span><br></pre></td></tr></table></figure></p><h3>promise</h3><p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install es6-promise --save</span><br></pre></td></tr></table></figure></p><h2>入门</h2><h3>最简单的store</h3><ol><li><p>定义<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">const store = new Vuex.Store(&#123;</span><br><span class="line">  state: &#123;</span><br><span class="line">    count: 0</span><br><span class="line">  &#125;,</span><br><span class="line">  mutations: &#123;</span><br><span class="line">    increment: state =&gt; state.count++,</span><br><span class="line">    decrement: state =&gt; state.count--</span><br><span class="line">  &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p></li><li><p>使用<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;p&gt;&#123;&#123; count &#125;&#125;&lt;/p&gt;</span><br><span class="line">&lt;p&gt;</span><br><span class="line">  &lt;button @click=<span class="string">"increment"</span>&gt;+&lt;/button&gt;</span><br><span class="line">  &lt;button @click=<span class="string">"decrement"</span>&gt;-&lt;/button&gt;</span><br><span class="line">&lt;/p&gt;</span><br></pre></td></tr></table></figure></p></li></ol><p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">computed: &#123;</span><br><span class="line">  <span class="function"><span class="title">count</span></span> () &#123;</span><br><span class="line">    <span class="built_in">return</span> store.state.count</span><br><span class="line">  &#125;</span><br><span class="line">&#125;,</span><br><span class="line">methods: &#123;</span><br><span class="line">  <span class="function"><span class="title">increment</span></span> () &#123;</span><br><span class="line">    store.commit(<span class="string">'increment'</span>)</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="function"><span class="title">decrement</span></span> () &#123;</span><br><span class="line">    store.commit(<span class="string">'decrement'</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p>通过提交变异的方式，而非直接改变<code>store.state.count</code></p><h2>state</h2><p>由于Vuex的状态存储是响应式的，从商店实例中读取状态最简单的方法就是在计算属性中返回某个状态</p><p>每当store.state.count变化的时候，都会重新求取计算属性，并且触发更新相关联的DOM。</p><h3>mapState 辅助函数</h3><p>当一个组件需要获取多个状态时候，将这些状态都声明为计算属性会有些重复和冗余为了解决这个问题，我们可以使用。mapState辅助函数帮助我们生成计算属性，让你少按几次键<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">// 在单独构建的版本中辅助函数为 Vuex.mapState</span><br><span class="line">import &#123; mapState &#125; from <span class="string">'vuex'</span></span><br><span class="line"><span class="built_in">export</span> default &#123;</span><br><span class="line">  // ...</span><br><span class="line">  computed: mapState(&#123;</span><br><span class="line">    // 箭头函数可使代码更简练</span><br><span class="line">    count: state =&gt; state.count,</span><br><span class="line">    // 传字符串参数 <span class="string">'count'</span> 等同于 `state =&gt; state.count`</span><br><span class="line">    countAlias: <span class="string">'count'</span>,</span><br><span class="line">    // 为了能够使用 `this` 获取局部状态，必须使用常规函数</span><br><span class="line">    countPlusLocalState (state) &#123;</span><br><span class="line">      <span class="built_in">return</span> state.count + this.localCount</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><h3>展开运算符</h3><p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">computed: &#123;</span><br><span class="line">  <span class="function"><span class="title">localComputed</span></span> () &#123; /* ... */ &#125;,</span><br><span class="line">  // 使用对象展开运算符将此对象混入到外部对象中</span><br><span class="line">  ...mapState(&#123;</span><br><span class="line">    // ...</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><h2>getters</h2><p>Vuex 允许我们在 store 中定义“getter”（可以认为是 store 的计算属性）。就像计算属性一样，getter 的返回值会根据它的依赖被缓存起来，且只有当它的依赖值发生了改变才会被重新计算。<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">const store = new Vuex.Store(&#123;</span><br><span class="line">  state: &#123;</span><br><span class="line">    todos: [</span><br><span class="line">      &#123; id: 1, text: <span class="string">'...'</span>, <span class="keyword">done</span>: <span class="literal">true</span> &#125;,</span><br><span class="line">      &#123; id: 2, text: <span class="string">'...'</span>, <span class="keyword">done</span>: <span class="literal">false</span> &#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;,</span><br><span class="line">  getters: &#123;</span><br><span class="line">    doneTodos: state =&gt; &#123;</span><br><span class="line">      <span class="built_in">return</span> state.todos.filter(todo =&gt; todo.done)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p><h3>通过属性访问</h3><p>Getter会暴露为store.getter对象，可以以属性的形式访问这些值<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">store.getters.doneTodos // -&gt;[&#123; id: 1, text: <span class="string">'...'</span>, <span class="keyword">done</span>: <span class="literal">true</span> &#125;]</span><br></pre></td></tr></table></figure></p><h3>通过方法访问</h3><p>getter返回一个函数，实现给getter传参<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">getters: &#123;</span><br><span class="line">  getTodoId: (state) =&gt; (id) =&gt; &#123;</span><br><span class="line">    <span class="built_in">return</span> state.todos.find(todo =&gt; todo.id === id)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">store.gettes.getTodoId(2)</span><br></pre></td></tr></table></figure></p><p>注意：getter在通过方法访问时hi，每次都会区进行调用，不会缓存结果</p><h3>maoGetters辅助函数</h3><p><code>maoGetters</code>辅助韩式仅仅是将store中的getter映射到局部计算属性<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">import &#123; mapGetters &#125; from <span class="string">'vuex'</span></span><br><span class="line"><span class="built_in">export</span> default &#123;</span><br><span class="line">  computed: &#123;</span><br><span class="line">    ...mapGettes([</span><br><span class="line">      <span class="string">'doneTodoCount'</span>,</span><br><span class="line">      <span class="string">'anotherGetter'</span>: <span class="string">'otherGetter'</span>  //将getter的anotherGetter属性重命名为otherGetter</span><br><span class="line">    ])</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><h2>Mutation</h2><p>更改Vuex的store中的唯一方法就是提交mutation。Vuex中的mutaion非常类似组件中的methods；每个mutation否有一个字符串的时间类型（tupe）和一个回调函数（handler）。这个回调函数就是我们实际进行状态更改的地方，并且它会接受state做为第一个参数<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">代码请看 入门中的代码</span><br></pre></td></tr></table></figure></p><h3>提交载荷（Payload）</h3><p>可以想<code>store.commit</code>提交额外的参数，即mutation的载荷（payload）<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">mutation: &#123;</span><br><span class="line">  increment (state, n) &#123;</span><br><span class="line">    state.count += n // n为简单数据类型时</span><br><span class="line">    state.count += n.amount // n为对象时</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">store.commit(<span class="string">'increment'</span>, 10)</span><br></pre></td></tr></table></figure></p><p>当n是一个对象时<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">store.commit(<span class="string">'increment'</span>, &#123;amount: 10&#125;)</span><br></pre></td></tr></table></figure></p><h3>Mutation需要遵守Vue的相映规则</h3><ol><li>最好提前初始化store的所有所需属性</li><li>需要在对象上添加新的属性是，</li></ol><ul><li>使用<code>Vue.set(obj,'newProp',123)</code> 或者</li><li>以新替旧<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">state.obj = &#123; ...state.obj, newProp: 123 &#125;</span><br></pre></td></tr></table></figure></li></ul><h3>使用常量替代Mutation事件类型</h3><p>使用常量替代Mutation事件类型在各种Flux实现中是最常见的模式。这样可以使linter之类的股票民航局发挥作用，把常量放在单独嗯文件中是整个项目包含的mutation一目了然<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// mutation-type.js</span><br><span class="line"><span class="built_in">export</span> const SOME_MUTATION = <span class="string">'SOME_MUTATION'</span></span><br></pre></td></tr></table></figure></p><p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">import Vuex from <span class="string">'vuex'</span></span><br><span class="line">import &#123; SOME_MUTATION &#125; from <span class="string">'./mutation-type'</span></span><br><span class="line">const store = new Vuex.Srore(&#123;</span><br><span class="line">  state: &#123;...&#125;</span><br><span class="line">  mutation: &#123;</span><br><span class="line">    [SOME_MUTATION] (state) &#123;&#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p><h3>Mutation必须是同步函数</h3><h3>在组件中提交Mutation</h3><p>在组件中可以使用<code>this.$store.commit('increment')</code>提交mutation，也可以使用mapMutation富足函数将组件中的methods映射为store.commit调用<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">import &#123; mapMutation &#125; from <span class="string">'vuex'</span></span><br><span class="line"><span class="built_in">export</span> default = &#123;</span><br><span class="line">  methods: &#123;</span><br><span class="line">    ...mapMutation([</span><br><span class="line">      <span class="string">'increment'</span>, // 将this.increment()映射为this.<span class="variable">$store</span>.commit(<span class="string">'increment'</span>)</span><br><span class="line">      <span class="string">'incrementBy'</span> // 将this.incrementBy(amount)映射为this.<span class="variable">$store</span>.commit(<span class="string">'incrementBy'</span>, amount)</span><br><span class="line">    ]),</span><br><span class="line">  &#125;</span><br><span class="line">  methods: &#123;</span><br><span class="line">    ...mapMutation([</span><br><span class="line">      add: <span class="string">'increment'</span>, // 将this.add()映射为this.<span class="variable">$store</span>.commit(<span class="string">'increment'</span>)  // 我们项目主要用的这种</span><br><span class="line">    ])</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><h2>Action</h2><p>Action类似于mutation，不同点</p><ul><li>Action提交的是mutation，而不是直接变更状态。</li><li>Action可以班汉任意异步操作<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">const store = new Vuex.store (&#123;</span><br><span class="line">    // ...</span><br><span class="line">  actions: &#123;</span><br><span class="line">    increment (context) &#123;</span><br><span class="line">      context.commit(<span class="string">'increment'</span>)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></li></ul><p>Action函数接受一个与store实例具有相同方法和属性的context对象。<code>context.commit</code>提交一个mutation，或者通过<code>context.state</code>和<code>context.getters</code>来获取state和getters。<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">actions: &#123;</span><br><span class="line">  increment (&#123; commit &#125;) &#123;</span><br><span class="line">    commit(<span class="string">'increment'</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><h3>分发Action</h3><p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">store.dispatch(<span class="string">'increment'</span>)</span><br></pre></td></tr></table></figure></p><p>mutation必须同步执行，Action不受约束，可以在action内部进行异步执行<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">actions: &#123;</span><br><span class="line">  incrementAsync (&#123; commit &#125;) &#123;</span><br><span class="line">    setTimeout(() =&gt; &#123;</span><br><span class="line">      commit(<span class="string">'increment'</span>)</span><br><span class="line">    &#125;, 1000)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p>Action支持载荷方式和对象方式进行分发<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">// 载荷方式</span><br><span class="line">store.dispatch(<span class="string">'incrementAsync'</span>, &#123;</span><br><span class="line">  amoutn: 10</span><br><span class="line">&#125;)</span><br><span class="line">// 对象方式</span><br><span class="line">store.dispatch(&#123;</span><br><span class="line">  <span class="built_in">type</span>: <span class="string">'incrementAsync'</span>,</span><br><span class="line">  amoutn: 10</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p><h3>组件中分发Action</h3><p>在组件中使用this.$store.dispatch('xxx')分发action，或者使用mapAction辅助函数将组件的methods映射为store.dispatch调用。和mapMutation类似<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">import &#123; mapAction &#125; from <span class="string">'vuex'</span></span><br><span class="line"><span class="built_in">export</span> default &#123;</span><br><span class="line">  methods: &#123;</span><br><span class="line">    ...mapAction([</span><br><span class="line">      <span class="string">'increment'</span>, // 将this.increment()映射为this.<span class="variable">$store</span>.dispatch(<span class="string">'increment'</span>)</span><br><span class="line">      <span class="string">'incrementBy'</span> // 将this.incrementBy(amount)映射为this.increment.dispatch(<span class="string">'increment'</span>,amount)</span><br><span class="line">    ]),</span><br><span class="line">    ...mapAction([</span><br><span class="line">      add: <span class="string">'increment'</span> //将this.add()映射为this.<span class="variable">$store</span>.dispatch(<span class="string">'increment'</span>)</span><br><span class="line">    ])</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><h2>Module</h2><p>由于使用单一状态树，所有的状态会集中到一个较大的对象。当应用变得非常复杂是，store对象就要变得相当臃肿</p><p>为了解决这个问题，Vuex允许我们将store分割成模块（module）。每个模块拥有自己的state、mutation、action、getter<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">const moduleA = &#123;</span><br><span class="line">  state: &#123;...&#125;,</span><br><span class="line">  mutations: &#123;...&#125;,</span><br><span class="line">  action: &#123;...&#125;,</span><br><span class="line">  getters: &#123;...&#125;</span><br><span class="line">&#125;</span><br><span class="line">const moduleA = &#123;</span><br><span class="line">  state: &#123;...&#125;,</span><br><span class="line">  mutations: &#123;...&#125;,</span><br><span class="line">  action: &#123;...&#125;,</span><br><span class="line">  getters: &#123;...&#125;</span><br><span class="line">&#125;</span><br><span class="line">const store = new Vuex.Store(&#123;</span><br><span class="line">  modules: &#123;</span><br><span class="line">   a: moduleA,</span><br><span class="line">   b: moduleB</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line">store.state.a // -&gt;moduleA 的状态</span><br></pre></td></tr></table></figure></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Vuex是一个专为Vue.js应用程序开发的状态管理模式。它采用集中式存储管理应用的所有组件的状态，并以相应的规则保证状态以一种可预测的方式发生变化.Vuex也集成到Vue的官方调试工具devtools扩展，提供了诸如零配置的time-travel调试，状态快照导入导出等高
+      
+    
+    </summary>
+    
+    
+      <category term="Vue" scheme="http://haojen.github.io/tags/Vue/"/>
+    
+      <category term="Vuex" scheme="http://haojen.github.io/tags/Vuex/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>vuex</title>
+    <link href="http://haojen.github.io/2019/02/11/190211-vuex/"/>
+    <id>http://haojen.github.io/2019/02/11/190211-vuex/</id>
+    <published>2019-02-10T16:00:00.000Z</published>
+    <updated>2019-02-13T03:10:01.633Z</updated>
+    
+    <content type="html"><![CDATA[<p>非父子和非兄弟组件传值</p><h2>配置</h2><p>&lt;ol&gt;&lt;li&gt;src目录下创建一个vuex的文件夹&lt;/li&gt;&lt;li&gt;vuex 文件夹里面创建一个store.js&lt;/li&gt;&lt;li&gt;安装vuexnpm install vuex --save&lt;/li&gt;&lt;li&gt;store.js里面引入vue 引入vuex 并且use<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">import Vue from <span class="string">'vue'</span></span><br><span class="line">import Vuex from <span class="string">'vuex'</span></span><br><span class="line"></span><br><span class="line">Vue.use(Vuex)</span><br><span class="line">/* state在vuex中用于存储数据 */</span><br><span class="line">var state=&#123;</span><br><span class="line">    count:1</span><br><span class="line">&#125;</span><br><span class="line">/* state在vuex中用于存储数据 */</span><br><span class="line">var mutation=&#123;</span><br><span class="line">    <span class="function"><span class="title">inCount</span></span>()&#123;</span><br><span class="line">         ++state.count;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const store = new Vuex.Store(&#123;</span><br><span class="line">    state,</span><br><span class="line">    mutations</span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">export</span> default store</span><br></pre></td></tr></table></figure></p><p>&lt;ol&gt;</p><h2>组件中使用</h2><p>&lt;ol&gt;&lt;li&gt;引入store<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import store from <span class="string">'../vuex/store.js'</span></span><br></pre></td></tr></table></figure></p><p>&lt;/li&gt;&lt;li&gt;注册<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> default &#123;</span><br><span class="line">    <span class="function"><span class="title">data</span></span>()&#123;<span class="built_in">return</span>&#123;&#125;&#125;,</span><br><span class="line">    store,</span><br><span class="line">    methods:&#123;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p>&lt;/li&gt;&lt;li&gt;获取store中的数据<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">this.<span class="variable">$store</span>.state.数据</span><br></pre></td></tr></table></figure></p><p>&lt;/li&gt;&lt;li&gt;触发mutation中的方法<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">this.commit(<span class="string">'inCount'</span>)</span><br></pre></td></tr></table></figure></p><p>&lt;/li&gt;&lt;/ol&gt;</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;非父子和非兄弟组件传值&lt;/p&gt;
+&lt;h2&gt;配置&lt;/h2&gt;
+&lt;p&gt;&amp;lt;ol&amp;gt;
+&amp;lt;li&amp;gt;src目录下创建一个vuex的文件夹&amp;lt;/li&amp;gt;
+&amp;lt;li&amp;gt;vuex 文件夹里面创建一个store.js&amp;lt;/li&amp;gt;
+&amp;lt;li&amp;gt;安
+      
+    
+    </summary>
+    
+    
+      <category term="Vue" scheme="http://haojen.github.io/tags/Vue/"/>
+    
+      <category term="Vuex" scheme="http://haojen.github.io/tags/Vuex/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>thinkPHP框架安装</title>
+    <link href="http://haojen.github.io/2019/01/29/190129-thinkPHP%E6%A1%86%E6%9E%B6%E7%9A%84%E5%AE%89%E8%A3%85/"/>
+    <id>http://haojen.github.io/2019/01/29/190129-thinkPHP框架的安装/</id>
+    <published>2019-01-29T01:38:00.000Z</published>
+    <updated>2019-02-14T07:04:18.350Z</updated>
+    
+    <content type="html"><![CDATA[<h2>thinkPHP概述</h2><p>是一个免费开源的、快速、简单的面向对象的轻量级的PHP开发框架，是为了便捷WEB应用开发会和简化应用开发尔诞生的</p><h2>检测环境</h2><ul><li>PHP &gt;= 5.4.0</li><li>PDO PHP Extension</li><li>MBString PHP Extension</li><li>CURL PHP Extension</li></ul><p>方法：在一个php页面中 echo phpInfo()</p><h2>源代码安装</h2><ol><li><a href="href='http://www.thinkphp.cn/down.html">thinkPHP源代码下载</a></li><li>解压文件</li><li>将文件拷贝网站的根目录(你自己放项目的目录，也可以不拷贝，直接修改apache里面的项目文件指向)</li><li>重命名(按你自己的需要)&lt;/li&gt;</li><li>若你在第三不的时候拷贝的，此时就可以访问http://loaclhost/项目名/phblic</li></ol><blockquote><p>注意：Apache的默认端口是80，若该端口没有与其他应用的端口产生冲突，我们未修改端口，我们访问localhost的时候，就不用写80</p></blockquote><h2>Composer安装</h2><h3>概念</h3><p>PHP用来管理依赖关系的工具，类似linux中的yum源</p><h3>方法</h3><ol><li>&lt;a href='https://getcomposer.org/download/'&gt;官网下载软件&lt;/a&gt;</li><li>解压文件</li><li>将文件拷贝网站的根目录(你自己放项目的目录，也可以不拷贝，直接修改apache里面的项目文件指向)</li><li>重命名(按你自己的需要)</li><li>若你在第三不的时候拷贝的，此时就可以访问http://loaclhost/项目名/phblic</li></ol><blockquote><p>注意：Apache的默认端口是80，若该端口没有与其他应用的端口产生冲突，我们未修改端口，我们访问localhost的时候，就不用写80</p></blockquote><h2>git安装</h2><p>直接从github库里面克隆</p>]]></content>
     
     <summary type="html">
     
@@ -60,16 +192,17 @@
         &lt;h2&gt;thinkPHP概述&lt;/h2&gt;
 &lt;p&gt;是一个免费开源的、快速、简单的面向对象的轻量级的PHP开发框架，是为了便捷WEB应用开发会和简化应用开发尔诞生的&lt;/p&gt;
 &lt;h2&gt;检测环境&lt;/h2&gt;
-&lt;p&gt;&amp;lt;ol&amp;gt;
-&amp;lt;li&amp;gt;PHP &amp;gt;= 5.4.0 &amp;l
+&lt;ul&gt;
+&lt;li&gt;PHP &amp;gt;= 5.4.0&lt;/li&gt;
+&lt;li&gt;PDO PHP 
       
     
     </summary>
     
     
-      <category term="ThinkPHP" scheme="http://haojen.github.io/tags/ThinkPHP/"/>
-    
       <category term="git" scheme="http://haojen.github.io/tags/git/"/>
+    
+      <category term="ThinkPHP" scheme="http://haojen.github.io/tags/ThinkPHP/"/>
     
       <category term="Composer" scheme="http://haojen.github.io/tags/Composer/"/>
     
@@ -77,8 +210,8 @@
   
   <entry>
     <title>在页面中打开链接</title>
-    <link href="http://haojen.github.io/2019/01/14/%E5%9C%A8%E6%96%B0%E9%A1%B5%E9%9D%A2%E4%B8%AD%E6%89%93%E5%BC%80%E9%93%BE%E6%8E%A5/"/>
-    <id>http://haojen.github.io/2019/01/14/在新页面中打开链接/</id>
+    <link href="http://haojen.github.io/2019/01/14/190114-%E6%89%93%E5%BC%80%E9%93%BE%E6%8E%A5/"/>
+    <id>http://haojen.github.io/2019/01/14/190114-打开链接/</id>
     <published>2019-01-14T04:46:03.203Z</published>
     <updated>2019-01-14T04:46:03.203Z</updated>
     
@@ -104,8 +237,8 @@
   
   <entry>
     <title>设备像素</title>
-    <link href="http://haojen.github.io/2019/01/10/%E8%AE%BE%E5%A4%87%E5%83%8F%E7%B4%A0/"/>
-    <id>http://haojen.github.io/2019/01/10/设备像素/</id>
+    <link href="http://haojen.github.io/2019/01/10/190110-%E8%AE%BE%E5%A4%87%E5%83%8F%E7%B4%A0/"/>
+    <id>http://haojen.github.io/2019/01/10/190110-设备像素/</id>
     <published>2019-01-10T01:30:00.000Z</published>
     <updated>2019-01-11T01:40:35.092Z</updated>
     
@@ -131,10 +264,10 @@
   
   <entry>
     <title>css3中的resize，user-select属性，多列布局特性，怪异盒子模型，倒影</title>
-    <link href="http://haojen.github.io/2019/01/09/css3-resize%E7%AD%89/"/>
-    <id>http://haojen.github.io/2019/01/09/css3-resize等/</id>
+    <link href="http://haojen.github.io/2019/01/09/190119-resize%E7%AD%89/"/>
+    <id>http://haojen.github.io/2019/01/09/190119-resize等/</id>
     <published>2019-01-09T01:30:00.000Z</published>
-    <updated>2019-01-11T01:45:56.308Z</updated>
+    <updated>2019-02-13T04:57:29.269Z</updated>
     
     <content type="html"><![CDATA[<h2>resize</h2><p>盒子大小的拖动<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">resize: both; // 支持宽高拖动</span><br><span class="line">resize: none; // 支持狂傲拖动</span><br></pre></td></tr></table></figure></p>]]></content>
     
@@ -152,45 +285,48 @@
     
       <category term="css3" scheme="http://haojen.github.io/tags/css3/"/>
     
-      <category term="resize" scheme="http://haojen.github.io/tags/resize/"/>
-    
   </entry>
   
   <entry>
     <title>微信官方接口</title>
-    <link href="http://haojen.github.io/2018/12/22/%E5%BE%AE%E4%BF%A1%E5%AE%98%E6%96%B9%E6%8E%A5%E5%8F%A3/"/>
-    <id>http://haojen.github.io/2018/12/22/微信官方接口/</id>
-    <published>2018-12-22T02:55:47.319Z</published>
-    <updated>2018-12-22T02:55:47.319Z</updated>
+    <link href="http://haojen.github.io/2018/12/24/181224-%E5%BE%AE%E4%BF%A1%E5%AE%98%E6%96%B9%E6%8E%A5%E5%8F%A3/"/>
+    <id>http://haojen.github.io/2018/12/24/181224-微信官方接口/</id>
+    <published>2018-12-23T16:00:00.000Z</published>
+    <updated>2019-02-13T04:53:38.275Z</updated>
     
-    <content type="html"><![CDATA[<h2>对接微信公众号平台</h2><p>1）获取微信API借口看微信|公众平台开发者文档中的接入指南2）下载API接口文件看微信|公众平台开发者文档解压--&gt;wx_sample.php3）复制wx_sample.php到项目（第一层目录），并更名为api.php4）确认api.php文件中TOKEN常量的定义，并通过svn上传到BAE5）打开微信公众平台的开发者中心URL：上面自定的网址/api.php (一定要把接口文件放在网址后面)Token：weixin (接口文件中TOKEN的值)确认无误后点击确认按钮，若失败，再进行提交6）通过微信手机将端测试第一次发消息测试，系统不会任何返回信息，因为接口文件值负责检测7）开启自动恢复a. 修改接口文件：注释掉valid方法，因为默认验证通过后，就会退出<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">// <span class="variable">$wechatObj</span>-&gt;valid</span><br></pre></td></tr></table></figure></p><p>b. 开启自动回复<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$wechatObj</span>-&gt;response</span><br></pre></td></tr></table></figure></p><ol start="8"><li>提交修改的代码，再进行测试</li></ol><h2>微信官方接口分析</h2><p>define(&quot;TOKEN&quot;,&quot;weixin&quot;); // 定义TOKEN密钥$wechatObj = new wechatCallbackapiTest(); // 实例化微信对象</p>]]></content>
+    <content type="html"><![CDATA[<h2>对接微信公众号平台</h2><ol><li>获取微信API借口看微信|公众平台开发者文档中的接入指南</li><li>下载API接口文件看微信|公众平台开发者文档解压--&gt;wx_sample.php</li><li>复制wx_sample.php到项目（第一层目录），并更名为api.php</li><li>确认api.php文件中TOKEN常量的定义，并通过svn上传到BAE</li><li>打开微信公众平台的开发者中心URL：上面自定的网址/api.php (一定要把接口文件放在网址后面)Token：weixin (接口文件中TOKEN的值)确认无误后点击确认按钮，若失败，再进行提交</li><li>通过微信手机将端测试第一次发消息测试，系统不会任何返回信息，因为接口文件值负责检测</li><li>开启自动恢复</li></ol><ul><li><p>修改接口文件：注释掉valid方法，因为默认验证通过后，就会退出<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">// <span class="variable">$wechatObj</span>-&gt;valid</span><br></pre></td></tr></table></figure></p></li><li><p>开启自动回复<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$wechatObj</span>-&gt;response</span><br></pre></td></tr></table></figure></p></li></ul><ol start="8"><li>提交修改的代码，再进行测试</li></ol><h2>微信官方接口分析</h2><p>define(&quot;TOKEN&quot;,&quot;weixin&quot;); // 定义TOKEN密钥$wechatObj = new wechatCallbackapiTest(); // 实例化微信对象</p>]]></content>
     
     <summary type="html">
     
       
       
         &lt;h2&gt;对接微信公众号平台&lt;/h2&gt;
-&lt;p&gt;1）获取微信API借口
-看微信|公众平台开发者文档中的接入指南
-2）下载API接口文件
+&lt;ol&gt;
+&lt;li&gt;获取微信API借口
+看微信|公众平台开发者文档中的接入指南&lt;/li&gt;
+&lt;li&gt;下载API接口文件
 看微信|公众平台开发者文档
-解压--&amp;gt;wx_sample.php
-3）复制wx_sample.php到项目（第一层目录），并更名为api.ph
+解压--&amp;gt;wx_sample.php&lt;/li&gt;
+&lt;li&gt;复制wx_sample.php到项目
       
     
     </summary>
     
     
+      <category term="接口" scheme="http://haojen.github.io/tags/%E6%8E%A5%E5%8F%A3/"/>
+    
+      <category term="微信" scheme="http://haojen.github.io/tags/%E5%BE%AE%E4%BF%A1/"/>
+    
   </entry>
   
   <entry>
     <title>微信平台开发</title>
-    <link href="http://haojen.github.io/2018/12/22/%E5%BE%AE%E4%BF%A1%E5%B9%B3%E5%8F%B0%E5%BC%80%E5%8F%91/"/>
-    <id>http://haojen.github.io/2018/12/22/微信平台开发/</id>
-    <published>2018-12-22T02:28:47.037Z</published>
-    <updated>2018-12-22T02:28:47.037Z</updated>
+    <link href="http://haojen.github.io/2018/12/23/181223-%E5%BE%AE%E4%BF%A1%E5%B9%B3%E5%8F%B0%E5%BC%80%E5%8F%91/"/>
+    <id>http://haojen.github.io/2018/12/23/181223-微信平台开发/</id>
+    <published>2018-12-22T16:00:00.000Z</published>
+    <updated>2019-02-13T04:53:13.022Z</updated>
     
-    <content type="html"><![CDATA[<h2>开发者模式</h2><h3>微信公众平台账号</h3><p>订阅号：个人版用户，每天可以发一条消息服务号：企业版用户，每月可以群发四条消息</p><h3>在线虚拟逐句或服务器（SAE云引擎、BAE云引擎、阿里云服务器）</h3><h3>Tortoise（SVN客户端软件）</h3><h2>开发者模式原理</h2><p>&lt;img src='../../../../images/post_img/wechat_yuanli.png'&gt;</p><h2>自定义云服务器（BAE）</h2><ol><li>自定义云平台http://bce.baidu.com/index.html</li><li>登录BAE云引擎产品服务---&gt; 应用引擎BAE</li><li>单击添加部署按钮名称：任意都可以类型：根据项目需要（我这儿选择的PHP-web）（一定不要选错)域名：自定义执行单元个数：1执行单元套餐：256其他的默认确认无误后，点击确定第二次确认无误后，点击确认单击管理控制台</li><li>访问我们的域名域名/index.php</li><li>管理BAE云服务器a. 新建文件夹，并进入b. 鼠标右键svn检出操作百度云里复制SVN/GIT地址然后根据提示输入用户名和密码（百度的账户和密码）</li><li>可以修改index.php文件鼠标右键通过svn提交代码到百度云配置自动发布：百度云只能够-&gt;配置文件-&gt;发布设置-&gt;开启自动发布</li></ol>]]></content>
+    <content type="html"><![CDATA[<h2>开发者模式</h2><h3>微信公众平台账号</h3><p>订阅号：个人版用户，每天可以发一条消息服务号：企业版用户，每月可以群发四条消息</p><h3>在线虚拟逐句或服务器（SAE云引擎、BAE云引擎、阿里云服务器）</h3><h3>Tortoise（SVN客户端软件）</h3><h2>自定义云服务器（BAE）</h2><ol><li>自定义云平台http://bce.baidu.com/index.html</li><li>登录BAE云引擎产品服务---&gt; 应用引擎BAE</li><li>单击添加部署按钮名称：任意都可以类型：根据项目需要（我这儿选择的PHP-web）（一定不要选错)域名：自定义执行单元个数：1执行单元套餐：256其他的默认确认无误后，点击确定第二次确认无误后，点击确认单击管理控制台</li><li>访问我们的域名域名/index.php</li><li>管理BAE云服务器a. 新建文件夹，并进入b. 鼠标右键svn检出操作百度云里复制SVN/GIT地址然后根据提示输入用户名和密码（百度的账户和密码）</li><li>可以修改index.php文件鼠标右键通过svn提交代码到百度云配置自动发布：百度云只能够-&gt;配置文件-&gt;发布设置-&gt;开启自动发布</li></ol>]]></content>
     
     <summary type="html">
     
@@ -207,14 +343,73 @@
     </summary>
     
     
+      <category term="微信" scheme="http://haojen.github.io/tags/%E5%BE%AE%E4%BF%A1/"/>
+    
+      <category term="公众号" scheme="http://haojen.github.io/tags/%E5%85%AC%E4%BC%97%E5%8F%B7/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>git使用</title>
+    <link href="http://haojen.github.io/2018/12/22/181222-git/"/>
+    <id>http://haojen.github.io/2018/12/22/181222-git/</id>
+    <published>2018-12-21T16:00:00.000Z</published>
+    <updated>2019-02-13T04:50:39.708Z</updated>
+    
+    <content type="html"><![CDATA[<p>mac系统自带有git，我们只需要打开终端，然后输入git系统会有提示，根据提示完成后面的操作，就可以使用git了</p><h2>git常用语法</h2><h3>创建目录</h3><p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir demo</span><br></pre></td></tr></table></figure></p><h3>文件创建与编辑</h3><p>1.创建一个文件<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">touch file</span><br></pre></td></tr></table></figure></p><p>2.创建一个文件并进入一般模式<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi 文件名</span><br></pre></td></tr></table></figure></p><p>也可以vi一个已经存在的文件，进入一般模式3.一般模式进入插入模式 按i键4.插入模式进入一般模式  按esc5.一般模式进入命令模式 依次按 :wq6.查看文件内容<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat 文件名</span><br></pre></td></tr></table></figure></p><h3>初始化一个git仓库</h3><p>1.远程仓库地址<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> 远程仓库地址</span><br></pre></td></tr></table></figure></p><p>2.在本地文件下<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br></pre></td></tr></table></figure></p><h3>git状态</h3><p>git的状态分为三种：工作区-&gt;暂存区(索引区)-&gt;版本区</p><p>1.查看状态<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git status</span><br></pre></td></tr></table></figure></p><p>当文件名是红色时---工作区当文件名是绿色时---暂存区不显示----版本区</p><p>2.工作区-&gt;️暂存区<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add 文件名</span><br></pre></td></tr></table></figure></p><p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br></pre></td></tr></table></figure></p><p>.表示将全部工作区的文件移入暂存区</p><p>3.暂存区-&gt;版本区<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit -m <span class="string">"file1提交"</span></span><br></pre></td></tr></table></figure></p><p>第一次提交的时候必须写-m和引号中的内容</p><p>4.暂存区-&gt;工作区<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git rm --cache 文件名</span><br></pre></td></tr></table></figure></p><h3>提交远程仓库</h3><ol><li>查看本地仓库是否已关联远程仓库<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote</span><br></pre></td></tr></table></figure></li></ol><p>2.若没有远程仓库或想提交另一个远程仓库，为当前仓库添加远程仓库<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote add 远程仓库别名 url（远程地址）</span><br></pre></td></tr></table></figure></p><p>3.把文件提交到远程仓库<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push [-u/-f] 远程仓库 本地仓库</span><br></pre></td></tr></table></figure></p><p>[-u/-f]第一次提交时，必须写上其中一个</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;mac系统自带有git，我们只需要打开终端，然后输入git系统会有提示，根据提示完成后面的操作，就可以使用git了&lt;/p&gt;
+&lt;h2&gt;git常用语法&lt;/h2&gt;
+&lt;h3&gt;创建目录&lt;/h3&gt;
+&lt;p&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr
+      
+    
+    </summary>
+    
+    
+      <category term="git" scheme="http://haojen.github.io/tags/git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>两栏布局-右侧自适应</title>
+    <link href="http://haojen.github.io/2018/12/21/181221-%E4%B8%A4%E6%A0%8F%E5%B8%83%E5%B1%80/"/>
+    <id>http://haojen.github.io/2018/12/21/181221-两栏布局/</id>
+    <published>2018-12-20T16:00:00.000Z</published>
+    <updated>2019-02-13T04:51:11.987Z</updated>
+    
+    <content type="html"><![CDATA[<p>利用简单的css实现左侧盒子200px定宽，右侧盒子自适应分析：如果想让两个div在一行内展示，则需要改变div默认的display：block实现方式：float，position，flex，table, border</p><h2>结构布局</h2><p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=<span class="string">"content"</span>&gt;</span><br><span class="line">    &lt;div class=<span class="string">"left"</span>&gt;1111111&lt;/div&gt;</span><br><span class="line">    &lt;div class=<span class="string">"right"</span>&gt;2222&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></p><h2>基础样式</h2><p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">* &#123;</span><br><span class="line">    padding: 0;</span><br><span class="line">    margin: 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.left &#123;</span><br><span class="line">    background-color: red;</span><br><span class="line">    width: 200px;</span><br><span class="line">    height: 300px;</span><br><span class="line">&#125;</span><br><span class="line">.right &#123;</span><br><span class="line">    background-color: <span class="comment">#000;</span></span><br><span class="line">    height: 300px;</span><br><span class="line">    color: <span class="comment">#fff;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><h2>左侧固定左侧自适应</h2><h3>方法一：浮动（float)</h3><p>思路：给left添加float:left样式，使其脱离标准文档流，后面元素就可以占据本来left所占据的行，再给右侧的div设置margin-right:200px使两个盒子不重叠。<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">.left &#123;</span><br><span class="line">    <span class="built_in">float</span>: left;</span><br><span class="line">&#125;</span><br><span class="line">.right &#123;</span><br><span class="line">    margin-left: 200px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><h3>方法二:浮动和overflow</h3><p>思路：设置float属性（不为none）时，会创建BFC，再设置overflow（不为visible）时也会产生BFC<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">.left &#123;</span><br><span class="line">     <span class="built_in">float</span>: left;</span><br><span class="line"> &#125;</span><br><span class="line">.right &#123;</span><br><span class="line">    overflow: auto;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><h3>方法三；positon:absolute或者fixed</h3><p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">left &#123;</span><br><span class="line">    position: absolute;</span><br><span class="line">    /*position: fixed;*/</span><br><span class="line">&#125;</span><br><span class="line">.right &#123;</span><br><span class="line">    margin-left: 200px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><h3>方法四；display:flex</h3><p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">.content &#123;</span><br><span class="line">    display: flex;</span><br><span class="line">&#125;</span><br><span class="line">.right &#123;</span><br><span class="line">    flex: 1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><h3>方法五；dispaly:table</h3><p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">.content &#123;</span><br><span class="line">    display: table;</span><br><span class="line">    width: 100%;</span><br><span class="line">&#125;</span><br><span class="line">.left,.right &#123;</span><br><span class="line">    display: table-cell;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><h3>方法六；box-sizing</h3><p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">.content &#123;</span><br><span class="line">    box-sizing: content-box;</span><br><span class="line">    font-size: 0;</span><br><span class="line">&#125;</span><br><span class="line">.left,</span><br><span class="line">.right &#123;</span><br><span class="line">    display: inline-block;</span><br><span class="line">    vertical-align: top;</span><br><span class="line">    font-size: 14px;</span><br><span class="line">    box-sizing: border-box;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.right &#123;</span><br><span class="line">    width: calc(100% - 200px);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><h2>总结</h2><p>这个问题大的整体思路就是，div是块级元素，当我们不设置它的宽度时，它的宽度就是一行，换句话说此时它的宽度就会随着浏览器的窗口大小而改变，那么我们需要做的工作就是把左侧盒子设置固定的宽度，并让这两个盒子在一行内显示</p><h2>注解</h2><p>&lt;span style=&quot;color:red&quot;&gt;box-sizing&lt;/span&gt;</p><p>&lt;style&gt;table th:first-of-type{width:100px}&lt;/style&gt;</p><table><thead><tr><th>值</th><th>描述</th></tr></thead><tbody><tr><td>content-box</td><td>这是由 CSS2.1 规定的宽度高度行为。&lt;/br&gt;宽度和高度分别应用到元素的内容框.&lt;br&gt;在宽度和高度之外绘制元素的内边距和边框。</td></tr><tr><td>boxder-box</td><td>为元素设定的宽度和高度决定了元素的边框盒。&lt;/br&gt;就是说，为元素指定的任何内边距和边框都将在已设定的宽度和高度内进行绘制。&lt;/br&gt;通过从已设定的宽度和高度分别减去边框和内边距才能得到内容的</td></tr><tr><td>inherit</td><td>规定应从父元素继承 box-sizing 属性的值。</td></tr></tbody></table><p>&lt;span style=&quot;color:red&quot;&gt;标准文档流：&lt;/span&gt;一种默认状态，文档流指的是元素排版布局过程中，元素会自动从左往右，从上往下的流式排列。并最终窗体自上而下分成一行行，并在每行中从左至右的顺序排放元素。</p><p>&lt;span style=&quot;color:red&quot;&gt;BFC：&lt;/span&gt;块级格式化上下文 (Block Fromatting Context)是按照块级盒子布局的。W3C对BFC的定义如下：浮动元素和绝对定位元素，非块级盒子的块级容器（例如 inline-blocks, table-cells, 和 table-captions），以及overflow值不为“visiable”的块级盒子，都会为他们的内容创建新的BFC（块级格式上下文）。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;利用简单的css实现左侧盒子200px定宽，右侧盒子自适应
+分析：如果想让两个div在一行内展示，则需要改变div默认的display：block
+实现方式：float，position，flex，table, border&lt;/p&gt;
+&lt;h2&gt;结构布局&lt;/h2&gt;
+&lt;p&gt;&lt;fi
+      
+    
+    </summary>
+    
+    
+      <category term="html" scheme="http://haojen.github.io/tags/html/"/>
+    
+      <category term="两栏布局" scheme="http://haojen.github.io/tags/%E4%B8%A4%E6%A0%8F%E5%B8%83%E5%B1%80/"/>
+    
   </entry>
   
   <entry>
     <title>vue强制刷新组件</title>
-    <link href="http://haojen.github.io/2018/12/20/vue%E5%BC%BA%E5%88%B6%E5%88%B7%E6%96%B0%E7%BB%84%E4%BB%B6/"/>
-    <id>http://haojen.github.io/2018/12/20/vue强制刷新组件/</id>
-    <published>2018-12-20T10:34:14.398Z</published>
-    <updated>2018-12-20T10:34:14.399Z</updated>
+    <link href="http://haojen.github.io/2018/12/20/181220vue%E5%BC%BA%E5%88%B6%E5%88%B7%E6%96%B0%E7%BB%84%E4%BB%B6/"/>
+    <id>http://haojen.github.io/2018/12/20/181220vue强制刷新组件/</id>
+    <published>2018-12-19T16:00:00.000Z</published>
+    <updated>2019-02-14T07:24:42.555Z</updated>
     
     <content type="html"><![CDATA[<h2>问题</h2><p>分页组件用过的elemntUi中的el-pagination，大体是三层嵌套的关系，第一层页面 &lt;- 子组件 &lt;- el-pagination最近修改我们项目的样式，和调整一些小bug，然后遇到了一个按条件查询，分页组件的currentPage无法实时刷新的问题，比如我按'全部'这个条件查询的时候，此时我已经切换到了第四页的内容，然后我切换到按'红包'这个条件查询，查询的结果是第一页的了，在方法中我已经把currentPage = 1了，但是分页组件的内容仍然没有发生变化，开始以为我在第二层中加入了watch监听currentPage的变化，但是分页组件仍然没有变化，多次尝试后，我发现当子组件被强制刷新后，currentPage会等于1，于是我就想到了强制刷新的方法</p><h2>第一层分页组件组件</h2><p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ve-pagination :total=<span class="string">"total"</span></span><br><span class="line">               :pageSize=<span class="string">"searchParams.pageSize"</span></span><br><span class="line">               v-if=<span class="string">"iscurrentPage"</span></span><br><span class="line">               :currentPage=<span class="string">"currentPage"</span></span><br><span class="line">               @changePage=<span class="string">"changePage"</span>/&gt;</span><br></pre></td></tr></table></figure></p><p>iscurrentPage:我们用于改变它的值实现强制刷新</p><h2>强制刷新</h2><h3>强制刷新方法</h3><p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">currentPageReset</span></span> () &#123;</span><br><span class="line">    this.iscurrentPage = <span class="literal">false</span></span><br><span class="line">    this.<span class="variable">$nextTick</span>(() =&gt; &#123;</span><br><span class="line">      this.iscurrentPage = <span class="literal">true</span></span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure></p><h3>监听下拉框值的变化</h3><p>我这儿监听的是一个对象中具体某一个值的变化<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">watch: &#123;</span><br><span class="line">  <span class="string">'searchParams.type'</span>: &#123;</span><br><span class="line">    handler (val, oldValue) &#123;</span><br><span class="line">      <span class="keyword">if</span> (val === <span class="string">'RECHARGE'</span>) &#123;</span><br><span class="line">        this.searchLabel = <span class="string">'很抱歉，没有搜索到账户充值的结果'</span></span><br><span class="line">        this.currentPageReset()</span><br><span class="line">      &#125; <span class="keyword">else</span> <span class="keyword">if</span> (val === <span class="string">'RED_PACK'</span>) &#123;</span><br><span class="line">        this.searchLabel = <span class="string">'很抱歉，没有搜索到红包消费的结果'</span></span><br><span class="line">        this.currentPageReset()</span><br><span class="line">      &#125; <span class="keyword">else</span> <span class="keyword">if</span> (val === <span class="string">'RE_RED_PACK'</span>) &#123;</span><br><span class="line">        this.searchLabel = <span class="string">'很抱歉，没有搜索到红包返回的结果'</span></span><br><span class="line">        this.currentPageReset()</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        this.searchLabel = <span class="string">'暂无数据'</span></span><br><span class="line">        this.currentPageReset()</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    deep: <span class="literal">true</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>]]></content>
     
@@ -230,38 +425,52 @@
     </summary>
     
     
+      <category term="Vue" scheme="http://haojen.github.io/tags/Vue/"/>
+    
+      <category term="组件" scheme="http://haojen.github.io/tags/%E7%BB%84%E4%BB%B6/"/>
+    
   </entry>
   
   <entry>
     <title>阿里图标库的使用</title>
-    <link href="http://haojen.github.io/2018/12/19/%E9%98%BF%E9%87%8C%E5%9B%BE%E6%A0%87%E5%BA%93%E4%BD%BF%E7%94%A8/"/>
-    <id>http://haojen.github.io/2018/12/19/阿里图标库使用/</id>
-    <published>2018-12-19T07:00:10.315Z</published>
-    <updated>2018-12-19T07:00:10.316Z</updated>
+    <link href="http://haojen.github.io/2018/12/19/181219-%E9%98%BF%E9%87%8C%E5%9B%BE%E6%A0%87%E5%BA%93%E4%BD%BF%E7%94%A8/"/>
+    <id>http://haojen.github.io/2018/12/19/181219-阿里图标库使用/</id>
+    <published>2018-12-18T16:00:00.000Z</published>
+    <updated>2019-02-13T03:52:54.636Z</updated>
     
-    <content type="html"><![CDATA[<p>场景：我是以及再一个项目组中了，然后我要在伪元素中使用项目组中的图标</p><p>找到目标图标，鼠标置于改图标之上，点击获取代码</p><p>将这个代码做一定的修改，例：  --&gt;  \e6b0</p><p>将\e6b0 放于 伪元素的content:'' 的引号中</p><p>并在样式中加入font-family:'iconfont'</p>]]></content>
+    <content type="html"><![CDATA[<p>一个项目中，不可避免要用到很多的图标，完全自己做是比较麻烦的，此时我们就可以充分利用网上图标库---如：阿里图标库</p><h2>阿里图标库</h2><ol><li>创建一个自己的项目</li><li>搜索你需要的图标，</li><li>然后加入购物车，点击购物车，添加到自己的项目</li><li>回到你需要项目图标页面（图标管理-&gt;我的项目）</li><li>界面会提醒你更新代码，点击更新，然后点击复制代码</li></ol><h2>类名使用</h2><ol><li>回到我的项目页面 点击 Font class</li><li>在需要的地方进行使用<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;i class=<span class="string">'iconfont icon-Heartarrow'</span>&gt;</span><br></pre></td></tr></table></figure></li></ol><ul><li>iconfont 表示你是用的图标</li><li>icon-Heartarrow 表示你使用的具体图标是哪一个（回到图标库中的你的项目，鼠标放在你需要的图标上方，点击复制代码）</li></ul><h2>伪类使用</h2><p>拿现有一个的项目距离，我们的项目（vue完整项目）</p><ol><li><p>src-&gt;assets-&gt;font-&gt;iconfont.scss</p></li><li><p>回到项目页，点击 Unicode</p></li><li><p>点击复制代码，把复制内容放于 iconfont.scss<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">@font-face &#123;</span><br><span class="line">font-family: <span class="string">'iconfont'</span>;  /* project id 1017971 */</span><br><span class="line">    src: url(<span class="string">'//at.alicdn.com/t/font_1017971_lr076u6w32l.eot'</span>);</span><br><span class="line">    src: url(<span class="string">'//at.alicdn.com/t/font_1017971_lr076u6w32l.eot?#iefix'</span>) format(<span class="string">'embedded-opentype'</span>),</span><br><span class="line">    url(<span class="string">'//at.alicdn.com/t/font_1017971_lr076u6w32l.woff2'</span>) format(<span class="string">'woff2'</span>),</span><br><span class="line">    url(<span class="string">'//at.alicdn.com/t/font_1017971_lr076u6w32l.woff'</span>) format(<span class="string">'woff'</span>),</span><br><span class="line">    url(<span class="string">'//at.alicdn.com/t/font_1017971_lr076u6w32l.ttf'</span>) format(<span class="string">'truetype'</span>),</span><br><span class="line">    url(<span class="string">'//at.alicdn.com/t/font_1017971_lr076u6w32l.svg#iconfont'</span>) format(<span class="string">'svg'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p></li><li><p>在src-&gt;app.js中引用<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import <span class="string">'assets/fonts/iconfont.scss'</span></span><br></pre></td></tr></table></figure></p></li><li><p>找到目标图标，鼠标置于改图标之上，点击获取代码</p></li><li><p>将这个代码做一定的修改，例：  --&gt;  \e6b0</p></li><li><p>将\e6b0 放于 伪元素的content:'' 的引号中</p></li><li><p>并在样式中加入font-family:'iconfont'</p></li></ol>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;场景：我是以及再一个项目组中了，然后我要在伪元素中使用项目组中的图标&lt;/p&gt;
-&lt;p&gt;找到目标图标，鼠标置于改图标之上，点击获取代码&lt;/p&gt;
-&lt;p&gt;将这个代码做一定的修改，例：  --&amp;gt;  \e6b0&lt;/p&gt;
-&lt;p&gt;将\e6b0 放于 伪元素的content:&#39;&#39; 的
+        &lt;p&gt;一个项目中，不可避免要用到很多的图标，完全自己做是比较麻烦的，此时我们就可以充分利用网上图标库---如：阿里图标库&lt;/p&gt;
+&lt;h2&gt;阿里图标库&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;创建一个自己的项目&lt;/li&gt;
+&lt;li&gt;搜索你需要的图标，&lt;/li&gt;
+&lt;li&gt;然后加入购物车，点击购物车
       
     
     </summary>
     
     
+      <category term="组件" scheme="http://haojen.github.io/tags/%E7%BB%84%E4%BB%B6/"/>
+    
+      <category term="阿里图标库" scheme="http://haojen.github.io/tags/%E9%98%BF%E9%87%8C%E5%9B%BE%E6%A0%87%E5%BA%93/"/>
+    
+      <category term="类名" scheme="http://haojen.github.io/tags/%E7%B1%BB%E5%90%8D/"/>
+    
+      <category term="伪类" scheme="http://haojen.github.io/tags/%E4%BC%AA%E7%B1%BB/"/>
+    
   </entry>
   
   <entry>
     <title>git提交代码的步骤</title>
-    <link href="http://haojen.github.io/2018/12/19/git%E6%8F%90%E4%BA%A4%E4%BB%A3%E7%A0%81%E7%9A%84%E6%AD%A5%E9%AA%A4/"/>
-    <id>http://haojen.github.io/2018/12/19/git提交代码的步骤/</id>
-    <published>2018-12-19T06:45:49.223Z</published>
-    <updated>2018-12-19T06:45:49.224Z</updated>
+    <link href="http://haojen.github.io/2018/12/18/181218-git%E6%8F%90%E4%BA%A4%E4%BB%A3%E7%A0%81/"/>
+    <id>http://haojen.github.io/2018/12/18/181218-git提交代码/</id>
+    <published>2018-12-17T16:00:00.000Z</published>
+    <updated>2019-02-13T03:21:23.271Z</updated>
     
     <content type="html"><![CDATA[<p>场景：现在我本地有两个分支，master和cq两个分支master分支主要用于pull代码和push代码，cq分支主要用于修改代码</p><h2>查看本地文件的状态</h2><p>git status</p><h2>将代码从工作区提交到缓存区</h2><p>git add .. 表示提交全部修改的文件到缓存区</p><h2>将文件从缓存区提交到版本去</h2><p>git commit -m 'ui''' 中的内容表示你这次修改的是什么，或者修改的目的是什么</p><h2>切换到master分支</h2><p>git checkout master</p><h2>获取远程上的最新代码</h2><p>git pull origin master提交前，一定要pull一下，否则将不能提交或者覆盖掉别人修改的代码origin 表示远程仓库名master 表示远程分支名</p><h2>合并本地的cq和master分支</h2><p>git merge cq</p><h2>将现在master分支的代码提交到远程master分支</h2><p>git push origin master</p><h2>冲突处理</h2><p>git grep '&lt;&lt;&lt;&lt;&lt;'找到冲突文件，修改掉冲突，再add、commit、push一下就可以了</p>]]></content>
     
@@ -280,40 +489,20 @@ master分支主要用于pull代码和push代码，cq分支主要用于修改代�
     </summary>
     
     
-  </entry>
-  
-  <entry>
-    <title>vuex</title>
-    <link href="http://haojen.github.io/2018/12/09/vuex/"/>
-    <id>http://haojen.github.io/2018/12/09/vuex/</id>
-    <published>2018-12-09T09:39:59.256Z</published>
-    <updated>2018-12-09T09:39:59.256Z</updated>
+      <category term="git" scheme="http://haojen.github.io/tags/git/"/>
     
-    <content type="html"><![CDATA[<p>非父子和非兄弟组件传值</p><h2>配置</h2><p>&lt;ol&gt;&lt;li&gt;src目录下创建一个vuex的文件夹&lt;/li&gt;&lt;li&gt;vuex 文件夹里面创建一个store.js&lt;/li&gt;&lt;li&gt;安装vuexnpm install vuex --save&lt;/li&gt;&lt;li&gt;store.js里面引入vue 引入vuex 并且use<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">import Vue from <span class="string">'vue'</span></span><br><span class="line">import Vuex from <span class="string">'vuex'</span></span><br><span class="line"></span><br><span class="line">Vue.use(Vuex)</span><br><span class="line">/* state在vuex中用于存储数据 */</span><br><span class="line">var state=&#123;</span><br><span class="line">    count:1</span><br><span class="line">&#125;</span><br><span class="line">/* state在vuex中用于存储数据 */</span><br><span class="line">var mutation=&#123;</span><br><span class="line">    <span class="function"><span class="title">inCount</span></span>()&#123;</span><br><span class="line">         ++state.count;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const store = new Vuex.Store(&#123;</span><br><span class="line">    state,</span><br><span class="line">    mutations</span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">export</span> default store</span><br></pre></td></tr></table></figure></p><p>&lt;ol&gt;</p><h2>组件中使用</h2><p>&lt;ol&gt;&lt;li&gt;引入store<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import store from <span class="string">'../vuex/store.js'</span></span><br></pre></td></tr></table></figure></p><p>&lt;/li&gt;&lt;li&gt;注册<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> default &#123;</span><br><span class="line">    <span class="function"><span class="title">data</span></span>()&#123;<span class="built_in">return</span>&#123;&#125;&#125;,</span><br><span class="line">    store,</span><br><span class="line">    methods:&#123;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p>&lt;/li&gt;&lt;li&gt;获取store中的数据<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">this.<span class="variable">$store</span>.state.数据</span><br></pre></td></tr></table></figure></p><p>&lt;/li&gt;&lt;li&gt;触发mutation中的方法<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">this.commit(<span class="string">'inCount'</span>)</span><br></pre></td></tr></table></figure></p><p>&lt;/li&gt;&lt;/ol&gt;</p>]]></content>
+      <category term="分支" scheme="http://haojen.github.io/tags/%E5%88%86%E6%94%AF/"/>
     
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;非父子和非兄弟组件传值&lt;/p&gt;
-&lt;h2&gt;配置&lt;/h2&gt;
-&lt;p&gt;&amp;lt;ol&amp;gt;
-&amp;lt;li&amp;gt;src目录下创建一个vuex的文件夹&amp;lt;/li&amp;gt;
-&amp;lt;li&amp;gt;vuex 文件夹里面创建一个store.js&amp;lt;/li&amp;gt;
-&amp;lt;li&amp;gt;安
-      
-    
-    </summary>
-    
+      <category term="代码提交" scheme="http://haojen.github.io/tags/%E4%BB%A3%E7%A0%81%E6%8F%90%E4%BA%A4/"/>
     
   </entry>
   
   <entry>
     <title>vue路由</title>
-    <link href="http://haojen.github.io/2018/12/09/vue%E8%B7%AF%E7%94%B1/"/>
-    <id>http://haojen.github.io/2018/12/09/vue路由/</id>
-    <published>2018-12-09T08:43:00.721Z</published>
-    <updated>2018-12-09T08:43:00.721Z</updated>
+    <link href="http://haojen.github.io/2018/12/10/181210-vue%E8%B7%AF%E7%94%B1/"/>
+    <id>http://haojen.github.io/2018/12/10/181210-vue路由/</id>
+    <published>2018-12-09T16:00:00.000Z</published>
+    <updated>2019-02-13T03:17:30.236Z</updated>
     
     <content type="html"><![CDATA[<h2>安装</h2><p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install vue-router --save</span><br><span class="line">cnpm install vue-router --save</span><br></pre></td></tr></table></figure></p><h2>引入并use</h2><pre><code>import VueRouter from 'vue-router'Vue.use(VueRouter)</code></pre><h2>配置路由</h2><p>1 . 创建组件 引入组件2 . 定义路由 （建议复制js）<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">const routes = &#123;</span><br><span class="line">    &#123;path:<span class="string">'/foo'</span>,componet:Foo&#125;</span><br><span class="line">    &#123;path:<span class="string">'/bar'</span>,componet:BAr&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p>3 . 实例花VueRouter<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cosnt router = new VueRouter(&#123;</span><br><span class="line">    routes //(缩写) 相当于routes:routes</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p><p>4 . 挂载<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">new Vue(&#123;</span><br><span class="line">    el:<span class="string">'#app'</span>,</span><br><span class="line">    router,</span><br><span class="line"></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p><p>5 . 使用</p><h2>动态路由</h2><h3>传值</h3><p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">const routes = &#123;</span><br><span class="line">    &#123;path:<span class="string">'/foo/:aid'</span>,componet:Foo&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;router-link :to=<span class="string">"'/foo/'+key"</span>&gt;&#123;&#123;key&#125;&#125; -- &#123;&#123;item&#125;&#125;&lt;/router-link&gt;</span><br></pre></td></tr></table></figure></p><h3>获取</h3><p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">this.<span class="variable">$route</span>.params</span><br></pre></td></tr></table></figure></p><h2>路由get传值</h2><h3>传值</h3><p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;router-link :to=<span class="string">"'/foo?key='+key"</span>&gt;&#123;&#123;key&#125;&#125; -- &#123;&#123;item&#125;&#125;&lt;/router-link&gt;</span><br></pre></td></tr></table></figure></p><h3>获取</h3><p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">this.<span class="variable">$route</span>.query</span><br></pre></td></tr></table></figure></p><h2>编程式导航</h2><p>this.$router.push({path:'/content/495'})</p><h2>命名路由</h2><h3>配置路由</h3><p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">const routes = &#123;</span><br><span class="line">    &#123;path:<span class="string">'/news'</span>,componet:News,name:<span class="string">'news'</span>&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><h3>使用</h3><p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">this.router.push(&#123;name:<span class="string">'news'</span>&#125;)</span><br></pre></td></tr></table></figure></p><h2>history 模式</h2><p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// 实例化VueRouter时</span><br><span class="line">const router = new VueRouter(&#123;</span><br><span class="line">    mode:&apos;history&apos;,</span><br><span class="line">    routes</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p><h2>子路由</h2><p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">const routes = &#123;</span><br><span class="line"> &#123;</span><br><span class="line">    path:<span class="string">'/user'</span>,</span><br><span class="line">    componet:User,</span><br><span class="line">    name:<span class="string">'user'</span>,</span><br><span class="line">    children:[</span><br><span class="line">        &#123;path:<span class="string">'useradd'</span>,component:UserAdd&#125;</span><br><span class="line">    ]</span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>]]></content>
     
@@ -328,203 +517,69 @@ master分支主要用于pull代码和push代码，cq分支主要用于修改代�
     </summary>
     
     
-  </entry>
-  
-  <entry>
-    <title>vue项目</title>
-    <link href="http://haojen.github.io/2018/12/09/vue%E5%B0%8F%E7%9F%A5%E8%AF%86/"/>
-    <id>http://haojen.github.io/2018/12/09/vue小知识/</id>
-    <published>2018-12-09T01:20:59.564Z</published>
-    <updated>2018-12-09T01:20:59.564Z</updated>
+      <category term="Vue" scheme="http://haojen.github.io/tags/Vue/"/>
     
-    <content type="html"><![CDATA[<h2>组件</h2><p>&lt;ol&gt;&lt;li&gt;watch监听对象每个监听都是有handler的，也可以不写；监听对象时，必须写上deep<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">watch: &#123;</span><br><span class="line">  user: &#123; hander(newValue,oldValue) =&gt; &#123;</span><br><span class="line">        console.log(<span class="string">'user被修改了'</span>)</span><br><span class="line">    &#125;,</span><br><span class="line">    deep: <span class="literal">true</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p>&lt;/li&gt;&lt;li&gt;获取组件中data中的值： vm.name 或者 vm.$data.name&lt;/li&gt;&lt;li&gt;获取组件中data中的值： vm.name 或者 vm.$data.name &lt;/li&gt;&lt;li&gt;获取绑定的元素：vm.$el  设置样式：vm.$el.style.color = red &lt;/li&gt;&lt;li&gt;获取自定义属性：vm.$options.name &lt;/li&gt;&lt;li&gt;获取添加了ref属性的元素：vm.$refs.namebox &lt;/li&gt;&lt;li&gt;手动挂载vue实例：vue.$mount('#app') 或者 new Vue({}).$mount('#app') &lt;/li&gt;&lt;li&gt;挂载时调用某个函数获取某一个值：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">getValue () &#123; this.nextTick(function()&#123; console.log(this.$refs.input.value)&#125;)&#125;</span><br></pre></td></tr></table></figure></p><p>&lt;/li&gt;&lt;li&gt; 给data中的user对象新增age属性： this.$set(this.user,'age',22) &lt;/li&gt;&lt;li&gt; 删除data中的user对象age属性： this.$set(this.user,'age') &lt;/li&gt;&lt;li&gt; 缓存数据： localStorage.setItem('key',JSON.stringfify(this.list)) &lt;/li&gt;&lt;li&gt; 获取缓存数据： var list = JSON.parse(localStorage.getItem('list')) &lt;/li&gt;&lt;li&gt; 请求数据：1 . 安装vue-resource模块  记得加上--save2 . main.js引入 vue-resourceimport VueResource from 'vue-resouce'3 . Vue.use(VueRe souce)&lt;/li&gt;&lt;/ol&gt;</p><h2>html元素</h2><p>动态绑定类名：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;li v-for=<span class="string">"(item, key) in items"</span> :class=<span class="string">"&#123;'red':key===1&#125;"</span>&gt;&#123;&#123;item&#125;&#125;&lt;/li&gt;</span><br></pre></td></tr></table></figure></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2&gt;组件&lt;/h2&gt;
-&lt;p&gt;&amp;lt;ol&amp;gt;
-&amp;lt;li&amp;gt;watch监听对象
-每个监听都是有handler的，也可以不写；监听对象时，必须写上deep
-&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutt
-      
-    
-    </summary>
-    
+      <category term="路由" scheme="http://haojen.github.io/tags/%E8%B7%AF%E7%94%B1/"/>
     
   </entry>
   
   <entry>
     <title>vue组件传值</title>
-    <link href="http://haojen.github.io/2018/12/09/vue%E7%BB%84%E4%BB%B6%E4%BC%A0%E5%80%BC/"/>
-    <id>http://haojen.github.io/2018/12/09/vue组件传值/</id>
-    <published>2018-12-09T01:18:55.807Z</published>
-    <updated>2018-12-09T01:18:55.807Z</updated>
+    <link href="http://haojen.github.io/2018/12/09/181209-vue%E7%BB%84%E4%BB%B6%E4%BC%A0%E5%80%BC/"/>
+    <id>http://haojen.github.io/2018/12/09/181209-vue组件传值/</id>
+    <published>2018-12-08T16:00:00.000Z</published>
+    <updated>2019-02-14T07:24:42.563Z</updated>
     
-    <content type="html"><![CDATA[<h2>父组件给子组件传值：</h2><pre><code>1 . 父组件调用子组件的时候 绑定动态属性    &lt;v-head :title='title'&gt;&lt;/v-head&gt;    引号中的title表示父组件中的数据2 . 在子组件里面通过 props接受父组件传过来的数据    props:[&quot;title&quot;]3 . 也可以传方法和把整个父组件，方法和上面也一样</code></pre><h2>非父子组件给子组件传值(事件广播)：</h2><pre><code>1 . 新建一个js文件 然后引入vue 实例华vue 然后暴露这个实例    import Vue from 'vue'    var VueEvent = new Vue ()    export default VueEvent2 . 在广播的地方引入刚才定义好的实例    import VueEvent from '地址'3 . 通过VueEmit.$emit('名称','数据')4 . 在接受数据的地方通过    VueEmit.$on('名称',function(){})</code></pre><h2>父组件主动获取子组件的数据和方法</h2><pre><code>1 . 调用子组件的时候定义一个ref    &lt;v-head ref='head'&gt;&lt;/v-head&gt;2 . 在父组件里面通过    this.$refs.header.属性    this.$refs.header.方法</code></pre><h2>父组件主动获取子组件的值</h2><pre><code>this.$parent.header.属性this.$parent.header.方法</code></pre>]]></content>
+    <content type="html"><![CDATA[<h2>父组件给子组件传值：</h2><p>1 . 父组件调用子组件的时候 绑定动态属性&lt;v-head :title='title'&gt;&lt;/v-head&gt;引号中的title表示父组件中的数据2 . 在子组件里面通过 props接受父组件传过来的数据props:[&quot;title&quot;]3 . 也可以传方法和把整个父组件，方法和上面也一样</p><h2>非父子组件给子组件传值(事件广播)：</h2><p>1 . 新建一个js文件 然后引入vue 实例华vue 然后暴露这个实例import Vue from 'vue'var VueEvent = new Vue ()export default VueEvent2 . 在广播的地方引入刚才定义好的实例import VueEvent from '地址'3 . 通过VueEmit.$emit('名称','数据')4 . 在接受数据的地方通过VueEmit.$on('名称',function(){})</p><h2>父组件主动获取子组件的数据和方法</h2><p>1 . 调用子组件的时候定义一个ref&lt;v-head ref='head'&gt;&lt;/v-head&gt;2 . 在父组件里面通过this.$refs.header.属性this.$refs.header.方法</p><h2>父组件主动获取子组件的值</h2><p>this.$parent.header.属性this.$parent.header.方法</p>]]></content>
     
     <summary type="html">
     
       
       
         &lt;h2&gt;父组件给子组件传值：&lt;/h2&gt;
-&lt;pre&gt;&lt;code&gt;1 . 父组件调用子组件的时候 绑定动态属性
-    &amp;lt;v-head :title=&#39;title&#39;&amp;gt;&amp;lt;/v-head&amp;gt;
-    引号中的title表示父组件中的数据
-2 . 在子组件里面通过 p
+&lt;p&gt;1 . 父组件调用子组件的时候 绑定动态属性
+&amp;lt;v-head :title=&#39;title&#39;&amp;gt;&amp;lt;/v-head&amp;gt;
+引号中的title表示父组件中的数据
+2 . 在子组件里面通过 props接受父组件传过来的数据
+
       
     
     </summary>
     
     
+      <category term="Vue" scheme="http://haojen.github.io/tags/Vue/"/>
+    
+      <category term="组件" scheme="http://haojen.github.io/tags/%E7%BB%84%E4%BB%B6/"/>
+    
   </entry>
   
   <entry>
-    <title>搭建vue开发环境</title>
-    <link href="http://haojen.github.io/2018/12/08/vue%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA/"/>
-    <id>http://haojen.github.io/2018/12/08/vue项目搭建/</id>
-    <published>2018-12-08T01:05:24.265Z</published>
-    <updated>2018-12-08T01:05:24.265Z</updated>
+    <title>vue项目小知识</title>
+    <link href="http://haojen.github.io/2018/12/08/181208-vue%E5%B0%8F%E7%9F%A5%E8%AF%86/"/>
+    <id>http://haojen.github.io/2018/12/08/181208-vue小知识/</id>
+    <published>2018-12-07T16:00:00.000Z</published>
+    <updated>2019-02-13T03:16:53.045Z</updated>
     
-    <content type="html"><![CDATA[<p>1 . 必须安装nodejs2 . 搭vue开发环境，安装vue的脚手架工具  官方命令工具npm install --g vue-cli3 . 创建项目vue init weback vue-demo01cd vue-demo01cnpm install / npm installnpm run dev4 . 另外一种创建项目的方式vue init webpack-simple vue-demo02cd vue-demo02cnpm install / npm installnpm run dev</p><p>vue的模版里面 所有的内容要被一个根结点包含起来</p>]]></content>
+    <content type="html"><![CDATA[<h2>组件</h2><ol><li><p>watch监听对象每个监听都是有handler的，也可以不写；监听对象时，必须写上deep<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">watch: &#123;</span><br><span class="line">  user: &#123; hander(newValue,oldValue) =&gt; &#123;</span><br><span class="line">        console.log(<span class="string">'user被修改了'</span>)</span><br><span class="line">    &#125;,</span><br><span class="line">    deep: <span class="literal">true</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p></li><li><p>获取组件中data中的值： vm.name 或者 vm.$data.name&lt;/li&gt;</p></li><li><p>获取组件中data中的值： vm.name 或者 vm.$data.name &lt;/li&gt;</p></li><li><p>获取绑定的元素：vm.$el  设置样式：vm.$el.style.color = red &lt;/li&gt;</p></li><li><p>获取自定义属性：vm.$options.name &lt;/li&gt;</p></li><li><p>获取添加了ref属性的元素：vm.$refs.namebox &lt;/li&gt;</p></li><li><p>手动挂载vue实例：vue.$mount('#app') 或者 new Vue({}).$mount('#app') &lt;/li&gt;</p></li><li><p>挂载时调用某个函数获取某一个值：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">getValue () &#123; this.nextTick(function()&#123; console.log(this.$refs.input.value)&#125;)&#125;</span><br></pre></td></tr></table></figure></p></li><li><p>给data中的user对象新增age属性： this.$set(this.user,'age',22) &lt;/li&gt;</p></li><li><p>删除data中的user对象age属性： this.$set(this.user,'age') &lt;/li&gt;</p></li><li><p>缓存数据： localStorage.setItem('key',JSON.stringfify(this.list)) &lt;/li&gt;</p></li><li><p>获取缓存数据： var list = JSON.parse(localStorage.getItem('list')) &lt;/li&gt;</p></li><li><p>请求数据：</p><ol><li>安装vue-resource模块  记得加上--save</li><li>main.js引入 vue-resourceimport VueResource from 'vue-resouce'</li><li>Vue.use(VueRe souce)</li></ol></li></ol><h2>html元素</h2><p>动态绑定类名：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;li v-for=<span class="string">"(item, key) in items"</span> :class=<span class="string">"&#123;'red':key===1&#125;"</span>&gt;&#123;&#123;item&#125;&#125;&lt;/li&gt;</span><br></pre></td></tr></table></figure></p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;1 . 必须安装nodejs
-2 . 搭vue开发环境，安装vue的脚手架工具  官方命令工具
-npm install --g vue-cli
-3 . 创建项目
-vue init weback vue-demo01
-cd vue-demo01
-cnpm install / 
+        &lt;h2&gt;组件&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;watch监听对象
+每个监听都是有handler的，也可以不写；监听对象时，必须写上deep
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;s
       
     
     </summary>
     
     
-  </entry>
-  
-  <entry>
-    <title>易盾验证</title>
-    <link href="http://haojen.github.io/2018/12/06/%E6%98%93%E7%9B%BE%E9%AA%8C%E8%AF%81/"/>
-    <id>http://haojen.github.io/2018/12/06/易盾验证/</id>
-    <published>2018-12-06T09:07:59.308Z</published>
-    <updated>2018-12-06T09:07:59.308Z</updated>
+      <category term="Vue" scheme="http://haojen.github.io/tags/Vue/"/>
     
-    <content type="html"><![CDATA[<p>易盾是网易云旗下的一个产品验证码三种模式：float(发式)、embed(嵌入式)、popup(弹出式)</p><h2>兼容性</h2><p>IE7+、Chrome、Firefox、Safari、Opera、主流手机浏览器、iOS 及 Android上的内嵌Webview</p><h2>使用</h2><h3>开始使用</h3><p>引入初始化js<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=<span class="string">"//cstaticdun.126.net/load.min.js"</span>&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure></p><h3>调用初始化函数</h3><p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">initNECaptcha(config, onload, onerror)</span><br></pre></td></tr></table></figure></p><p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">// initNECaptcha为全局函数，可直接调用</span><br><span class="line">initNECaptcha(&#123;</span><br><span class="line">    // config对象，参数配置</span><br><span class="line">    captchaId: <span class="string">'从易盾申请的captchaId'</span>,</span><br><span class="line">    element: <span class="string">'#captcha'</span>,</span><br><span class="line">    mode: <span class="string">'float'</span>,</span><br><span class="line">    width: <span class="string">'320px'</span></span><br><span class="line">&#125;, <span class="keyword">function</span> (instance) &#123;</span><br><span class="line">    // 初始化成功后得到验证实例instance，可以调用实例的方法</span><br><span class="line">&#125;, <span class="keyword">function</span> (err) &#123;</span><br><span class="line">    // 初始化失败后触发该函数，err对象描述当前错误信息</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p><h2>参数配置</h2><p>这里指初始化时传入的config对象，即调用初始化函数initNECaptcha时传入的第一个参数。智能验证码设置参数有些不同，详见表格下方特别说明。</p><table><thead><tr><th>参数</th><th>参数类型</th><th>必填</th><th>默认</th><th>说明</th></tr></thead><tbody><tr><td>captchaId</td><td>string</td><td>是</td><td>无</td><td>验证码id</td></tr><tr><td>element</td><td>string</td><td>否</td><td>*</td><td>HTMLElement</td></tr><tr><td>mode</td><td>string</td><td>否</td><td>pc-&gt;float、移动端-&gt;popup</td><td>验证码模式</td></tr><tr><td>protocol</td><td>string</td><td>否</td><td>与永无网站的协议一致</td><td>验证码传输数据使用的网络协议，可选：http、https</td></tr><tr><td>width</td><td>number</td><td>否</td><td>auto</td><td>宽度</td></tr><tr><td>lang</td><td>string</td><td>否</td><td>zh-CN</td><td>验证码语言选项。支持&quot;zh-CN&quot;、&quot;en&quot;，即简体中文和英文</td></tr><tr><td>onReady</td><td>function</td><td>否</td><td>无</td><td>NECaptcha所有工作准备就绪，用户可以使用验证码时触发该回调。具体使用见完整示例</td></tr><tr><td>onVertify</td><td>function</td><td>否</td><td>无</td><td>验证码验证结束回调函数。具体使用见完整示例</td></tr></tbody></table><h2>实例方法</h2><p>这里指initNECaptcha初始化成功，onload触发时传入的实例的方法。refresh：刷新验证码，获取新的验证信息destroy：销毁当前实例popUp：当验证码是常规验证码并且mode为&quot;popup&quot;时，可调用该实例方法弹出验证码进行验证<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">initNECaptcha(config, <span class="keyword">function</span> onload (instance) &#123;</span><br><span class="line">    // 可在此处调用实例方法</span><br><span class="line">&#125;, onerror)</span><br></pre></td></tr></table></figure></p><h3>form表单</h3><p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;form action=<span class="string">"/login"</span> method=<span class="string">"post"</span>&gt;</span><br><span class="line">   &lt;input  <span class="built_in">type</span>=<span class="string">"text"</span> name=<span class="string">"username"</span> placeholder=<span class="string">"用户名"</span>&gt;</span><br><span class="line">   &lt;input  <span class="built_in">type</span>=<span class="string">"password"</span> name=<span class="string">"password"</span> placeholder=<span class="string">"密码"</span>&gt;</span><br><span class="line">   &lt;input  <span class="built_in">type</span>=<span class="string">"hidden"</span> name=<span class="string">"captchaId"</span> value=<span class="string">"从易盾申请的captchaId"</span>&gt;</span><br><span class="line">   &lt;div id=<span class="string">"captcha"</span>&gt;&lt;/div&gt; &lt;!-- 验证码容器元素 --&gt;</span><br><span class="line">   &lt;button <span class="built_in">type</span>=<span class="string">"submit"</span>&gt;登录&lt;/button&gt;</span><br><span class="line">&lt;/form&gt;</span><br><span class="line">&lt;script src=<span class="string">"//cstaticdun.126.net/load.min.js"</span>&gt;&lt;/script&gt;&lt;!-- 初始化JS --&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    initNECaptcha(&#123;</span><br><span class="line">      captchaId: <span class="string">'从易盾申请的captchaId'</span>,</span><br><span class="line">      element: <span class="string">'#captcha'</span>,</span><br><span class="line">      mode: <span class="string">'float'</span>,</span><br><span class="line">      width: 320</span><br><span class="line">    &#125;, <span class="keyword">function</span> onload (instance) &#123;</span><br><span class="line">      // 初始化成功后，用户输入对应用户名和密码，以及完成验证后，直接点击登录按钮即可</span><br><span class="line">    &#125;, <span class="keyword">function</span> onerror (err) &#123;</span><br><span class="line">      // 验证码初始化失败处理逻辑，例如：提示用户点击按钮重新初始化</span><br><span class="line">    &#125;)</span><br><span class="line">&lt;script&gt;</span><br></pre></td></tr></table></figure></p><h3>onVerify</h3><p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=<span class="string">"form-container"</span>&gt;</span><br><span class="line">    &lt;input  <span class="built_in">type</span>=<span class="string">"text"</span> name=<span class="string">"username"</span> id=<span class="string">"username"</span> placeholder=<span class="string">"用户名"</span>&gt;</span><br><span class="line">    &lt;input  <span class="built_in">type</span>=<span class="string">"password"</span> name=<span class="string">"password"</span> id=<span class="string">"password"</span> placeholder=<span class="string">"密码"</span>&gt;</span><br><span class="line">    &lt;div id=<span class="string">"captcha"</span>&gt;&lt;/div&gt; &lt;!-- 验证码容器元素 --&gt;</span><br><span class="line">    登录</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;script src=<span class="string">"//cstaticdun.126.net/load.min.js"</span>&gt;&lt;/script&gt;&lt;!-- 初始化JS --&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    initNECaptcha(&#123;</span><br><span class="line">      captchaId: <span class="string">'从易盾申请的captchaId'</span>,</span><br><span class="line">      element: <span class="string">'#captcha'</span>,</span><br><span class="line">      mode: <span class="string">'float'</span>,</span><br><span class="line">      width: 320,</span><br><span class="line">      onReady: <span class="keyword">function</span> (instance) &#123;</span><br><span class="line">        // 验证码一切准备就绪，此时可正常使用验证码的相关功能</span><br><span class="line">      &#125;,</span><br><span class="line">      onVerify: <span class="keyword">function</span> (err, data) &#123;</span><br><span class="line">        /**</span><br><span class="line">         * 第一个参数是err（Error的实例），验证失败才有err对象</span><br><span class="line">         * 第二个参数是data对象，验证成功后的相关信息，data数据结构为key-value，如下：</span><br><span class="line">         * &#123;</span><br><span class="line">         *   validate: <span class="string">'xxxxx'</span> // 二次验证信息</span><br><span class="line">         * &#125;</span><br><span class="line">         */</span><br><span class="line">        // 点击登录按钮后可调用服务端接口，以下为伪代码，仅作示例用</span><br><span class="line">        ajax(<span class="string">'/login'</span>, &#123;</span><br><span class="line">          captchaId: <span class="string">'从易盾申请的captchaId'</span>,</span><br><span class="line">          username: $(<span class="string">'#username'</span>).val(),</span><br><span class="line">          password: $(<span class="string">'#password'</span>).val(),</span><br><span class="line">          validate: data.validate</span><br><span class="line">        &#125;, <span class="keyword">function</span> onsuccess (data) &#123;</span><br><span class="line">          // 登录成功后，相关处理逻辑</span><br><span class="line">        &#125;)</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;, <span class="keyword">function</span> onload (instance) &#123;</span><br><span class="line">      // 初始化成功</span><br><span class="line">    &#125;, <span class="keyword">function</span> onerror (err) &#123;</span><br><span class="line">      // 验证码初始化失败处理逻辑，例如：提示用户点击按钮重新初始化</span><br><span class="line">    &#125;)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure></p><h3>popup</h3><p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;button id=<span class="string">"j-popup"</span>&gt;点击弹出验证码&lt;/button&gt;</span><br><span class="line">&lt;div id=<span class="string">"captcha"</span>&gt;&lt;/div&gt;</span><br><span class="line">&lt;script  charset=<span class="string">"UTF-8"</span> <span class="built_in">type</span>=<span class="string">"text/javascript"</span> src=<span class="string">"http://cstaticdun.126.net/load.min.js"</span>&gt;&lt;/script&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">  var captchaIns;</span><br><span class="line">  initNECaptcha(&#123;</span><br><span class="line">    element: <span class="string">'#captcha'</span>,</span><br><span class="line">    captchaId: <span class="string">'从易盾申请的captchaId'</span>,</span><br><span class="line">    mode: <span class="string">'popup'</span>,</span><br><span class="line">    width: <span class="string">'320px'</span></span><br><span class="line">  &#125;, <span class="keyword">function</span> (instance) &#123;</span><br><span class="line">    // 初始化成功后得到验证实例instance，可以调用实例的方法</span><br><span class="line">    captchaIns = instance</span><br><span class="line">  &#125;, <span class="keyword">function</span> (err) &#123;</span><br><span class="line">    // 初始化失败后触发该函数，err对象描述当前错误信息</span><br><span class="line">  &#125;)</span><br><span class="line">  // 监听button的点击事件，弹出验证码</span><br><span class="line">  document.getElementById(<span class="string">'j-popup'</span>).addEventListener(<span class="string">'click'</span>, <span class="function"><span class="title">function</span></span> () &#123;</span><br><span class="line">    captchaIns.popUp()</span><br><span class="line">&lt;/scripr&gt;</span><br></pre></td></tr></table></figure></p><p>注意：onload和onReady的区别：onload和onReady触发时，均会返回验证码的实例，即传入的第一个参数。二者触发时机有所不同，onload触发时，初始化函数结束和完成实例的生成，注意这并不代表验证码是可用的（比如验证码相关背景图片和信息并没有加载），此方法只触发一次。onReady触发时，说明验证码准备就绪（比如背景图片等信息均已加载），在popup模式下，每次弹出均会触发onReady，其他模式下onReady只触发一次。</p><p>文章来自：&lt;a href='https://blog.csdn.net/w97531/article/details/80448239'&gt;网站验证码WEB前端接入实例&lt;/a&gt;</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;易盾是网易云旗下的一个产品
-验证码三种模式：float(发式)、embed(嵌入式)、popup(弹出式)&lt;/p&gt;
-&lt;h2&gt;兼容性&lt;/h2&gt;
-&lt;p&gt;IE7+、Chrome、Firefox、Safari、Opera、主流手机浏览器、iOS 及 Android上的内嵌Webvi
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>全屏与居中</title>
-    <link href="http://haojen.github.io/2018/12/05/%E5%85%A8%E5%B1%8F%E4%B8%8E%E5%B1%85%E4%B8%AD/"/>
-    <id>http://haojen.github.io/2018/12/05/全屏与居中/</id>
-    <published>2018-12-05T14:13:32.802Z</published>
-    <updated>2018-12-05T14:13:32.803Z</updated>
-    
-    <content type="html"><![CDATA[<p>这边文章主要记录我今天看代码和练习代码关于盒子布局的收获</p><h2>结构</h2><p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=<span class="string">"wrap"</span>&gt;</span><br><span class="line">    &lt;div class=<span class="string">"left"</span>&gt;</span><br><span class="line">        &lt;div class=<span class="string">"l-content"</span>&gt;我是左边的内容&lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;div class=<span class="string">"right"</span>&gt;</span><br><span class="line">        &lt;div class=<span class="string">"r-content"</span>&gt;我是右边的小可爱&lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></p><h2>基础样式</h2><p>如果我们想让一个盒子水平或者垂直方向居中，我们一般都会给它设置宽度和高度<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">* &#123;margin: 0;padding: 0;&#125;</span><br><span class="line">.wrap &#123;height: 100%;</span><br><span class="line">    background-color: <span class="comment">#00c47d;</span></span><br><span class="line">    clear: both;</span><br><span class="line">    min-hight: 300px;</span><br><span class="line">&#125;</span><br><span class="line">.left &#123;</span><br><span class="line">    background-color: <span class="comment">#ffff00;</span></span><br><span class="line">    <span class="built_in">float</span>: left;</span><br><span class="line">    width: 50%;</span><br><span class="line">    position: relative;</span><br><span class="line">&#125;</span><br><span class="line">.l-content &#123;</span><br><span class="line">    background-color: <span class="comment">#00acec;</span></span><br><span class="line">    width: 200px;</span><br><span class="line">    height: 200px;</span><br><span class="line">&#125;</span><br><span class="line">.right &#123;</span><br><span class="line">    background-color: <span class="comment">#2e7ac4;</span></span><br><span class="line">    <span class="built_in">float</span>: right;</span><br><span class="line">    width: 50%;</span><br><span class="line">&#125;</span><br><span class="line">.r-content &#123;</span><br><span class="line">    background-color: red;</span><br><span class="line">    height: 200px;</span><br><span class="line">    width: 200px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><h2>垂直方向全屏</h2><p>目前我看到的方法答题就只有这一种，首先设置body和html的高度为100%，再设置盒子的高度<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">html,body &#123;height:100%&#125;</span><br><span class="line">.wrap &#123;height:10%&#125;</span><br></pre></td></tr></table></figure></p><h2>水平居中</h2><h3>margin</h3><p>较为简单就是这种，要注意的是，当position的值不为static时，这种方法不会生效<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.l-content &#123;</span><br><span class="line">    margin: 0 auto</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><h3>position</h3><p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">.l-content &#123;</span><br><span class="line">    position: absolute;</span><br><span class="line">    left: 50%;</span><br><span class="line">    margin-left: -100px; // 这个盒子宽度的一半</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><h2>垂直居中</h2><h3>postion</h3><p>postion完成大致地定位，margin调整居中<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">.l-content &#123;</span><br><span class="line">    position: absolute;</span><br><span class="line">    top: 50%;</span><br><span class="line">    margin-top: -100px; // 这个盒子宽度的一半</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><h3>margin</h3><p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">.r-content &#123;</span><br><span class="line">    position: absolute;</span><br><span class="line">    top: 0;</span><br><span class="line">    bottom: 0;</span><br><span class="line">    margin: auto 0;</span><br><span class="line">    max-height: 200px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><h3>transform</h3><p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">.r-content &#123;</span><br><span class="line">    background-color: red;</span><br><span class="line">    height: 200px;</span><br><span class="line">    width: 200px;</span><br><span class="line">    position: absolute;</span><br><span class="line">    top: 50%;</span><br><span class="line">    transform: translate(0, -50%);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><h3>flex</h3><p>对父亲盒子使用弹性布局方法一<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">.right &#123;</span><br><span class="line">   display: flex;</span><br><span class="line">   align-items: center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p>方法二<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">.right &#123;</span><br><span class="line">    display: flex;</span><br><span class="line">    flex-direction: column;</span><br><span class="line">    justify-content: center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;这边文章主要记录我今天看代码和练习代码关于盒子布局的收获&lt;/p&gt;
-&lt;h2&gt;结构&lt;/h2&gt;
-&lt;p&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/s
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>ES6特性</title>
-    <link href="http://haojen.github.io/2018/12/04/ES6/"/>
-    <id>http://haojen.github.io/2018/12/04/ES6/</id>
-    <published>2018-12-04T08:56:12.402Z</published>
-    <updated>2018-12-04T08:56:12.403Z</updated>
-    
-    <content type="html"><![CDATA[<h2>ES6简介</h2><p>ECMScript6简称ES6，是JavaScript语言的下一代标砖，以及在2015年6余额发布。ECMScript和JavaScript的关系：前者是后者的语法规格，后者是前者的一种实现</p><h2>新特性</h2><h3>let、const</h3><p>let定义的变量不会被变量提升，const定义的常量不能被修改const定义了一个对象，对象的属性是可以被修改的，例：student.name = &quot;cc&quot;</p><h3>import、export</h3><p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">// 全部导入</span><br><span class="line">import people from <span class="string">'./example'</span></span><br><span class="line">// 将整个模块当作单一对象进行导入，该模块的所有导出都会作为对象的属性存在</span><br><span class="line">import * as example from <span class="string">"./example.js"</span></span><br><span class="line">console.log(example.name)</span><br><span class="line">console.log(example.getName())</span><br><span class="line">// 导入部分，引入非 default 时，使用花括号</span><br><span class="line">import &#123;name, age&#125; from <span class="string">'./example'</span></span><br><span class="line">// 导出默认, 有且只有一个默认</span><br><span class="line"><span class="built_in">export</span> default App</span><br><span class="line">// 部分导出</span><br><span class="line"><span class="built_in">export</span> class App extend Component &#123;&#125;;</span><br></pre></td></tr></table></figure></p><h3>class、extends、super</h3><p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">class Animal &#123;</span><br><span class="line">    <span class="function"><span class="title">constructor</span></span>() &#123;</span><br><span class="line">    　　this.type = <span class="string">'animal'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    says(say) &#123;</span><br><span class="line">    　　console.log(this.type + <span class="string">' says '</span> + say);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">let</span> animal = new Animal();</span><br><span class="line">animal.says(<span class="string">'hello'</span>); //animal says hello</span><br><span class="line">class Cat extends Animal &#123;</span><br><span class="line">　　<span class="function"><span class="title">constructor</span></span>() &#123;</span><br><span class="line">　　　　super();</span><br><span class="line">　　　　this.type = <span class="string">'cat'</span>;</span><br><span class="line">　　&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">let</span> cat = new Cat();</span><br><span class="line">cat.says(<span class="string">'hello'</span>); //cat says hello</span><br></pre></td></tr></table></figure></p><p>首先定义了一个&quot;类&quot;，有constructor构造方法，this关键字则代表实例对象。换句话来说，constructor内定义的方法和属性是实例对象自己的，而constructor外定义的方法和属性则是所有实例对象可以共享的class之间可以通过extends实现继承。如实例中Cat类，通过extends关键字，继承了Animal类的所有属性和fnagfa。super关键字，它指代父亲的实例（即父亲的this对象）。子类必须在constructor方法中调用super方法，否则实例时会报错。因为子类没有自己的this对象，而是继承父类的this对象，然后对其进行加工。如果不调用，子类就得不到this对象ES6的继承机制，实质是看创造父类的实例对象this（所以必须先调用super方法），然后再用子类的构造函数修改this。</p><h3>箭头函数</h3><p>函数的快捷写法。不需要function来创建函数，省略retrun，继承当前上下文的this<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">// ES5</span><br><span class="line">var arr1 = [1, 2, 3];</span><br><span class="line">var newArr1 = arr1.map(<span class="keyword">function</span>(x) &#123;</span><br><span class="line">　　<span class="built_in">return</span> x + 1;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">// ES6</span><br><span class="line"><span class="built_in">let</span> newArr2 = arr1.map((x) =&gt; &#123;</span><br><span class="line">　　x + 1</span><br><span class="line">&#125;);</span><br><span class="line">// ES6 函数有且只有一个参数是，可以省略括号，函数中有且只有一个表达式可以省略&#123;&#125;</span><br><span class="line"><span class="built_in">let</span> newArr2 = arr1.map(x =&gt; x + 1 );</span><br></pre></td></tr></table></figure></p><h3>tempalte string(模版字符串)</h3><p>第一个用途：字符串拼接。将表达式嵌入字符串中进行拼接，语法 <code>hello ${变量}</code><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">// es5</span><br><span class="line">var name1 = <span class="string">"bai"</span>;</span><br><span class="line">console.log(<span class="string">'hello '</span> + name1);</span><br><span class="line">// es6</span><br><span class="line">const name2 = <span class="string">"ming"</span>;</span><br><span class="line">console.log(`hello <span class="variable">$&#123;name2&#125;</span>`);</span><br></pre></td></tr></table></figure></p><p>第二个用途：多行字符串拼接<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">// es5</span><br><span class="line">var msg = <span class="string">"Hi \</span></span><br><span class="line"><span class="string">man!"</span>;</span><br><span class="line">// es6</span><br><span class="line">const template = `&lt;div&gt;</span><br><span class="line">&lt;span&gt;hello world&lt;/span&gt;</span><br><span class="line">&lt;/div&gt;`;</span><br></pre></td></tr></table></figure></p><h3>destructing (解构)</h3><p>简化数组和对象中信息的提取<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> people2 = &#123;</span><br><span class="line">　　name: <span class="string">'ming'</span>,</span><br><span class="line">　　age: 20,</span><br><span class="line">　　color: [<span class="string">'red'</span>, <span class="string">'blue'</span>]</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">let</span> &#123; name, age &#125; = people2;</span><br><span class="line"><span class="built_in">let</span> [first, second] = people2.color;</span><br><span class="line">console.log(`<span class="variable">$&#123;name&#125;</span>----<span class="variable">$&#123;age&#125;</span>----<span class="variable">$&#123;first&#125;</span>`);</span><br></pre></td></tr></table></figure></p><h3>default 函数默认参数</h3><p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">// ES5 给函数定义参数默认值</span><br><span class="line"><span class="keyword">function</span> foo(num) &#123;</span><br><span class="line">　　num = num || 200;</span><br><span class="line">　　<span class="built_in">return</span> num;</span><br><span class="line">&#125;</span><br><span class="line">// ES6</span><br><span class="line"><span class="keyword">function</span> foo(num = 200) &#123;</span><br><span class="line">　　<span class="built_in">return</span> num;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><h3>rest arguments （rest参数）</h3><p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> foo(x, y, ...rest) &#123;</span><br><span class="line">　　<span class="built_in">return</span> ((x + y) * rest.length);</span><br><span class="line">&#125;</span><br><span class="line">foo(1, 2, <span class="string">'hello'</span>, <span class="literal">true</span>, 7); // 9</span><br></pre></td></tr></table></figure></p><h3>Spread Operator （展开运算符）</h3><p>第一个用途：组装数组<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> color = [<span class="string">'red'</span>, <span class="string">'yellow'</span>];</span><br><span class="line"><span class="built_in">let</span> colorful = [...color, <span class="string">'green'</span>, <span class="string">'blue'</span>];</span><br><span class="line">console.log(colorful); // [<span class="string">"red"</span>, <span class="string">"yellow"</span>, <span class="string">"green"</span>, <span class="string">"blue"</span>]</span><br></pre></td></tr></table></figure></p><p>第二个用途：获取数组除了某几项的其他项<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> num = [1, 3, 5, 7, 9];</span><br><span class="line"><span class="built_in">let</span> [first, second, ...rest] = num;</span><br><span class="line">console.log(rest); // [5, 7, 9]</span><br></pre></td></tr></table></figure></p><h3>对象</h3><p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">/// ES5</span><br><span class="line"><span class="keyword">function</span> people(name, age) &#123;</span><br><span class="line">　　<span class="built_in">return</span> &#123;</span><br><span class="line">　　　　name: name,</span><br><span class="line">　　　　age: age</span><br><span class="line">　　&#125;;</span><br><span class="line">&#125;</span><br><span class="line">// ES6</span><br><span class="line"><span class="keyword">function</span> people(name, age) &#123;</span><br><span class="line">　　<span class="built_in">return</span> &#123;</span><br><span class="line">　　　　name,</span><br><span class="line">　　　　age</span><br><span class="line">　　&#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p>另外：Object.assign()ES6 对象提供了Object.assign()这个方法来实现浅复制。Object.assign()可以把任意多个源对象自身可枚举的属性拷贝给目标对象，然后返回目标对象。第一参数即为目标对象。在实际项目中，我们为了不改变源对象。一般会把目标对象传为{}用法1：合并对象<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var first = &#123; name: <span class="string">"Bob"</span> &#125;;</span><br><span class="line">var last = &#123; lastName: <span class="string">"Smith"</span> &#125;;</span><br><span class="line">var person = Object.assign(first, last);</span><br><span class="line">console.log(person);</span><br><span class="line">// Output:</span><br><span class="line">// &#123; name: <span class="string">"Bob"</span>, lastName: <span class="string">"Smith"</span> &#125;</span><br></pre></td></tr></table></figure></p><p>用法2：克隆对象<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123; person: <span class="string">"Bob Smith"</span>&#125;;</span><br><span class="line">var <span class="built_in">clone</span> = Object.assign(&#123;&#125;, obj);</span><br></pre></td></tr></table></figure></p><h3>Promise</h3><p>用同步的方式写一步代码<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// 发起异步请求</span><br><span class="line">fetch(<span class="string">'/api/todos'</span>)</span><br><span class="line">.<span class="keyword">then</span>(res =&gt; res.json())</span><br><span class="line">.<span class="keyword">then</span>(data =&gt; (&#123; data &#125;))</span><br><span class="line">.catch(err =&gt; (&#123; err &#125;));</span><br></pre></td></tr></table></figure></p><h3>Generators</h3><p>生成器（generator）是能返回一个迭代器的函数生成器也是一种函数，最直观的表现就是比普通的function多一个*号，在其函数体内可以使用yield关键字，函数会在每个yield后暂停如：银行取号排队办理业务迭代器：调用一个generator时，它将返回一个迭代器对象。这个跌打器对象拥有一个叫做next的方法帮组你重启generator函数并得到了下一个值。nenxt方法不返回值，它返回的对象具有两个属性：done和value。calue是你获得的值，done用来表明你的generator是否已停止提供值。<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">// 生成器</span><br><span class="line"><span class="keyword">function</span> *<span class="function"><span class="title">createIterator</span></span>() &#123;</span><br><span class="line">    yield 1;</span><br><span class="line">    yield 2;</span><br><span class="line">    yield 3;</span><br><span class="line">&#125;</span><br><span class="line">// 生成器能像正规函数那样被调用，但会返回一个迭代器</span><br><span class="line"><span class="built_in">let</span> iterator = createIterator();</span><br><span class="line">console.log(iterator.next().value); // 1</span><br><span class="line">console.log(iterator.next().value); // 2</span><br><span class="line">console.log(iterator.next().value); // 3</span><br></pre></td></tr></table></figure></p><p>参考文献：https://www.cnblogs.com/fangsmile/p/7081194.html</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2&gt;ES6简介&lt;/h2&gt;
-&lt;p&gt;ECMScript6简称ES6，是JavaScript语言的下一代标砖，以及在2015年6余额发布。
-ECMScript和JavaScript的关系：前者是后者的语法规格，后者是前者的一种实现&lt;/p&gt;
-&lt;h2&gt;新特性&lt;/h2&gt;
-&lt;h3&gt;let、
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>flex布局</title>
-    <link href="http://haojen.github.io/2018/12/04/flex%E5%B8%83%E5%B1%80/"/>
-    <id>http://haojen.github.io/2018/12/04/flex布局/</id>
-    <published>2018-12-04T06:14:02.897Z</published>
-    <updated>2018-12-04T06:14:02.897Z</updated>
-    
-    <content type="html"><![CDATA[<p>弹性盒子 display:flexflex为复合属性，且必须配合父元素display:flex使用。以下6个属性设置在子元素上：&lt;ul&gt;&lt;li&gt;flex-grow：放大比例&lt;/li&gt;&lt;li&gt;flex-shrink：缩小比例&lt;/li&gt;&lt;li&gt;flex-basis：伸缩基准值&lt;/li&gt;&lt;li&gt;flex：前面三者的缩写&lt;/li&gt;&lt;li&gt;order：排列顺序&lt;/li&gt;&lt;li&gt;align：单个元素对齐方式ß&lt;/li&gt;&lt;/ul&gt;</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;弹性盒子 display:flex
-flex为复合属性，且必须配合父元素display:flex使用。
-以下6个属性设置在子元素上：
-&amp;lt;ul&amp;gt;
-&amp;lt;li&amp;gt;flex-grow：放大比例&amp;lt;/li&amp;gt;
-&amp;lt;li&amp;gt;flex-shrink：缩
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>单选框和复选框</title>
-    <link href="http://haojen.github.io/2018/12/04/input/"/>
-    <id>http://haojen.github.io/2018/12/04/input/</id>
-    <published>2018-12-04T05:50:55.479Z</published>
-    <updated>2018-12-04T05:50:55.479Z</updated>
-    
-    <content type="html"><![CDATA[<p>input的功能可以说是非常强大了，他的属性不同，呈现的效果是完全不一样的</p><h2>单选框</h2><p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;label&gt;性别：&lt;label&gt;</span><br><span class="line">男：&lt;input <span class="built_in">type</span>=<span class="string">'radio'</span> name=<span class="string">'gender'</span>&gt;</span><br><span class="line">女：&lt;input <span class="built_in">type</span>=<span class="string">'radio'</span> name=<span class="string">'gender'</span>&gt;</span><br></pre></td></tr></table></figure></p><h2>复选框</h2><p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;label&gt;爱好：&lt;label&gt;</span><br><span class="line">篮球：&lt;input <span class="built_in">type</span>=<span class="string">'checkbox'</span> name=<span class="string">'hobby'</span> value=<span class="string">"1"</span>&gt;</span><br><span class="line">足球：&lt;input <span class="built_in">type</span>=<span class="string">'checkbox'</span> name=<span class="string">'hobby'</span> value=<span class="string">"2"</span>&gt;</span><br><span class="line">跑步：&lt;input <span class="built_in">type</span>=<span class="string">'checkbox'</span> name=<span class="string">'hobby'</span> value=<span class="string">"3"</span>&gt;</span><br><span class="line">跳舞：&lt;input <span class="built_in">type</span>=<span class="string">'checkbox'</span> name=<span class="string">'hobby'</span> value=<span class="string">"4"</span>&gt;</span><br></pre></td></tr></table></figure></p><h2>属性</h2><table><thead><tr><th>属性</th><th>值及功能</th></tr></thead><tbody><tr><td>type</td><td>radio:单选框  checkbox:复选框</td></tr><tr><td>value</td><td>提交数据到后台的值</td></tr><tr><td>checked</td><td>当设置 checked=true或者&quot;checked&quot; 时，该选项被默认选中</td></tr><tr><td>disabled</td><td>true：禁用  false(默认):非禁用</td></tr></tbody></table><p>checkbox视觉上忧伤三种状态： checked(选中)、unchecked(未选中)、indeterminate(不确定的)</p><p>element中的input：http://element-cn.eleme.io/#/zh-CN/component/input</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;input的功能可以说是非常强大了，他的属性不同，呈现的效果是完全不一样的&lt;/p&gt;
-&lt;h2&gt;单选框&lt;/h2&gt;
-&lt;p&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;
-      
-    
-    </summary>
-    
+      <category term="组件" scheme="http://haojen.github.io/tags/%E7%BB%84%E4%BB%B6/"/>
     
   </entry>
   
