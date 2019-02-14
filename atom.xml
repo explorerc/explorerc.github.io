@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://haojen.github.io/"/>
-  <updated>2019-02-14T07:16:17.836Z</updated>
+  <updated>2019-02-14T08:43:20.915Z</updated>
   <id>http://haojen.github.io/</id>
   
   <author>
@@ -17,50 +17,28 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>学习中的优秀资源</title>
-    <link href="http://haojen.github.io/2019/02/14/190205-markdown/"/>
-    <id>http://haojen.github.io/2019/02/14/190205-markdown/</id>
-    <published>2019-02-14T03:24:00.000Z</published>
-    <updated>2019-02-14T07:16:17.836Z</updated>
+    <title>Vue命名路由</title>
+    <link href="http://haojen.github.io/2019/02/14/190214-vue%E5%91%BD%E5%90%8D%E8%B7%AF%E7%94%B1/"/>
+    <id>http://haojen.github.io/2019/02/14/190214-vue命名路由/</id>
+    <published>2019-02-14T08:34:00.000Z</published>
+    <updated>2019-02-14T08:43:20.915Z</updated>
     
-    <content type="html"><![CDATA[<p>最近发现我写的博客.md文件里面识别不了html代码了，为了让整个blog看上去美观一点，可读性更高一点，我觉得学习一下markdwon语法</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;最近发现我写的博客.md文件里面识别不了html代码了，为了让整个blog看上去美观一点，可读性更高一点，我觉得学习一下markdwon语法&lt;/p&gt;
-
-      
-    
-    </summary>
-    
-    
-      <category term="markdown" scheme="http://haojen.github.io/tags/markdown/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>学习中的优秀资源</title>
-    <link href="http://haojen.github.io/2019/02/14/190214-%E4%BC%98%E7%A7%80%E8%B5%84%E6%BA%90/"/>
-    <id>http://haojen.github.io/2019/02/14/190214-优秀资源/</id>
-    <published>2019-02-14T03:24:00.000Z</published>
-    <updated>2019-02-14T03:51:23.134Z</updated>
-    
-    <content type="html"><![CDATA[<p><a href="http://www.ruanyifeng.com/blog/" target="_blank" rel="noopener">阮一峰的网络日志</a></p>]]></content>
+    <content type="html"><![CDATA[<p>有时候，通过一个名称来表示一个路由显得更方便一些，特别是在连接一个路由，或者执行一些跳转的时候。我们可以在创建Router实例的时候，在routes配置中给某个路由设置名称<br><a href="https://router.vuejs.org/zh/guide/essentials/named-routes.html" target="_blank" rel="noopener">命名路由</a><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">cosnt router = newRouter(&#123;</span><br><span class="line">  routes: [</span><br><span class="line">    &#123;</span><br><span class="line">      path: <span class="string">'/user/:userId'</span>,</span><br><span class="line">      name: <span class="string">'user'</span>,</span><br><span class="line">      component: User</span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p><h2>名字跳转</h2><pre><code>&lt;router-link :to=&quot;{name: 'user', params: { userId: 123 }}&quot;&gt;User&lt;/router-link&gt;router.push({name: 'user', params: {userId:123})</code></pre><h2>路径跳转</h2><pre><code>&lt;router-link :to=&quot;/user/123&quot;&gt;User&lt;/router-link&gt;router.push('/user/123&quot;')</code></pre>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;&lt;a href=&quot;http://www.ruanyifeng.com/blog/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;阮一峰的网络日志&lt;/a&gt;&lt;/p&gt;
-
+        &lt;p&gt;有时候，通过一个名称来表示一个路由显得更方便一些，特别是在连接一个路由，或者执行一些跳转的时候。我们可以在创建Router实例的时候，在routes配置中给某个路由设置名称&lt;br&gt;
+&lt;a href=&quot;https://router.vuejs.org/zh/guide/ess
       
     
     </summary>
     
     
-      <category term="学习资源" scheme="http://haojen.github.io/tags/%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%BA%90/"/>
+      <category term="路由" scheme="http://haojen.github.io/tags/%E8%B7%AF%E7%94%B1/"/>
+    
+      <category term="vue" scheme="http://haojen.github.io/tags/vue/"/>
     
   </entry>
   
@@ -94,13 +72,13 @@
   </entry>
   
   <entry>
-    <title>Vue-route的beforEach实现导航守卫（路由跳转前验证登录） </title>
+    <title>Vue-route导航守卫</title>
     <link href="http://haojen.github.io/2019/02/13/190213-beforEach%20/"/>
     <id>http://haojen.github.io/2019/02/13/190213-beforEach /</id>
     <published>2019-02-12T16:00:00.000Z</published>
-    <updated>2019-02-13T02:46:59.803Z</updated>
+    <updated>2019-02-14T09:30:24.826Z</updated>
     
-    <content type="html"><![CDATA[<p>vue-route提供的beforeRouteUpadate可以方便实现导航守卫</p><p><a href="http:////router.vuejs.org/zh/guide/advanced/navigation-guards.html" target="_blank" rel="noopener">官方文档</a></p><h2>全局前置守卫</h2><p>1、注册全局前置守卫（router.beforeEach）<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">const router = new VueRouter(&#123; ... &#125;)</span><br><span class="line"></span><br><span class="line">router.beforeEach((to, from, next) =&gt; &#123;</span><br><span class="line">  // ...</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p><ul><li>to: 即将进入的目标路由对象</li><li>from： 当前导航真要离开的路由</li><li>next： 一定要调用该方法来resolve这个钩子，执行效果依赖next方法调用参数。<ul><li>next(): 进行管道中的下一个钩子。如果全部钩子执行完了，则导航的状态就是 confirmed （确认的）。</li><li>next(false): 中断当前的导航。如果浏览器的 URL 改变了（可能是用户手动或者浏览器后退按钮），那么 URL 地址会重置到 from 路由对应的地址。</li><li>next('/') 或者 next({ path: '/' }): 跳转到一个不同的地址。当前的导航被中断，然后进行一个新的导航。</li><li>next(error): (2.4.0+) 如果传入 next 的参数是一个 Error 实例，则导航会被终止且该错误会被传递给 router.onError() 注册过的回调。</li></ul></li></ul><h2>问题</h2><p><code>alert('Hello World');</code></p>]]></content>
+    <content type="html"><![CDATA[<p>vue-route提供的beforeRouteUpadate可以方便实现导航守卫</p><p><a href="http:////router.vuejs.org/zh/guide/advanced/navigation-guards.html" target="_blank" rel="noopener">官方文档</a></p><h2>全局前置守卫</h2><p>1、注册全局前置守卫（router.beforeEach）<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">const router = new VueRouter(&#123; ... &#125;)</span><br><span class="line"></span><br><span class="line">router.beforeEach((to, from, next) =&gt; &#123;</span><br><span class="line">  // ...</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p><ul><li>to: 即将进入的目标路由对象</li><li>from： 当前导航真要离开的路由</li><li>next： 一定要调用该方法来resolve这个钩子，执行效果依赖next方法调用参数。<ul><li>next(): 进行管道中的下一个钩子。如果全部钩子执行完了，则导航的状态就是 confirmed （确认的）。</li><li>next(false): 中断当前的导航。如果浏览器的 URL 改变了（可能是用户手动或者浏览器后退按钮），那么 URL 地址会重置到 from 路由对应的地址。</li><li>next('/') 或者 next({ path: '/' }): 跳转到一个不同的地址。当前的导航被中断，然后进行一个新的导航。</li><li>next(error): (2.4.0+) 如果传入 next 的参数是一个 Error 实例，则导航会被终止且该错误会被传递给 router.onError() 注册过的回调。</li></ul></li></ul><h2>全局后置钩子</h2><p>我们可以注册全局后置钩子，然后和守卫不同的是，这些钩子不会接受next函数也不会该拜年导航本身<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">router.afterEach((to, from) =&gt; &#123;</span><br><span class="line">  // ...</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p><h2>路由独享守卫</h2><p>我们可以在路由配置上直接定义beforeEnter守卫：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">const router = new VueRouter(&#123;</span><br><span class="line">  routes: [</span><br><span class="line">    &#123;</span><br><span class="line">      path: <span class="string">'/foo'</span>,</span><br><span class="line">      component: Foo,</span><br><span class="line">      beforeEnter: (to, from, next) =&gt; &#123;</span><br><span class="line">        // ....</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p><p>守卫与全局前置守卫的方法参数是一样的</p><h2>组件内的守卫</h2><p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">const Foo = &#123;</span><br><span class="line">  tmeplate: <span class="string">'...'</span>,</span><br><span class="line">  beforeRouterEnter (to, from, next) &#123;</span><br><span class="line">    // 在渲染该组件的对应路由被confirm前调用</span><br><span class="line">    // 不能获取组件实例<span class="string">'this'</span></span><br><span class="line">    // 因为当守卫执行前，组件实例还没有被创建</span><br><span class="line">  &#125;,</span><br><span class="line">  beforeRouterUpdate (to, from, next) &#123;</span><br><span class="line">    // 在当前路由改变，当时该组件被恢复使用是调用</span><br><span class="line">    // 举例来说，对于一个动态路由，/foo/:id，在/foo/1和/foo/2之间跳转的时候</span><br><span class="line">    // 由于会渲染同样的Foo组件，因此组件实例会被复用。二这个钩子就会在这个情况被调用</span><br><span class="line">    // 可以访问组件实例<span class="string">'this'</span></span><br><span class="line">  &#125;,</span><br><span class="line">  beforeRouterLeave (to, from, next) &#123;</span><br><span class="line">    // 导航离开该组件的对应路由时调用</span><br><span class="line">    // 可以访问组件实例<span class="string">'this'</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p><code>beforeRouterEnter</code>可以通过穿一个回调给next来访问组件实例。在导航被确认的时候执行回调，并且把组件实例做为回调方法的参数<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">beforeRouterEnter (to, from, next) &#123;</span><br><span class="line">  next(vm =&gt; &#123;</span><br><span class="line">    // t通过vm访问组件实例</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><h3>提醒保存</h3><p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">beforeRouterLeave (to, from, next) &#123;</span><br><span class="line">  const answer = window.confirm(<span class="string">'是否保存修改'</span>)</span><br><span class="line">  <span class="keyword">if</span> (answer) &#123;</span><br><span class="line">    this.save()</span><br><span class="line">    next()</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    next(<span class="literal">false</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><h2>完整的导航解析流程</h2><ol><li>导航被触发</li><li>在失活的组件里调用离开守卫</li><li>调用全局的<code>beforeEach</code>守卫</li><li>在重用组件里调用<code>beforeRouteUpdate</code>守卫</li><li>在路由配置里调用<code>beforeEnter</code></li><li>解析异步路由组件。</li><li>在被激活的组件里调用<code>beforeRouteEnter</code></li><li>调用全局的<code>beforeResolve</code>守卫</li><li>导航被确认</li><li>调用全局的<code>afterEach</code>钩子</li><li>触发DOM更新</li><li>在创建好的实例跳用<code>beforeRouteEnter</code>守卫中传给<code>next</code>的回调函数</li></ol>]]></content>
     
     <summary type="html">
     
@@ -173,6 +151,60 @@
       <category term="Vue" scheme="http://haojen.github.io/tags/Vue/"/>
     
       <category term="Vuex" scheme="http://haojen.github.io/tags/Vuex/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>学习中的优秀资源</title>
+    <link href="http://haojen.github.io/2019/02/10/190210-%E4%BC%98%E7%A7%80%E8%B5%84%E6%BA%90/"/>
+    <id>http://haojen.github.io/2019/02/10/190210-优秀资源/</id>
+    <published>2019-02-10T03:24:00.000Z</published>
+    <updated>2019-02-14T08:26:22.059Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="http://www.ruanyifeng.com/blog/" target="_blank" rel="noopener">阮一峰的网络日志</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;a href=&quot;http://www.ruanyifeng.com/blog/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;阮一峰的网络日志&lt;/a&gt;&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+      <category term="学习资源" scheme="http://haojen.github.io/tags/%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%BA%90/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>markdown常用语法</title>
+    <link href="http://haojen.github.io/2019/02/07/190207-markdown/"/>
+    <id>http://haojen.github.io/2019/02/07/190207-markdown/</id>
+    <published>2019-02-07T03:24:00.000Z</published>
+    <updated>2019-02-14T08:13:55.109Z</updated>
+    
+    <content type="html"><![CDATA[<p>最近发现我写的博客.md文件里面识别不了html代码了，为了让整个blog看上去美观一点，可读性更高一点，我觉得学习一下markdwon语法</p><ol><li><p>换行<br>一行结束时输入两个空格，然后回车，接着写内容</p></li><li><p>图片<br><code>![Alt text](/path/to/img.jpg &quot;optional title&quot;)</code></p></li></ol><p>叙述：</p><ul><li>一个感叹号<code>!</code></li><li>紧接着一个方括号，里面放图片的替代文字，当图片地址活因为其他原因没有显示时，将会显示这个文字</li><li>紧接着一个小括号，里面放图片地址</li><li>optional title图片标题，当鼠标放于图片上面是，显示的文字（可以不写）</li></ul><ol start="3"><li><p>小段代码<br>两个``符号，将你需要标记的代码放于两符号之间，切换到英文键盘，1键前面的那个键</p></li><li><p>大段代码<br>```bash大段代码```</p></li><li><p>块<br>在文字前面加一个&gt;</p></li></ol><blockquote><p>这个是个演示的块文字</p></blockquote><ol start="6"><li><p>有序列表<br>数字+. 内容   .一定要是英文状态的，且它与内容间要有空着<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1. 演示1</span><br><span class="line">2. 演示3</span><br></pre></td></tr></table></figure></p></li><li><p>无序列表<br>+ 内容<br>前面的符号可以使+、-和* ，他们都需要与后面的内容有一个空格</p></li><li><p>标题<br># 内容<br>有几个# 号表示这是几级标题</p></li><li><p>反斜杠\<br>当这个符号不需要有特殊含义时，仅仅是一个字符时，我们就可以在这个符号前面加一个反斜杠</p></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;最近发现我写的博客.md文件里面识别不了html代码了，为了让整个blog看上去美观一点，可读性更高一点，我觉得学习一下markdwon语法&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;换行&lt;br&gt;
+一行结束时输入两个空格，然后回车，接着写内容&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;图
+      
+    
+    </summary>
+    
+    
+      <category term="markdown" scheme="http://haojen.github.io/tags/markdown/"/>
     
   </entry>
   
@@ -502,16 +534,20 @@ master分支主要用于pull代码和push代码，cq分支主要用于修改代�
     <link href="http://haojen.github.io/2018/12/10/181210-vue%E8%B7%AF%E7%94%B1/"/>
     <id>http://haojen.github.io/2018/12/10/181210-vue路由/</id>
     <published>2018-12-09T16:00:00.000Z</published>
-    <updated>2019-02-13T03:17:30.236Z</updated>
+    <updated>2019-02-14T08:31:46.350Z</updated>
     
-    <content type="html"><![CDATA[<h2>安装</h2><p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install vue-router --save</span><br><span class="line">cnpm install vue-router --save</span><br></pre></td></tr></table></figure></p><h2>引入并use</h2><pre><code>import VueRouter from 'vue-router'Vue.use(VueRouter)</code></pre><h2>配置路由</h2><p>1 . 创建组件 引入组件2 . 定义路由 （建议复制js）<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">const routes = &#123;</span><br><span class="line">    &#123;path:<span class="string">'/foo'</span>,componet:Foo&#125;</span><br><span class="line">    &#123;path:<span class="string">'/bar'</span>,componet:BAr&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p>3 . 实例花VueRouter<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cosnt router = new VueRouter(&#123;</span><br><span class="line">    routes //(缩写) 相当于routes:routes</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p><p>4 . 挂载<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">new Vue(&#123;</span><br><span class="line">    el:<span class="string">'#app'</span>,</span><br><span class="line">    router,</span><br><span class="line"></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p><p>5 . 使用</p><h2>动态路由</h2><h3>传值</h3><p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">const routes = &#123;</span><br><span class="line">    &#123;path:<span class="string">'/foo/:aid'</span>,componet:Foo&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;router-link :to=<span class="string">"'/foo/'+key"</span>&gt;&#123;&#123;key&#125;&#125; -- &#123;&#123;item&#125;&#125;&lt;/router-link&gt;</span><br></pre></td></tr></table></figure></p><h3>获取</h3><p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">this.<span class="variable">$route</span>.params</span><br></pre></td></tr></table></figure></p><h2>路由get传值</h2><h3>传值</h3><p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;router-link :to=<span class="string">"'/foo?key='+key"</span>&gt;&#123;&#123;key&#125;&#125; -- &#123;&#123;item&#125;&#125;&lt;/router-link&gt;</span><br></pre></td></tr></table></figure></p><h3>获取</h3><p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">this.<span class="variable">$route</span>.query</span><br></pre></td></tr></table></figure></p><h2>编程式导航</h2><p>this.$router.push({path:'/content/495'})</p><h2>命名路由</h2><h3>配置路由</h3><p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">const routes = &#123;</span><br><span class="line">    &#123;path:<span class="string">'/news'</span>,componet:News,name:<span class="string">'news'</span>&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><h3>使用</h3><p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">this.router.push(&#123;name:<span class="string">'news'</span>&#125;)</span><br></pre></td></tr></table></figure></p><h2>history 模式</h2><p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// 实例化VueRouter时</span><br><span class="line">const router = new VueRouter(&#123;</span><br><span class="line">    mode:&apos;history&apos;,</span><br><span class="line">    routes</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p><h2>子路由</h2><p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">const routes = &#123;</span><br><span class="line"> &#123;</span><br><span class="line">    path:<span class="string">'/user'</span>,</span><br><span class="line">    componet:User,</span><br><span class="line">    name:<span class="string">'user'</span>,</span><br><span class="line">    children:[</span><br><span class="line">        &#123;path:<span class="string">'useradd'</span>,component:UserAdd&#125;</span><br><span class="line">    ]</span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>]]></content>
+    <content type="html"><![CDATA[<h2>安装</h2><pre><code>npm install vue-router --savecnpm install vue-router --save</code></pre><h2>引入</h2><pre><code>import VueRouter from 'vue-router'Vue.use(VueRouter)</code></pre><h2>配置路由</h2><ol><li><p>创建组件 引入组件</p></li><li><p>定义路由 （建议复制js）<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">const routes = &#123;</span><br><span class="line">    &#123;path:<span class="string">'/foo'</span>,componet:Foo&#125;</span><br><span class="line">    &#123;path:<span class="string">'/bar'</span>,componet:BAr&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p></li><li><p>实例化VueRouter<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cosnt router = new VueRouter(&#123;</span><br><span class="line">    routes //(缩写) 相当于routes:routes</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p></li><li><p>挂载<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">new Vue(&#123;</span><br><span class="line">    el:<span class="string">'#app'</span>,</span><br><span class="line">    router,</span><br><span class="line"></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p></li><li><p>使用</p></li></ol><h2>动态路由</h2><h3>传值</h3><p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">const routes = &#123;</span><br><span class="line">    &#123;path:<span class="string">'/foo/:aid'</span>,componet:Foo&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;router-link :to=<span class="string">"'/foo/'+key"</span>&gt;&#123;&#123;key&#125;&#125; -- &#123;&#123;item&#125;&#125;&lt;/router-link&gt;</span><br></pre></td></tr></table></figure></p><h3>获取</h3><pre><code>this.$route.params</code></pre><h2>路由get传值</h2><h3>传值</h3><pre><code>&lt;router-link :to=&quot;'/foo?key='+key&quot;&gt;{{key}} -- {{item}}&lt;/router-link&gt;</code></pre><h3>获取</h3><pre><code>this.$route.query</code></pre><h2>编程式导航</h2><pre><code>this.$router.push({path:'/content/495'})</code></pre><h2>命名路由</h2><h3>配置路由</h3><p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">const routes = &#123;</span><br><span class="line">    &#123;path:<span class="string">'/news'</span>,componet:News,name:<span class="string">'news'</span>&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><h3>使用</h3><p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">this.router.push(&#123;name:<span class="string">'news'</span>&#125;)</span><br></pre></td></tr></table></figure></p><h2>history 模式</h2><p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// 实例化VueRouter时</span><br><span class="line">const router = new VueRouter(&#123;</span><br><span class="line">    mode:&apos;history&apos;,</span><br><span class="line">    routes</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p><h2>子路由</h2><p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">const routes = &#123;</span><br><span class="line"> &#123;</span><br><span class="line">    path:<span class="string">'/user'</span>,</span><br><span class="line">    componet:User,</span><br><span class="line">    name:<span class="string">'user'</span>,</span><br><span class="line">    children:[</span><br><span class="line">        &#123;path:<span class="string">'useradd'</span>,component:UserAdd&#125;</span><br><span class="line">    ]</span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>]]></content>
     
     <summary type="html">
     
       
       
         &lt;h2&gt;安装&lt;/h2&gt;
-&lt;p&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;
+&lt;pre&gt;&lt;code&gt;npm install vue-router --save
+cnpm install vue-router --save
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;引入&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;import VueRouter fr
       
     
     </summary>
@@ -542,36 +578,6 @@ master分支主要用于pull代码和push代码，cq分支主要用于修改代�
 引号中的title表示父组件中的数据
 2 . 在子组件里面通过 props接受父组件传过来的数据
 
-      
-    
-    </summary>
-    
-    
-      <category term="Vue" scheme="http://haojen.github.io/tags/Vue/"/>
-    
-      <category term="组件" scheme="http://haojen.github.io/tags/%E7%BB%84%E4%BB%B6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>vue项目小知识</title>
-    <link href="http://haojen.github.io/2018/12/08/181208-vue%E5%B0%8F%E7%9F%A5%E8%AF%86/"/>
-    <id>http://haojen.github.io/2018/12/08/181208-vue小知识/</id>
-    <published>2018-12-07T16:00:00.000Z</published>
-    <updated>2019-02-13T03:16:53.045Z</updated>
-    
-    <content type="html"><![CDATA[<h2>组件</h2><ol><li><p>watch监听对象每个监听都是有handler的，也可以不写；监听对象时，必须写上deep<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">watch: &#123;</span><br><span class="line">  user: &#123; hander(newValue,oldValue) =&gt; &#123;</span><br><span class="line">        console.log(<span class="string">'user被修改了'</span>)</span><br><span class="line">    &#125;,</span><br><span class="line">    deep: <span class="literal">true</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p></li><li><p>获取组件中data中的值： vm.name 或者 vm.$data.name&lt;/li&gt;</p></li><li><p>获取组件中data中的值： vm.name 或者 vm.$data.name &lt;/li&gt;</p></li><li><p>获取绑定的元素：vm.$el  设置样式：vm.$el.style.color = red &lt;/li&gt;</p></li><li><p>获取自定义属性：vm.$options.name &lt;/li&gt;</p></li><li><p>获取添加了ref属性的元素：vm.$refs.namebox &lt;/li&gt;</p></li><li><p>手动挂载vue实例：vue.$mount('#app') 或者 new Vue({}).$mount('#app') &lt;/li&gt;</p></li><li><p>挂载时调用某个函数获取某一个值：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">getValue () &#123; this.nextTick(function()&#123; console.log(this.$refs.input.value)&#125;)&#125;</span><br></pre></td></tr></table></figure></p></li><li><p>给data中的user对象新增age属性： this.$set(this.user,'age',22) &lt;/li&gt;</p></li><li><p>删除data中的user对象age属性： this.$set(this.user,'age') &lt;/li&gt;</p></li><li><p>缓存数据： localStorage.setItem('key',JSON.stringfify(this.list)) &lt;/li&gt;</p></li><li><p>获取缓存数据： var list = JSON.parse(localStorage.getItem('list')) &lt;/li&gt;</p></li><li><p>请求数据：</p><ol><li>安装vue-resource模块  记得加上--save</li><li>main.js引入 vue-resourceimport VueResource from 'vue-resouce'</li><li>Vue.use(VueRe souce)</li></ol></li></ol><h2>html元素</h2><p>动态绑定类名：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;li v-for=<span class="string">"(item, key) in items"</span> :class=<span class="string">"&#123;'red':key===1&#125;"</span>&gt;&#123;&#123;item&#125;&#125;&lt;/li&gt;</span><br></pre></td></tr></table></figure></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2&gt;组件&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;watch监听对象
-每个监听都是有handler的，也可以不写；监听对象时，必须写上deep
-&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;s
       
     
     </summary>
