@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://haojen.github.io/"/>
-  <updated>2019-02-14T08:43:20.915Z</updated>
+  <updated>2019-03-07T08:27:11.607Z</updated>
   <id>http://haojen.github.io/</id>
   
   <author>
@@ -15,6 +15,87 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>vue中往后台传输的数据类型</title>
+    <link href="http://haojen.github.io/2019/03/07/190307-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/"/>
+    <id>http://haojen.github.io/2019/03/07/190307-数据类型/</id>
+    <published>2019-03-07T08:02:00.000Z</published>
+    <updated>2019-03-07T08:27:11.607Z</updated>
+    
+    <content type="html"><![CDATA[<p>最近在开发一个绩效评估系统，我主要负责前端的编写，前端主要用的vue和elment-ui。项目开发肯定离不开往后台传输数据了，我和另外一个开发后台的就遇到了往后台传输数据的问题。下面我们就来分析一下我用到的数据类型。</p><h2>application/x-www-form-urlencoded</h2><p>这应该是最常见的post编码方式，一般的表单提交默认以此方式提交。<br>表单数据编码为键值对，&amp;分隔</p><ul><li>引入 qs 文件<br><code>import qs from 'qs'</code></li><li>使用qs.stringfy(data)，data为我们需要传输的数据（将默认的json数据结构转化为该格式）</li></ul><h2>multipart/form-data</h2><p>表单数据编码为一条消息，每个控件对应消息的一部分</p><h2>application/json</h2><p>post默认的数据形式</p><h2>text/xml text/plain</h2><p>表单数据以纯文本形式进行编码</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;最近在开发一个绩效评估系统，我主要负责前端的编写，前端主要用的vue和elment-ui。项目开发肯定离不开往后台传输数据了，
+我和另外一个开发后台的就遇到了往后台传输数据的问题。下面我们就来分析一下我用到的数据类型。&lt;/p&gt;
+&lt;h2&gt;application/x-www-f
+      
+    
+    </summary>
+    
+    
+      <category term="Vue" scheme="http://haojen.github.io/tags/Vue/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>vue项目小知识(2)</title>
+    <link href="http://haojen.github.io/2019/02/15/190215-vue%E5%B0%8F%E7%9F%A5%E8%AF%86/"/>
+    <id>http://haojen.github.io/2019/02/15/190215-vue小知识/</id>
+    <published>2019-02-15T07:00:00.000Z</published>
+    <updated>2019-02-15T09:28:08.826Z</updated>
+    
+    <content type="html"><![CDATA[<h2>模版语法</h2><h3>插值</h3><ul><li>v-once 执行一次性插值，当数据改变是，插值处的内容不会更新<br><code>&lt;span v-once&gt;&lt;/span&gt;</code></li><li>v-text</li><li>v-html</li></ul><h3>指令</h3><p>指令是带有<code>v-</code>前缀的特殊特性，指令的指责是，当表达式的值改变是，将其产生连带影响，响应式地作用于DOM。</p><ul><li>v-if 判断 不成立不渲染</li><li>v-else-if 判断</li><li>v-else 必须跟在v-if或者v-else-if的后面</li><li>v-show 判断 元素始终会被渲染并保留在 DOM 中</li><li>v-bind绑定属性 缩写： :</li><li>v-on绑定事件  缩写：@</li><li>v-for 遍历<br>当它们处于同一节点，v-for 的优先级比 v-if 更高，这意味着 v-if 将分别重复运行于每个 v-for 循环中。当你想为仅有的一些项渲染节点时，这种优先级的机制会十分有用</li></ul><h2>计算属性</h2><p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">data: &#123;</span><br><span class="line">  msg: <span class="string">'12345'</span></span><br><span class="line">&#125;</span><br><span class="line">computed: &#123;</span><br><span class="line">  reverseMsg: &#123;</span><br><span class="line">    returen this.msg.split(<span class="string">''</span>).reverse().join(<span class="string">''</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><h3>对象计算属性</h3><p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">data: &#123;</span><br><span class="line">  isActive: <span class="literal">true</span>,</span><br><span class="line">  error: null</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="title">computed</span></span> () &#123;</span><br><span class="line">  classObj: <span class="function"><span class="title">function</span></span> () &#123;</span><br><span class="line">    <span class="built_in">return</span> &#123;</span><br><span class="line">      active: this.isActive &amp;&amp; !this.error,</span><br><span class="line">      static: this.error &amp;&amp; this.error.type = <span class="string">'fatal'</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><h3>计算属性缓存vs方法</h3><p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">methods: &#123;</span><br><span class="line">  <span class="function"><span class="title">reverseMsg</span></span> () &#123;</span><br><span class="line">    <span class="built_in">return</span> this.msg.split(<span class="string">''</span>).reverse().join(<span class="string">''</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;p&gt;&#123;&#123; recerseMsg() &#125;&#125;&lt;p&gt;</span><br></pre></td></tr></table></figure></p><p>这样实现的效果于上面计算属性达到的最终效果是完全相同的，然而，不同的是<strong>计算属性是基于他们的依赖进行缓存的</strong>，只要相关依赖发生改变时他们才会重新求职。换句话说，只要msg不发生改变。多次访问reverseMsg计算属性会立即返回之前的计算结果，而不必每次执行函数。</p><h3>计算属性vs侦听属性</h3><p>当你有一些数据需要随着其它数据变动而变动，通常更好的做法是使用计算属性而不是命令式的</p><h3>计算属性的setter</h3><p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">computed: &#123;</span><br><span class="line">  fullNmae: &#123;</span><br><span class="line">    get: <span class="function"><span class="title">function</span></span> () &#123;</span><br><span class="line">      <span class="built_in">return</span> this.firstName + <span class="string">' '</span> + this.lastName</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="built_in">set</span>: <span class="keyword">function</span> (newName) &#123;</span><br><span class="line">      var names = newName.splite(<span class="string">' '</span>)</span><br><span class="line">      this.firstName = names[0]</span><br><span class="line">      this.lastNmae = names[name.length - 1]</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p>当运行vm.fullName = 'John Doe'时，vm.firstName和vm.lastName也会改变</p><h2>侦听器</h2><h3>简单数据类型监听</h3><p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">watch: &#123;</span><br><span class="line">  name: &#123;</span><br><span class="line">    handler (val, oldVal) &#123;</span><br><span class="line">      console.log(val)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><h3>对象监听</h3><p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">watch: &#123;</span><br><span class="line">  user: &#123;</span><br><span class="line">    handler (val, oldVal) &#123;</span><br><span class="line">      console.log(val)</span><br><span class="line">    &#125;,</span><br><span class="line">    deep: <span class="literal">true</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><h2>绑定Class</h2><h3>对象语法</h3><p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;div :class=<span class="string">"&#123; active: isActive &#125;"</span>&gt;&lt;/div&gt;</span><br><span class="line">&lt;div :class=<span class="string">"&#123; active: isActive, static: isStatic &#125;"</span>&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure></p><p>或者直接绑定一个对对象<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div :class=<span class="string">"classObj"</span>&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure></p><p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">data: &#123;</span><br><span class="line">  classObj = &#123;</span><br><span class="line">    active: <span class="literal">true</span>,</span><br><span class="line">    stataic: <span class="literal">false</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p>渲染结果与上面的绑定多个类名的效果一致</p><h3>数组语法</h3><p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div :class=<span class="string">"[activeClass, errorClasss]"</span>&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure></p><p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">data: &#123;</span><br><span class="line">  activeClass: <span class="string">'active'</span>,</span><br><span class="line">  erroreClasss: <span class="string">'text-danger'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p>渲染结果：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=<span class="string">"active text-danger"</span>&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure></p><p>增加判断条件：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;div :class=<span class="string">"[isActive?activeClass:'', errorClass]"</span>&gt;&lt;/div&gt; // 或者</span><br><span class="line">&lt;div :class=<span class="string">"[&#123;activeClass: isActive&#125;, errorClass]"</span>&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure></p><h2>绑定内联样式</h2><h3>对象语法</h3><p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div :style=<span class="string">"&#123;color: actuveColor, fontSize: fontSize + 'px'&#125;"</span>&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure></p><p>直接绑定一个对象<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div :style=<span class="string">"styleObj"</span>&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure></p><p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">data: &#123;</span><br><span class="line">  styleObj: &#123;</span><br><span class="line">    color: <span class="string">'red'</span>,</span><br><span class="line">    fontSize: <span class="string">'13px'</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><h3>数组语法</h3><p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div :style=<span class="string">"[baseStyle, otherStyle]"</span>&gt;</span><br></pre></td></tr></table></figure></p><h2>事件处理</h2><h3>内联处理器中的方法</h3><p>特殊变量$event<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;button @click=<span class="string">'btnClick('</span>hi<span class="string">', $event)'</span>&gt;</span><br></pre></td></tr></table></figure></p><p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">methods: &#123;</span><br><span class="line">  btnClick (msg, event) &#123;</span><br><span class="line">    <span class="keyword">if</span> (event) event.preventfault</span><br><span class="line">    alert(msg)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><h3>事件修饰符</h3><ul><li>stop 阻止事件继续传播</li><li>prevent 阻止默认事件</li><li>capture  元素自身触发的事件现在此处理，然后才交由内部元素处理</li><li>self 事件元素不是从内部元素触发</li><li>once 事件只触发一次</li><li>passive</li></ul><blockquote><p>使用修饰符是，顺序很重要，相应的代码会以相同的顺序产生，例：<code>v-on:click.prevent.self</code>会阻止所有的点击，<code>@:click.self.prevent</code>会阻止对元素自身的点击</p></blockquote><p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 滚动事件的默认行为 (即滚动行为) 将会立即触发 --&gt;</span><br><span class="line">&lt;!-- 而不会等待 `onScroll` 完成  --&gt;</span><br><span class="line">&lt;!-- 这其中包含 `event.preventDefault()` 的情况 --&gt;</span><br><span class="line">&lt;div v-on:scroll.passive=<span class="string">"onScroll"</span>&gt;...&lt;/div&gt;</span><br></pre></td></tr></table></figure></p><p>.passive 修饰符可以提升移动端的性能。</p><h3>按键修饰符</h3><p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 只有在 `key` 是 `Enter` 时调用 `vm.submit()` --&gt;</span><br><span class="line">&lt;input v-on:keyup.enter=<span class="string">"submit"</span>&gt;</span><br></pre></td></tr></table></figure></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2&gt;模版语法&lt;/h2&gt;
+&lt;h3&gt;插值&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;v-once 执行一次性插值，当数据改变是，插值处的内容不会更新&lt;br&gt;
+&lt;code&gt;&amp;lt;span v-once&amp;gt;&amp;lt;/span&amp;gt;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;v-text&lt;/li&gt;
+&lt;
+      
+    
+    </summary>
+    
+    
+      <category term="Vue" scheme="http://haojen.github.io/tags/Vue/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>js中的this指向</title>
+    <link href="http://haojen.github.io/2019/02/15/190215-this%E6%8C%87%E5%90%91%E9%97%AE%E9%A2%98/"/>
+    <id>http://haojen.github.io/2019/02/15/190215-this指向问题/</id>
+    <published>2019-02-15T02:58:00.000Z</published>
+    <updated>2019-02-15T06:48:39.522Z</updated>
+    
+    <content type="html"><![CDATA[<p>js中的this指向问题对于前端工作者来说是非常重要的，最近一直用的是vue，很久没有用js已经块忘得差不多了，现在来复习一下。<br>this 指的是当前对象，如果在全局范围内使用this，则指代当前页面window；如果在函数中使用this，谁（对象）调用该函数，this未被调用，this指向window。<br>我们可以使用call和apply改变函数中this的具体指向。</p><p>分析：因为在这个例子中this指向的是b，b对象没有a属性，所以输出的结果为undefined</p><h2>es5</h2><h3>对象调用函数</h3><ol><li>没有被上一级的对象调用时，严格模式下this指向不会window，严格模式为undifined，非严格模式为window</li><li>被上一级的对象调用，那么this就指向调用函数的对象</li><li>若函数中包含多个对象，尽管这个函数是被最外层的对象调用，this指向的也只是他的上一级对象<br>例：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123;</span><br><span class="line">    a: 12</span><br><span class="line">    b: &#123;</span><br><span class="line">        fn: <span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">            console.log(this.a); // -&gt;undefined</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">obj.b.fun();</span><br></pre></td></tr></table></figure></li></ol><h3>call和aoply</h3><p>他两的主要作用就是改变函数this的指向，区别就在于传参的不同，call可以传入多个参数，用逗号隔开；apply只能传入一个参数，需要传入多个参数时，可将这些参数放在一个数组中。<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">fun(p1, p2) // 等价于</span><br><span class="line">fun.call(undefinded, p1, p2)</span><br><span class="line">obj.child.fun1(p1, p2) // 等价于</span><br><span class="line">obj.child.fun1.call(obj.child, p1, p2)</span><br></pre></td></tr></table></figure></p><p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">function.call(context, p1, p2)</span><br><span class="line">```   </span><br><span class="line"></span><br><span class="line">使用call是，函数this的指向context  </span><br><span class="line">&gt;如果context为null或者undefined是，window对象就是默认的context（严格模式是undefined）</span><br><span class="line"></span><br><span class="line"><span class="comment">### 数组</span></span><br><span class="line"></span><br><span class="line">```bash</span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">arrFn</span></span>()&#123; console.log(this) &#125;</span><br><span class="line">var arr = [arrFn, arrFn1]</span><br><span class="line">arr[0]() // -&gt; arr</span><br></pre></td></tr></table></figure></p><p>分析：我们可以吧arr理解成一个对象，0为他的属性也就是arrFn，arr[0]() -&gt; arr.arrFn(),那么this就指向arr</p><h3>赋值</h3><ol><li>将fn赋值给一个变量，导致this指向改变，this指向window<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var f = obj.b.fn</span><br><span class="line">f(); // -&gt; undefined</span><br></pre></td></tr></table></figure></li></ol><p>分析：我们简单可以理解为，将obj的b属性的fn函数赋值给了f，f()；并没有被上一级对象调用，此时就与情况1 类似，所以this指向为window，window中没有变量a，所以输出结果是undefined</p><h3>构造函数</h3><p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">name</span></span>()&#123;</span><br><span class="line">    this.user = <span class="string">'xiaoming'</span>;</span><br><span class="line">&#125;</span><br><span class="line">var a = new name();</span><br><span class="line">console.log(a.user) // -&gt; xiaoming</span><br></pre></td></tr></table></figure></p><p>分析：开始的时候，this指向的是window，但是在定义a并给它赋值的时候使用了new，new改变了this的指向，让它指向了a，所以最后的输出结果是'xiaoming'</p><h3>return</h3><ol><li></li></ol><p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">f1</span></span>()&#123;</span><br><span class="line">    this.user = <span class="string">'xiaoming'</span>;</span><br><span class="line">    <span class="built_in">return</span> &#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line">var a1 = new f1;</span><br><span class="line">console.log(a1.user) // -&gt;undefined</span><br></pre></td></tr></table></figure></p><ol start="2"><li></li></ol><p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">f2</span></span>()&#123;</span><br><span class="line">    this.user = <span class="string">'xiaoming'</span>;</span><br><span class="line">    <span class="built_in">return</span> <span class="function"><span class="title">function</span></span>()&#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line">var a2 = new f2;</span><br><span class="line">console.log(a2.user);  // -&gt;undefined</span><br></pre></td></tr></table></figure></p><ol start="3"><li></li></ol><p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">f3</span></span>()&#123;</span><br><span class="line">    this.user = <span class="string">'xiaoming'</span>;</span><br><span class="line">    <span class="built_in">return</span> 1</span><br><span class="line">&#125;</span><br><span class="line">var a3 = new f3;</span><br><span class="line">console.log(a3.user);  // -&gt;xiaoming</span><br></pre></td></tr></table></figure></p><ol start="4"><li></li></ol><p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">f4</span></span>()&#123;</span><br><span class="line">    this.user = <span class="string">'xiaoming'</span>;</span><br><span class="line">    <span class="built_in">return</span> undefined</span><br><span class="line">&#125;</span><br><span class="line">var a4 = new f4;</span><br><span class="line">console.log(a4.user); // -&gt;xiaoming</span><br></pre></td></tr></table></figure></p><p>总结：1、2中情况，返回的是一个对象，那么this就指向该对象；3、4情况返回的是值，那么this还是指向函数的实例</p><ol start="5"><li>特殊值null<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">f4</span></span>()&#123;</span><br><span class="line">    this.user = <span class="string">'xiaoming'</span>;</span><br><span class="line">    <span class="built_in">return</span> null</span><br><span class="line">&#125;</span><br><span class="line">var a4 = new f4;</span><br><span class="line">console.log(a4.user); // -&gt;xiaoming</span><br><span class="line">console.log(typeof null); // -&gt;object</span><br></pre></td></tr></table></figure></li></ol><p>分析：虽然null也是对象，但是这里的this还是指向那个函数的实例</p><h2>es6</h2><h3>变量声明</h3><p>es5声明变量只有两种方式：var和function<br>es6声明变量：let、impotr、class、var和function<br>浏览器环境中顶层对象是window，node中是global对象<br>es6中有所改变：var、function声明的是全局变量，依然是顶层对象的属性；let、const、class声明的全局变量不属于顶层对象的属性，也就是说es6开始，全局变量和顶层对象的属性开始分离、脱钩。<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var a = 2;</span><br><span class="line"><span class="built_in">let</span> b = 3;</span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">fun</span></span>()&#123;</span><br><span class="line">    console.log(this.a) // -&gt;2</span><br><span class="line">    console.log(this.b) // -&gt;undefined</span><br><span class="line">&#125;</span><br><span class="line">fun();</span><br></pre></td></tr></table></figure></p><p>分析：函数中的this皆指向window，但是let声明的全局变量，不会成为window的属性，所以this.b-&gt;window.b为undefined</p><h3>箭头函数</h3><p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> obj = &#123;</span><br><span class="line">    a: 222,</span><br><span class="line">    fn:<span class="function"><span class="title">function</span></span> ()&#123;</span><br><span class="line">        setTimeout(()=&gt;&#123;console.log(this.a)&#125;,0)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">obj.fn() // -&gt; 222</span><br></pre></td></tr></table></figure></p><p>分析：箭头函数里面没有this，沿着作用域链向上层查找，fn中的this指向obj，所以最后输出结果是222</p><p>资料参考：<a href="https://blog.csdn.net/qq_22855325/article/details/72958345" target="_blank" rel="noopener">Caraxiong：浅析js之this --- 一次性搞懂this指向</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;js中的this指向问题对于前端工作者来说是非常重要的，最近一直用的是vue，很久没有用js已经块忘得差不多了，现在来复习一下。&lt;br&gt;
+this 指的是当前对象，如果在全局范围内使用this，则指代当前页面window；
+如果在函数中使用this，谁（对象）调用该函数，t
+      
+    
+    </summary>
+    
+    
+      <category term="html" scheme="http://haojen.github.io/tags/html/"/>
+    
+      <category term="js" scheme="http://haojen.github.io/tags/js/"/>
+    
+  </entry>
   
   <entry>
     <title>Vue命名路由</title>
@@ -36,9 +117,9 @@
     </summary>
     
     
-      <category term="路由" scheme="http://haojen.github.io/tags/%E8%B7%AF%E7%94%B1/"/>
-    
       <category term="vue" scheme="http://haojen.github.io/tags/vue/"/>
+    
+      <category term="路由" scheme="http://haojen.github.io/tags/%E8%B7%AF%E7%94%B1/"/>
     
   </entry>
   
@@ -159,16 +240,16 @@
     <link href="http://haojen.github.io/2019/02/10/190210-%E4%BC%98%E7%A7%80%E8%B5%84%E6%BA%90/"/>
     <id>http://haojen.github.io/2019/02/10/190210-优秀资源/</id>
     <published>2019-02-10T03:24:00.000Z</published>
-    <updated>2019-02-14T08:26:22.059Z</updated>
+    <updated>2019-02-15T02:36:58.503Z</updated>
     
-    <content type="html"><![CDATA[<p><a href="http://www.ruanyifeng.com/blog/" target="_blank" rel="noopener">阮一峰的网络日志</a></p>]]></content>
+    <content type="html"><![CDATA[<p><a href="http://www.ruanyifeng.com/blog/" target="_blank" rel="noopener">阮一峰的网络日志</a><a href="http://www.w3school.com.cn/" target="_blank" rel="noopener">w3school</a><a href="https://www.liaoxuefeng.com" target="_blank" rel="noopener">廖雪峰的官方网站</a></p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;&lt;a href=&quot;http://www.ruanyifeng.com/blog/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;阮一峰的网络日志&lt;/a&gt;&lt;/p&gt;
-
+        &lt;p&gt;&lt;a href=&quot;http://www.ruanyifeng.com/blog/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;阮一峰的网络日志&lt;/a&gt;
+&lt;a href=&quot;http://www.w3school.com.cn/&quot; target=&quot;_blan
       
     
     </summary>
@@ -494,98 +575,6 @@
       <category term="类名" scheme="http://haojen.github.io/tags/%E7%B1%BB%E5%90%8D/"/>
     
       <category term="伪类" scheme="http://haojen.github.io/tags/%E4%BC%AA%E7%B1%BB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>git提交代码的步骤</title>
-    <link href="http://haojen.github.io/2018/12/18/181218-git%E6%8F%90%E4%BA%A4%E4%BB%A3%E7%A0%81/"/>
-    <id>http://haojen.github.io/2018/12/18/181218-git提交代码/</id>
-    <published>2018-12-17T16:00:00.000Z</published>
-    <updated>2019-02-13T03:21:23.271Z</updated>
-    
-    <content type="html"><![CDATA[<p>场景：现在我本地有两个分支，master和cq两个分支master分支主要用于pull代码和push代码，cq分支主要用于修改代码</p><h2>查看本地文件的状态</h2><p>git status</p><h2>将代码从工作区提交到缓存区</h2><p>git add .. 表示提交全部修改的文件到缓存区</p><h2>将文件从缓存区提交到版本去</h2><p>git commit -m 'ui''' 中的内容表示你这次修改的是什么，或者修改的目的是什么</p><h2>切换到master分支</h2><p>git checkout master</p><h2>获取远程上的最新代码</h2><p>git pull origin master提交前，一定要pull一下，否则将不能提交或者覆盖掉别人修改的代码origin 表示远程仓库名master 表示远程分支名</p><h2>合并本地的cq和master分支</h2><p>git merge cq</p><h2>将现在master分支的代码提交到远程master分支</h2><p>git push origin master</p><h2>冲突处理</h2><p>git grep '&lt;&lt;&lt;&lt;&lt;'找到冲突文件，修改掉冲突，再add、commit、push一下就可以了</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;场景：现在我本地有两个分支，master和cq两个分支
-master分支主要用于pull代码和push代码，cq分支主要用于修改代码&lt;/p&gt;
-&lt;h2&gt;查看本地文件的状态&lt;/h2&gt;
-&lt;p&gt;git status&lt;/p&gt;
-&lt;h2&gt;将代码从工作区提交到缓存区&lt;/h2&gt;
-&lt;p&gt;git
-      
-    
-    </summary>
-    
-    
-      <category term="git" scheme="http://haojen.github.io/tags/git/"/>
-    
-      <category term="分支" scheme="http://haojen.github.io/tags/%E5%88%86%E6%94%AF/"/>
-    
-      <category term="代码提交" scheme="http://haojen.github.io/tags/%E4%BB%A3%E7%A0%81%E6%8F%90%E4%BA%A4/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>vue路由</title>
-    <link href="http://haojen.github.io/2018/12/10/181210-vue%E8%B7%AF%E7%94%B1/"/>
-    <id>http://haojen.github.io/2018/12/10/181210-vue路由/</id>
-    <published>2018-12-09T16:00:00.000Z</published>
-    <updated>2019-02-14T08:31:46.350Z</updated>
-    
-    <content type="html"><![CDATA[<h2>安装</h2><pre><code>npm install vue-router --savecnpm install vue-router --save</code></pre><h2>引入</h2><pre><code>import VueRouter from 'vue-router'Vue.use(VueRouter)</code></pre><h2>配置路由</h2><ol><li><p>创建组件 引入组件</p></li><li><p>定义路由 （建议复制js）<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">const routes = &#123;</span><br><span class="line">    &#123;path:<span class="string">'/foo'</span>,componet:Foo&#125;</span><br><span class="line">    &#123;path:<span class="string">'/bar'</span>,componet:BAr&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p></li><li><p>实例化VueRouter<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cosnt router = new VueRouter(&#123;</span><br><span class="line">    routes //(缩写) 相当于routes:routes</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p></li><li><p>挂载<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">new Vue(&#123;</span><br><span class="line">    el:<span class="string">'#app'</span>,</span><br><span class="line">    router,</span><br><span class="line"></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p></li><li><p>使用</p></li></ol><h2>动态路由</h2><h3>传值</h3><p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">const routes = &#123;</span><br><span class="line">    &#123;path:<span class="string">'/foo/:aid'</span>,componet:Foo&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;router-link :to=<span class="string">"'/foo/'+key"</span>&gt;&#123;&#123;key&#125;&#125; -- &#123;&#123;item&#125;&#125;&lt;/router-link&gt;</span><br></pre></td></tr></table></figure></p><h3>获取</h3><pre><code>this.$route.params</code></pre><h2>路由get传值</h2><h3>传值</h3><pre><code>&lt;router-link :to=&quot;'/foo?key='+key&quot;&gt;{{key}} -- {{item}}&lt;/router-link&gt;</code></pre><h3>获取</h3><pre><code>this.$route.query</code></pre><h2>编程式导航</h2><pre><code>this.$router.push({path:'/content/495'})</code></pre><h2>命名路由</h2><h3>配置路由</h3><p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">const routes = &#123;</span><br><span class="line">    &#123;path:<span class="string">'/news'</span>,componet:News,name:<span class="string">'news'</span>&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><h3>使用</h3><p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">this.router.push(&#123;name:<span class="string">'news'</span>&#125;)</span><br></pre></td></tr></table></figure></p><h2>history 模式</h2><p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// 实例化VueRouter时</span><br><span class="line">const router = new VueRouter(&#123;</span><br><span class="line">    mode:&apos;history&apos;,</span><br><span class="line">    routes</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p><h2>子路由</h2><p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">const routes = &#123;</span><br><span class="line"> &#123;</span><br><span class="line">    path:<span class="string">'/user'</span>,</span><br><span class="line">    componet:User,</span><br><span class="line">    name:<span class="string">'user'</span>,</span><br><span class="line">    children:[</span><br><span class="line">        &#123;path:<span class="string">'useradd'</span>,component:UserAdd&#125;</span><br><span class="line">    ]</span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2&gt;安装&lt;/h2&gt;
-&lt;pre&gt;&lt;code&gt;npm install vue-router --save
-cnpm install vue-router --save
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h2&gt;引入&lt;/h2&gt;
-&lt;pre&gt;&lt;code&gt;import VueRouter fr
-      
-    
-    </summary>
-    
-    
-      <category term="Vue" scheme="http://haojen.github.io/tags/Vue/"/>
-    
-      <category term="路由" scheme="http://haojen.github.io/tags/%E8%B7%AF%E7%94%B1/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>vue组件传值</title>
-    <link href="http://haojen.github.io/2018/12/09/181209-vue%E7%BB%84%E4%BB%B6%E4%BC%A0%E5%80%BC/"/>
-    <id>http://haojen.github.io/2018/12/09/181209-vue组件传值/</id>
-    <published>2018-12-08T16:00:00.000Z</published>
-    <updated>2019-02-14T07:24:42.563Z</updated>
-    
-    <content type="html"><![CDATA[<h2>父组件给子组件传值：</h2><p>1 . 父组件调用子组件的时候 绑定动态属性&lt;v-head :title='title'&gt;&lt;/v-head&gt;引号中的title表示父组件中的数据2 . 在子组件里面通过 props接受父组件传过来的数据props:[&quot;title&quot;]3 . 也可以传方法和把整个父组件，方法和上面也一样</p><h2>非父子组件给子组件传值(事件广播)：</h2><p>1 . 新建一个js文件 然后引入vue 实例华vue 然后暴露这个实例import Vue from 'vue'var VueEvent = new Vue ()export default VueEvent2 . 在广播的地方引入刚才定义好的实例import VueEvent from '地址'3 . 通过VueEmit.$emit('名称','数据')4 . 在接受数据的地方通过VueEmit.$on('名称',function(){})</p><h2>父组件主动获取子组件的数据和方法</h2><p>1 . 调用子组件的时候定义一个ref&lt;v-head ref='head'&gt;&lt;/v-head&gt;2 . 在父组件里面通过this.$refs.header.属性this.$refs.header.方法</p><h2>父组件主动获取子组件的值</h2><p>this.$parent.header.属性this.$parent.header.方法</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2&gt;父组件给子组件传值：&lt;/h2&gt;
-&lt;p&gt;1 . 父组件调用子组件的时候 绑定动态属性
-&amp;lt;v-head :title=&#39;title&#39;&amp;gt;&amp;lt;/v-head&amp;gt;
-引号中的title表示父组件中的数据
-2 . 在子组件里面通过 props接受父组件传过来的数据
-
-      
-    
-    </summary>
-    
-    
-      <category term="Vue" scheme="http://haojen.github.io/tags/Vue/"/>
-    
-      <category term="组件" scheme="http://haojen.github.io/tags/%E7%BB%84%E4%BB%B6/"/>
     
   </entry>
   
